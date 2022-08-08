@@ -1,1 +1,51 @@
-<p>login works!</p>
+<section class="login">
+  <ftc-icon icon="sem_parar" [width]="40" [height]="36"></ftc-icon>
+
+  <div class="login__content">
+    <ftc-icon
+      icon="cardume"
+      class="minus-phone"
+      [width]="350"
+      [height]="100"
+    ></ftc-icon>
+
+    <ftc-icon icon="call_center" [width]="160" [height]="28"></ftc-icon>
+
+    <form class="login__form" [formGroup]="loginForm">
+      <ftc-input-text
+        [placeholder]="'usuário'"
+        [errorMessage]="'campo usuário obrigatório'"
+        [typeForm]="'text'"
+        [showError]="userError"
+        formControlName="user"
+        [(ngModel)]="userData"
+      ></ftc-input-text>
+
+      <ftc-input-text
+        [placeholder]="'senha'"
+        [errorMessage]="'campo senha obrigatório'"
+        [typeForm]="'password'"
+        [showError]="passwordError"
+        formControlName="password"
+        [(ngModel)]="passwordData"
+      ></ftc-input-text>
+
+      <ftc-input-text
+        [placeholder]="'código'"
+        [errorMessage]="'campo código obrigatório'"
+        [typeForm]="'text'"
+        [showError]="codeError"
+        formControlName="code"
+        [(ngModel)]="codeData"
+      ></ftc-input-text>
+
+      <button type="submit" class="button button--primary" (click)="onSubmit()">
+        entrar
+      </button>
+
+      <a class="login__help" href="{{ forgotPassword }}" target="_blank"
+        >problema para entrar?</a
+      >
+    </form>
+  </div>
+</section>

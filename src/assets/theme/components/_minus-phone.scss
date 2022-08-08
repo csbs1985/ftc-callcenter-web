@@ -1,0 +1,7 @@
+.minus-phone {
+  display: none;
+
+  @media (min-height: 560px) {
+    display: block;
+  }
+}

@@ -3,4 +3,13 @@
 @import "./settings/colors";
 @import "./settings/sizes";
 
+@import "./tools/border";
+
 @import "./generic/reset";
+
+@import "./components/minus-desktop";
+@import "./components/minus-phone";
+@import "./components/only-desktop";
+@import "./components/sem_parar";
+
+@import "./objects/button";

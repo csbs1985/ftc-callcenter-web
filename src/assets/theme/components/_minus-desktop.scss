@@ -1,0 +1,7 @@
+.minus-desktop {
+  display: block;
+
+  @media (min-width: 1023px) {
+    display: none;
+  }
+}

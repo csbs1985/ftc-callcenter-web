@@ -1,0 +1,13 @@
+@import "./../tools/_border";
+
+.button {
+  @include border-radius;
+  cursor: pointer;
+  height: var(--size-button-medium);
+  width: 100%;
+  color: var(--color-second);
+
+  &--primary {
+    background-color: var(--color-button);
+  }
+}

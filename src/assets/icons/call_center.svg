@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="158.5" height="28"><text transform="translate(104.5 23)" fill="#4a4a4a"
+    font-size="24" font-family="Ubuntu-Medium, Ubuntu" font-weight="500" letter-spacing="-.05em">
+    <tspan x="-53.76" y="0">CallCenter</tspan>
+  </text>
+  <path
+    d="m23.608 27.333-2-1.809a2.3 2.3 0 0 1 0-3.527l4.2-3.708c.2-.181.1-.452-.2-.452l-16.7-.09a8.171 8.171 0 0 1-5.4-1.989l-3-2.8a1.589 1.589 0 0 1 1.3-2.713l23.8.09c.3 0 .4-.271.2-.452l-4.3-3.8a2.4 2.4 0 0 1 0-3.617l1.9-1.718a3.054 3.054 0 0 1 4 0l12.7 11.485a2.5 2.5 0 0 1 0 3.708l-12.6 11.3a3.028 3.028 0 0 1-3.9.09Z"
+    fill="#6e74b6" />
+</svg>

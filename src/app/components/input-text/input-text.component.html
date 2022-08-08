@@ -1,0 +1,19 @@
+<section class="input-text">
+  <div class="input-text__box" [class.input-text__box--error]="showError">
+    <input
+      [(ngModel)]="value"
+      [maxlength]="maxLength"
+      [minlength]="minLength"
+      [type]="type"
+      [placeholder]="placeholder"
+      [disabled]="disabled"
+      (keyup)="keyup($event)"
+    />
+
+    <button *ngIf="typeNative === 'password'" (click)="toogle()">
+      {{ buttonPassword }}
+    </button>
+  </div>
+
+  <span *ngIf="showError">{{ errorMessage }}</span>
+</section>
