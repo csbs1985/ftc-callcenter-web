@@ -1,0 +1,31 @@
+* {
+  font-family: "ubuntu-regular", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  list-style: none;
+  list-style-type: none;
+  outline: none;
+  background-color: var(--color-default);
+  color: var(--color-text);
+  text-decoration: none;
+
+  :active,
+  :focus,
+  :focus-within,
+  :focus-visible :hover,
+  :target,
+  :visited {
+    outline: none;
+  }
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}

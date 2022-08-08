@@ -8,7 +8,6 @@ import { PagesModule } from './pages/pages.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule, ComponentsModule, PagesModule],
-  exports: [BrowserModule, AppRoutingModule, ComponentsModule, PagesModule],
   providers: [],
   bootstrap: [AppComponent],
 })

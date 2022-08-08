@@ -1,0 +1,16 @@
+:root {
+  --color-primary: #6e74b6;
+  --color-default: #fff;
+  --color-text: #4a4a4a;
+  --color-input: #f7f6fe;
+  --color-error: #ef5540;
+  --color-success: #5b9e0f;
+  --color-warning: #efc02d;
+}
+
+:root .dark-theme {
+  --color-primary: #6e74b6;
+  --color-default: #181e25;
+  --color-text: #f7f6fe;
+  --color-input: #252934;
+}
