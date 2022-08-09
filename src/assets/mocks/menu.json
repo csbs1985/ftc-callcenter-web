@@ -1,0 +1,503 @@
+{
+  "menu": [
+    {
+      "name": "atendimento",
+      "showLogout": false,
+      "profiles": [
+        1,
+        2,
+        3
+      ],
+      "devices": [
+        1,
+        2,
+        3
+      ],
+      "submenu": [
+        {
+          "name": "atendimento",
+          "url": "/atendimento/atendimento",
+          "profiles": [
+            1,
+            2
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "emissão de nota fiscal eletrônica",
+          "url": "/atendimento/emissao-nota-fiscal-eletronica",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "exclusão do serasa",
+          "url": "/atendimento/exclusao-serasa",
+          "profiles": [
+            1,
+            2
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "histórico de atendimento",
+          "url": "/atendimento/historico-atendimento",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "histórico de inadimplência",
+          "url": "/atendimento/historico-inadimplencia",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "priorização",
+          "url": "/atendimento/priorizacao",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "reclamação, sugestão e elegios",
+          "url": "/atendimento/reclamacao-sugestao-elegios",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "sem parar não recebido",
+          "url": "/atendimento/sem-parar-nao-recebido",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "sem parar sem cliente",
+          "url": "/atendimento/sem-parar-sem-cliente",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cliente",
+      "showLogout": false,
+      "profiles": [
+        1,
+        2,
+        3
+      ],
+      "devices": [
+        1,
+        2,
+        3
+      ],
+      "submenu": [
+        {
+          "name": "bloqueio de corresp./cobrança",
+          "url": "/cliente/bloqueio-cobranca",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "cobrança externa judicial",
+          "url": "/cliente/cobranca-externa-judicial",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "consultar cliente",
+          "url": "/cliente/consultar-cliente",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "dados cadastrais",
+          "url": "/cliente/dados-cadastrais",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "situação do pedido",
+          "url": "/cliente/situacao-pedido",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "name": "dispositivo",
+      "showLogout": false,
+      "profiles": [
+        1,
+        2,
+        3
+      ],
+      "devices": [
+        1,
+        2,
+        3
+      ],
+      "submenu": [
+        {
+          "name": "dados dos veiculos",
+          "url": "/dispositivo/dados-veiculos",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "devices virtuais",
+          "url": "/dispositivo/devices-virtuais",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "multa por evasao",
+          "url": "/dispositivo/multa-evasao",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "name": "financeiro",
+      "showLogout": false,
+      "profiles": [
+        1,
+        2,
+        3
+      ],
+      "devices": [
+        1,
+        2,
+        3
+      ],
+      "submenu": [
+        {
+          "name": "dados de cobrança",
+          "url": "/financeiro/dados-cobranca",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "movimentação de conta",
+          "url": "/financeiro/movimentacao-conta",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "faturas",
+          "url": "/financeiro/faturas",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vale pedágio",
+      "showLogout": false,
+      "profiles": [
+        1,
+        2,
+        3
+      ],
+      "devices": [
+        1,
+        2,
+        3
+      ],
+      "submenu": [
+        {
+          "name": "viagens",
+          "url": "/vale-pedagio/viagens",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "consulta e constetação",
+          "url": "/vale-pedagio/consulta-constetacao",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "name": "configurações",
+      "profiles": [
+        1,
+        2,
+        3
+      ],
+      "devices": [
+        1,
+        2,
+        3
+      ],
+      "submenu": [
+        {
+          "name": "histórico permissões",
+          "url": "/configuracoes/historico-permissoes",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "permissões perfil",
+          "url": "/configuracoes/permissoes-perfil",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "gestão de perfil",
+          "url": "/configuracoes/gestao-perfil",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "histórico de atendimento",
+          "url": "/configuracoes/historico-atendimento",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "manutenção de orientações",
+          "url": "/configuracoes/manutenção-orientacoes",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "manual",
+          "url": "/configuracoes/manual",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "versões",
+          "url": "/configuracoes/versoes",
+          "profiles": [
+            1,
+            2,
+            3
+          ],
+          "devices": [
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    }
+  ]
+}

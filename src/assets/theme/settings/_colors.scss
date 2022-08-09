@@ -1,6 +1,7 @@
 :root {
   --color-primary: #6e74b6;
   --color-second: #f7f6fe;
+  --color-third: #cfcfd1;
   --color-default: #fff;
   --color-text: #4a4a4a;
   --color-input: #f7f6fe;
@@ -8,12 +9,13 @@
   --color-success: #5b9e0f;
   --color-warning: #efc02d;
   --color-button: var(--color-primary);
-  --color-button-label: var(--color-second);
+  --color-button-label: #f7f6fe;
 }
 
 :root .dark-theme {
   --color-primary: #6e74b6;
   --color-second: #252934;
+  --color-third: #252934;
   --color-default: #181e25;
   --color-text: #f7f6fe;
   --color-input: #252934;

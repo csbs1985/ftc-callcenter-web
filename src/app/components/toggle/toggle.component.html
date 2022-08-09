@@ -1,0 +1,9 @@
+<section class="toggle">
+  <p>{{ label }}</p>
+
+  <input type="checkbox" for="toggle" id="toggle" />
+
+  <div class="toggle__item" (click)="toggle()">
+    <span [ngClass]="value ? 'toggle--off' : 'toggle--on'"></span>
+  </div>
+</section>

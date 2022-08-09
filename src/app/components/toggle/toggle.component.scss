@@ -1,0 +1,44 @@
+.toggle {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+
+  p {
+    font-size: 14px;
+  }
+
+  input[type="checkbox"] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  &__item {
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    position: relative;
+    width: 32px;
+    height: 16px;
+    background: var(--color-third);
+    border-radius: 16px;
+
+    span {
+      position: absolute;
+      top: 0px;
+      width: 16px;
+      height: 16px;
+      background: var(--color-primary);
+      border-radius: 50%;
+      transition: left 0.25s;
+    }
+  }
+
+  &--off {
+    left: 0px;
+  }
+
+  &--on {
+    left: 16px;
+  }
+}

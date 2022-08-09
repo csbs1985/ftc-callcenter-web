@@ -1,6 +1,56 @@
+@import "./../../../assets/theme/tools/_border";
+
 .menu {
   width: 280px;
   height: 100%;
   overflow-x: auto;
-  background-color: red;
+  padding: var(--size-medium);
+
+  &__subitem {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  h6 {
+    margin-bottom: 8px;
+  }
+
+  svg {
+    cursor: pointer;
+    height: 21px;
+  }
+
+  p {
+    @include border-radius;
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+    margin-left: var(--size-small);
+    padding: var(--size-x-small) var(--size-x-small);
+    background-color: transparent;
+
+    &:hover {
+      background-color: var(--color-second);
+    }
+  }
+
+  &--favorite {
+    fill: var(--color-third);
+  }
+
+  &--favorited {
+    fill: var(--color-primary);
+  }
+
+  ul:last-of-type {
+    margin-bottom: var(--size-medium);
+  }
+
+  button {
+    margin-top: var(--size-medium);
+    width: min-content;
+    padding-left: var(--size-medium);
+    padding-right: var(--size-medium);
+  }
 }
