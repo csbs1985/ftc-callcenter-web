@@ -13,7 +13,7 @@ export class SessionService {
     private router: Router
   ) {}
 
-  public login(user: string, password: string, code: string): void {
+  public login(code: string, user: string, password: string): void {
     this.localStorageService.save('user', {
       user: user,
       password: password,

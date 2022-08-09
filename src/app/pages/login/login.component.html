@@ -1,20 +1,15 @@
 <section class="login">
-  <ftc-icon icon="sem_parar" [width]="40" [height]="36"></ftc-icon>
+  <svg class="sem_parar"></svg>
 
   <div class="login__content">
-    <ftc-icon
-      icon="cardume"
-      class="minus-phone"
-      [width]="350"
-      [height]="100"
-    ></ftc-icon>
+    <svg class="cardume minus-phone"></svg>
 
     <ftc-icon icon="call_center" [width]="160" [height]="28"></ftc-icon>
 
     <form class="login__form" [formGroup]="loginForm">
       <ftc-input-text
         [placeholder]="'usuário'"
-        [errorMessage]="'campo usuário obrigatório'"
+        [errorMessage]="errorMessageUser"
         [typeForm]="'text'"
         [showError]="userError"
         formControlName="user"
@@ -23,7 +18,7 @@
 
       <ftc-input-text
         [placeholder]="'senha'"
-        [errorMessage]="'campo senha obrigatório'"
+        [errorMessage]="errorMessagePassword"
         [typeForm]="'password'"
         [showError]="passwordError"
         formControlName="password"
@@ -32,9 +27,11 @@
 
       <ftc-input-text
         [placeholder]="'código'"
-        [errorMessage]="'campo código obrigatório'"
-        [typeForm]="'text'"
+        [errorMessage]="errorMessageCode"
+        [typeForm]="'number'"
         [showError]="codeError"
+        [minLength]="6"
+        [maxLength]="6"
         formControlName="code"
         [(ngModel)]="codeData"
       ></ftc-input-text>
