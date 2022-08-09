@@ -17,9 +17,9 @@ export class LoginComponent implements OnInit {
   public passwordData: string = '';
   public userData: string = '';
 
-  public codeError: boolean = false;
-  public passwordError: boolean = false;
-  public userError: boolean = false;
+  public isErrorCode: boolean = false;
+  public isErrorPassword: boolean = false;
+  public isErrorUser: boolean = false;
 
   public errorMessageCode!: string;
   public errorMessagePassword!: string;
@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
   }
 
   protected login(): void {
-    this.codeError = this.userError = this.passwordError = false;
+    this.isErrorCode = this.isErrorUser = this.isErrorPassword = false;
     this.sessionService.sessionUser = true;
     this.sessionService.login(this.codeData, this.userData, this.passwordData);
   }

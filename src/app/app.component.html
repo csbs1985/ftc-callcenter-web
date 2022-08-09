@@ -1,1 +1,7 @@
-<router-outlet></router-outlet>
+<section class="app">
+  <ftc-menu *ngIf="isLogin()"></ftc-menu>
+
+  <router-outlet></router-outlet>
+
+  <ftc-info *ngIf="isLogin()"></ftc-info>
+</section>
