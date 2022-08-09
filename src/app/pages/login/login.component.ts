@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  MinLengthValidator,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SessionService } from 'src/app/shared/services/session.service';
 
 @Component({
@@ -27,22 +22,19 @@ export class LoginComponent implements OnInit {
   public userError: boolean = false;
 
   public errorMessageCode!: string;
-  public errorMessagePassword: string;
-  public errorMessageUser: string;
+  public errorMessagePassword!: string;
+  public errorMessageUser!: string;
 
   constructor(
     private formBuilder: FormBuilder,
     private sessionService: SessionService
-  ) {
-    this.errorMessagePassword = 'campo senha obrigatório';
-    this.errorMessageUser = 'campo usuário obrigatório';
-  }
+  ) {}
 
   ngOnInit(): void {
     this.initForm();
   }
 
-  private initForm(): void {
+  protected initForm(): void {
     this.loginForm = this.formBuilder.group({
       code: [
         '',
@@ -57,35 +49,34 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       this.login();
     } else {
-      this.validateCode();
-      this.passwordError = this.passwordData === '' ? true : false;
-      this.userError = this.userData === '' ? true : false;
+      this.errorMessageCode = this.validateCode();
+      this.errorMessagePassword = this.validatePassword();
+      this.errorMessageUser = this.validateUser();
     }
   }
 
-  private validateCode(): void {
-    if (this.codeData === '') {
-      this.errorMessageCode = 'campo código obrigatório';
-      this.codeError = true;
-      return;
-    }
-    if (this.codeData.length !== 6) {
-      this.errorMessageCode = 'código deve ter 6 caracteres';
-      this.codeError = true;
-      return;
-    }
-    if (this.codeData.toString() !== '123456') {
-      this.errorMessageCode = 'código okta incorreto';
-      this.codeError = true;
-      return;
-    }
-
-    this.codeError = false;
-  }
-
-  private login(): void {
+  protected login(): void {
     this.codeError = this.userError = this.passwordError = false;
     this.sessionService.sessionUser = true;
     this.sessionService.login(this.codeData, this.userData, this.passwordData);
+  }
+
+  protected validateCode(): string {
+    if (this.codeData === '') return 'campo código obrigatório';
+    if (this.codeData.length !== 6) return 'código deve ter 6 caracteres';
+    if (this.codeData.toString() !== '123456') return 'código okta incorreto';
+    return '';
+  }
+
+  protected validatePassword(): string {
+    if (this.passwordData === '') return 'campo senha obrigatório';
+    if (this.passwordData !== '123456') return 'senha incorreta';
+    return '';
+  }
+
+  protected validateUser(): string {
+    if (this.userData === '') return 'campo usuário obrigatório';
+    if (this.userData !== 'charles') return 'usuário não existe';
+    return '';
   }
 }

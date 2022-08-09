@@ -11,7 +11,6 @@
         [placeholder]="'usuário'"
         [errorMessage]="errorMessageUser"
         [typeForm]="'text'"
-        [showError]="userError"
         formControlName="user"
         [(ngModel)]="userData"
       ></ftc-input-text>
@@ -20,7 +19,6 @@
         [placeholder]="'senha'"
         [errorMessage]="errorMessagePassword"
         [typeForm]="'password'"
-        [showError]="passwordError"
         formControlName="password"
         [(ngModel)]="passwordData"
       ></ftc-input-text>
@@ -29,9 +27,6 @@
         [placeholder]="'código'"
         [errorMessage]="errorMessageCode"
         [typeForm]="'number'"
-        [showError]="codeError"
-        [minLength]="6"
-        [maxLength]="6"
         formControlName="code"
         [(ngModel)]="codeData"
       ></ftc-input-text>

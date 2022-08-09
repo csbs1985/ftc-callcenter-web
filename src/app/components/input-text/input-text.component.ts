@@ -28,10 +28,6 @@ export class InputTextComponent implements OnInit, ControlValueAccessor {
   @Input() disabled: boolean = false;
   @Input() placeholder!: string;
   @Input() errorMessage!: string;
-  @Input() showError: boolean = false;
-  @Input() minLength!: number;
-  @Input() maxLength!: number;
-
   @Input() set typeForm(value: string) {
     this.typeNative = value;
     if (value === 'password') this.isPassword = true;
@@ -63,20 +59,15 @@ export class InputTextComponent implements OnInit, ControlValueAccessor {
     this.onTouch = onTouched;
   }
 
-  keyup(event: any): void {
-    this.showError = this.minLength >= event.target.value.lenght ? true : false;
-  }
-
   toogle(): void {
     if (this.isPassword) {
       this.isPassword = false;
       this.type = 'text';
       this.buttonPassword = 'ocultar';
-      return;
+    } else {
+      this.isPassword = true;
+      this.type = 'password';
+      this.buttonPassword = 'mostrar';
     }
-
-    this.isPassword = true;
-    this.type = 'password';
-    this.buttonPassword = 'mostrar';
   }
 }
