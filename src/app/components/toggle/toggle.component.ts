@@ -13,9 +13,15 @@ export class ToggleComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.initToggle();
+  }
 
-  public toggle() {
+  private initToggle(): void {
+    this.value = this.value ? true : false;
+  }
+
+  public toggle(): void {
     this.value = !this.value;
     this.valueToggle.emit(this.value);
   }

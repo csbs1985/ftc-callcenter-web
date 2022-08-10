@@ -29,7 +29,11 @@
     </li>
   </ul>
 
-  <ftc-toggle [label]="'tema escuro'" (valueToggle)="valueTheme()"></ftc-toggle>
+  <ftc-toggle
+    [label]="'tema escuro'"
+    [value]="theme"
+    (valueToggle)="valueTheme()"
+  ></ftc-toggle>
 
   <button class="button button--primary" (click)="logout()">sair</button>
 </section>

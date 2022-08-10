@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MenuModel } from 'src/app/shared/interfaces/menu.interface';
 import { AttendanceService } from 'src/app/shared/services/attendance.service';
 import { FavoriteService } from 'src/app/shared/services/favorite.service';
+import { ThemeService } from 'src/app/shared/services/theme.service';
 import { SessionService } from '../../shared/services/session.service';
 
 @Component({
@@ -11,17 +12,18 @@ import { SessionService } from '../../shared/services/session.service';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
-  private favorites: any;
-
   public menu!: MenuModel[];
+  public theme!: boolean;
 
   constructor(
     private attendanceService: AttendanceService,
     private client: HttpClient,
     private favoriteService: FavoriteService,
-    private sessionService: SessionService
+    private sessionService: SessionService,
+    private themeService: ThemeService
   ) {
     this.initMenu();
+    this.theme = this.themeService.theme;
   }
 
   ngOnInit(): void {}
@@ -53,7 +55,7 @@ export class MenuComponent implements OnInit {
   }
 
   public valueTheme(): void {
-    document.body.classList.toggle('dark-theme');
+    this.themeService.toggle();
   }
 
   public logout(): void {
