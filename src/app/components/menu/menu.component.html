@@ -10,15 +10,14 @@
               width="11.007"
               height="10.468"
               viewBox="0 0 11.007 10.468"
+              (click)="toggleFavorite(sub.url)"
             >
               <path
                 id="favorite"
                 d="M7.5,2,9.2,5.445l3.8.556-2.752,2.68.649,3.786L7.5,10.679,4.1,12.468l.649-3.786L2,6l3.8-.556Z"
                 transform="translate(-2 -2)"
                 [ngClass]="
-                  getItemFavorited(sub.name)
-                    ? 'menu--favorited'
-                    : 'menu--favorite'
+                  getFavorited(sub.url) ? 'menu--favorited' : 'menu--favorite'
                 "
               />
             </svg>
@@ -30,10 +29,7 @@
     </li>
   </ul>
 
-  <ftc-toggle
-    [label]="'tema escuro'"
-    (valueToggle)="valueToggle($event)"
-  ></ftc-toggle>
+  <ftc-toggle [label]="'tema escuro'" (valueToggle)="valueTheme()"></ftc-toggle>
 
   <button class="button button--primary" (click)="logout()">sair</button>
 </section>

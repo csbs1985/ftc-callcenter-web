@@ -4,13 +4,18 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class FavoriteService {
-  public favorites: string[] = [];
+  private favorites: string[] = [];
 
   constructor() {}
 
-  public getFavorites(): string[] {
-    return (this.favorites = []);
-    // this.favorites = api.user;
+  public getFavorites(item: string): boolean {
+    var favorites = localStorage.getItem('favorites');
+
+    if (favorites) {
+      this.favorites = JSON.parse(favorites);
+      return this.favorites.includes(item) ? true : false;
+    }
+    return false;
   }
 
   public toggle(item: string) {
@@ -20,8 +25,8 @@ export class FavoriteService {
       });
     } else this.favorites.push(item);
 
-    //TODO: salvar na api
+    localStorage.setItem('favorites', JSON.stringify(this.favorites));
 
-    console.log(this.favorites);
+    //TODO: salvar na api
   }
 }
