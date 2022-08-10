@@ -5,7 +5,7 @@ import { SubmenuInterface } from './submenu.interface';
 export class MenuModel {
   'name': string;
   'submenu': SubmenuInterface[];
-  'showLogout': boolean;
+  'requiredService': boolean;
   'profiles': profilesInterface[];
   'devices': DevicesInterface[];
 }

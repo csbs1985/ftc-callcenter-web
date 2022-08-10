@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MenuModel } from 'src/app/shared/interfaces/menu.interface';
+import { AttendanceService } from 'src/app/shared/services/attendance.service';
 import { SessionService } from '../../shared/services/session.service';
 
 @Component({
@@ -12,6 +13,7 @@ export class MenuComponent implements OnInit {
   public menu!: MenuModel[];
 
   constructor(
+    private attendanceService: AttendanceService,
     private client: HttpClient,
     private sessionService: SessionService
   ) {
@@ -29,6 +31,15 @@ export class MenuComponent implements OnInit {
         this.menu = result.menu;
         mySub.unsubscribe();
       });
+  }
+
+  public canMenu(menu: boolean): boolean {
+    var hasAttendance = this.attendanceService.hasAttendance();
+
+    if (!menu) return true;
+    else if (hasAttendance) return true;
+
+    return false;
   }
 
   public getItemFavorited(item: string): boolean {

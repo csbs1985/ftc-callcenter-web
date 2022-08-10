@@ -1,30 +1,32 @@
 <section class="menu">
   <ul>
     <li *ngFor="let item of menu">
-      <h6>{{ item.name }}</h6>
-      <ul>
-        <li class="menu__subitem" *ngFor="let sub of item.submenu">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="11.007"
-            height="10.468"
-            viewBox="0 0 11.007 10.468"
-          >
-            <path
-              id="favorite"
-              d="M7.5,2,9.2,5.445l3.8.556-2.752,2.68.649,3.786L7.5,10.679,4.1,12.468l.649-3.786L2,6l3.8-.556Z"
-              transform="translate(-2 -2)"
-              [ngClass]="
-                getItemFavorited(sub.name)
-                  ? 'menu--favorited'
-                  : 'menu--favorite'
-              "
-            />
-          </svg>
+      <div *ngIf="canMenu(item.requiredService)">
+        <h6>{{ item.name }}</h6>
+        <ul>
+          <li class="menu__subitem" *ngFor="let sub of item.submenu">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="11.007"
+              height="10.468"
+              viewBox="0 0 11.007 10.468"
+            >
+              <path
+                id="favorite"
+                d="M7.5,2,9.2,5.445l3.8.556-2.752,2.68.649,3.786L7.5,10.679,4.1,12.468l.649-3.786L2,6l3.8-.556Z"
+                transform="translate(-2 -2)"
+                [ngClass]="
+                  getItemFavorited(sub.name)
+                    ? 'menu--favorited'
+                    : 'menu--favorite'
+                "
+              />
+            </svg>
 
-          <p routerLink="{{ sub.url }}">{{ sub.name }}</p>
-        </li>
-      </ul>
+            <p routerLink="{{ sub.url }}">{{ sub.name }}</p>
+          </li>
+        </ul>
+      </div>
     </li>
   </ul>
 

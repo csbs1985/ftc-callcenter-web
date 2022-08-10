@@ -26,6 +26,7 @@ export class LocalStorageService {
   }
 
   public endSession(): boolean {
+    localStorage.removeItem('attendance');
     localStorage.removeItem('user');
     localStorage.removeItem('theme');
     return true;
