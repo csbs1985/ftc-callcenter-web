@@ -23,7 +23,7 @@ export class SessionService {
   }
 
   public isLogged(): boolean {
-    const user = this.localStorageService.find('user');
+    const user = localStorage.getItem('user');
     return user !== null;
   }
 

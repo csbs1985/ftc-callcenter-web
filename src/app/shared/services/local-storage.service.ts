@@ -12,10 +12,6 @@ export class LocalStorageService {
     localStorage.setItem(key, crypto);
   }
 
-  find(key: string): string | null {
-    return localStorage.getItem(key);
-  }
-
   delete(key: string): void {
     localStorage.removeItem(key);
   }
@@ -27,6 +23,7 @@ export class LocalStorageService {
 
   public endSession(): boolean {
     localStorage.removeItem('attendance');
+    localStorage.removeItem('favorites');
     localStorage.removeItem('user');
     localStorage.removeItem('theme');
     return true;
