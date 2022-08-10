@@ -1,0 +1,23 @@
+<section class="timezone">
+  <h1>horário brasileiro</h1>
+
+  <div class="text-label">
+    <label>data</label>
+    <p>{{ day }}</p>
+  </div>
+
+  <div class="text-label">
+    <label>horário padrão de brasília</label>
+    <p>{{ brasilia | date: "HH:mm:ss" }}</p>
+  </div>
+
+  <div class="text-label">
+    <label>horário padrão do amazonas</label>
+    <p>{{ amazonas | date: "HH:mm:ss":"-04:00" }}</p>
+  </div>
+
+  <div class="text-label">
+    <label>horário padrão do acre</label>
+    <p>{{ acre | date: "HH:mm:ss":"-05:00" }}</p>
+  </div>
+</section>

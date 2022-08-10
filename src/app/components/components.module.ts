@@ -7,6 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { InfoComponent } from './info/info.component';
 import { RouterModule } from '@angular/router';
 import { ToggleComponent } from './toggle/toggle.component';
+import { LibsModule } from '../libs/libs.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,13 @@ import { ToggleComponent } from './toggle/toggle.component';
     InfoComponent,
     ToggleComponent,
   ],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+    LibsModule,
+  ],
   exports: [
     IconComponent,
     InputTextComponent,

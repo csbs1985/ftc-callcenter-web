@@ -2,5 +2,5 @@
   width: 300px;
   height: 100%;
   overflow-x: auto;
-  background-color: blue;
+  border-left: var(--size-border) solid var(--color-border);
 }

@@ -10,6 +10,7 @@
   --color-warning: #efc02d;
   --color-button: var(--color-primary);
   --color-button-label: #f7f6fe;
+  --color-border: var(--color-third);
 }
 
 :root .dark-theme {
@@ -19,4 +20,5 @@
   --color-default: #181e25;
   --color-text: #f7f6fe;
   --color-input: #252934;
+  --color-border: var(--color-third);
 }

@@ -6,6 +6,7 @@
   overflow-x: auto;
   padding: var(--size-medium);
   padding-top: 0;
+  border-right: 0.5px solid var(--color-border);
 
   &__item {
     margin-bottom: var(--size-small);
