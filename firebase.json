@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist",
+    "public": "dist/ftc-callcenter-web",
     "ignore": [
       "firebase.json",
       "**/.*",
