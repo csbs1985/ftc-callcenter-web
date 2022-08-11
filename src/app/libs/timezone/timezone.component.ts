@@ -47,7 +47,6 @@ export class TimezoneComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.intervalId = setInterval(() => {
-      this.brasilia = new Date();
       this.getData();
     }, 1000);
 
@@ -57,6 +56,7 @@ export class TimezoneComponent implements OnInit, OnDestroy {
         share()
       )
       .subscribe((time: Date) => {
+        this.brasilia = new Date();
         this.amazonas = time;
         this.acre = time;
       });

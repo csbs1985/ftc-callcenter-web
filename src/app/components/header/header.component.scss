@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  height: var(--size-header-phone);
+  padding: 0 var(--size-medium);
+  background-color: red;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: var(--size-header-phone);
+    background-color: blue;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    &__top {
+      height: var(--size-header-desktop);
+    }
+  }
+}

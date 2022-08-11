@@ -8,6 +8,8 @@ import { InfoComponent } from './info/info.component';
 import { RouterModule } from '@angular/router';
 import { ToggleComponent } from './toggle/toggle.component';
 import { LibsModule } from '../libs/libs.module';
+import { HeaderComponent } from './header/header.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { LibsModule } from '../libs/libs.module';
     MenuComponent,
     InfoComponent,
     ToggleComponent,
+    HeaderComponent,
+    FavoritesComponent,
   ],
   imports: [
     CommonModule,
@@ -30,6 +34,8 @@ import { LibsModule } from '../libs/libs.module';
     MenuComponent,
     InfoComponent,
     ToggleComponent,
+    HeaderComponent,
+    FavoritesComponent,
   ],
 })
 export class ComponentsModule {}
