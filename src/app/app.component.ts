@@ -18,7 +18,9 @@ export class AppComponent {
     private authenticationService: AuthenticationService,
     private themeService: ThemeService
   ) {
-    this.authenticationService.user.subscribe((x) => (this.currentUser = x));
+    this.authenticationService.currentUser.subscribe(
+      (x) => (this.currentUser = x)
+    );
     this.getTheme();
   }
 

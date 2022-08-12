@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {
+  AuthenticationService,
   AttendanceService,
   FavoriteService,
-  SessionService,
   ThemeService,
   MenuInterface,
   SubmenuInterface,
@@ -22,7 +22,7 @@ export class MenuComponent implements OnInit {
     private attendanceService: AttendanceService,
     private client: HttpClient,
     private favoriteService: FavoriteService,
-    private sessionService: SessionService,
+    private authenticationService: AuthenticationService,
     private themeService: ThemeService
   ) {
     this.initMenu();
@@ -64,6 +64,6 @@ export class MenuComponent implements OnInit {
   }
 
   public logout(): void {
-    this.sessionService.logout();
+    this.authenticationService.logout();
   }
 }
