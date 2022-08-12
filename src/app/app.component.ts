@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
-import { SessionService } from './_services/session.service';
-import { ThemeService } from './_services/theme.service';
+import {
+  AuthenticationService,
+  ThemeService,
+  UserInterface,
+  UserService,
+} from './shared/_index';
 
 @Component({
   selector: 'ftc-root',
@@ -8,19 +12,14 @@ import { ThemeService } from './_services/theme.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  public currentUser!: UserInterface;
+
   constructor(
-    private sessionService: SessionService,
+    private authenticationService: AuthenticationService,
     private themeService: ThemeService
   ) {
+    this.authenticationService.user.subscribe((x) => (this.currentUser = x));
     this.getTheme();
-  }
-
-  public getUser() {
-    return this.sessionService.sessionUser;
-  }
-
-  public isLogin() {
-    return this.sessionService.isLogged();
   }
 
   private getTheme(): void {

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FavoriteService } from 'src/app/_services/favorite.service';
-import { LocalStorageService } from '../../_services/local_storage.service';
+import { FavoriteService } from '@app/shared/_index';
 
 @Component({
   selector: 'ftc-favorites',

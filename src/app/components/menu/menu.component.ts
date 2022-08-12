@@ -1,10 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { MenuInterface, SubmenuInterface } from 'src/app/_interfaces/_index';
-import { AttendanceService } from 'src/app/_services/attendance.service';
-import { FavoriteService } from 'src/app/_services/favorite.service';
-import { ThemeService } from 'src/app/_services/theme.service';
-import { SessionService } from '../../_services/session.service';
+import {
+  AttendanceService,
+  FavoriteService,
+  SessionService,
+  ThemeService,
+  MenuInterface,
+  SubmenuInterface,
+} from 'src/app/shared/_index';
 
 @Component({
   selector: 'ftc-menu',

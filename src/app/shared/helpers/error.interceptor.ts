@@ -7,11 +7,11 @@ import {
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { SessionService } from '../_services/session.service';
+import { AuthenticationService, SessionService } from '../services/_index';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
-  constructor(private sessionService: SessionService) {}
+  constructor(private authenticationService: AuthenticationService) {}
 
   intercept(
     request: HttpRequest<any>,
@@ -20,13 +20,12 @@ export class ErrorInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((err) => {
         if ([401, 403].indexOf(err.status) !== -1) {
-          // logout automático se a resposta 401 não autorizada ou 403 proibida for retornada da api
-          this.sessionService.logout();
+          this.authenticationService.logout();
           location.reload();
         }
 
         const error = err.error.message || err.statusText;
-        return throwError(error);
+        return throwError(() => error);
       })
     );
   }

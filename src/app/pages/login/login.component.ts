@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SessionService } from 'src/app/_services/session.service';
 import { first } from 'rxjs';
+import { SessionService } from 'src/app/shared/_index';
 
 @Component({
   selector: 'ftc-login',
@@ -74,7 +74,7 @@ export class LoginComponent implements OnInit {
       .login(this.codeData, this.passwordData, this.userData)
       .pipe(first())
       .subscribe(
-        (data) => {
+        (data: any) => {
           this.isErrorCode = this.isErrorUser = this.isErrorPassword = false;
           this.sessionService.sessionUser = true;
           this.sessionService.login(
@@ -84,7 +84,7 @@ export class LoginComponent implements OnInit {
           );
           this.router.navigate([this.returnUrl]);
         },
-        (error) => {
+        (error: any) => {
           console.log('ERRO = > não foi possivél inciar sessão: ', error);
           this.loading = false;
         }

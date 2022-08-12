@@ -2,29 +2,29 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { User } from '../_interfaces/user.interface';
+import { UserInterface } from '../interfaces/user.interface';
 import { LocalStorageService } from './local_storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SessionService {
-  private currentUserSubject: BehaviorSubject<User>;
+  private currentUserSubject: BehaviorSubject<UserInterface>;
 
-  public currentUser: Observable<User>;
+  public currentUser: Observable<UserInterface>;
   public sessionUser: boolean = false;
 
   constructor(
     private http: HttpClient,
     private localStorageService: LocalStorageService
   ) {
-    this.currentUserSubject = new BehaviorSubject<User>(
+    this.currentUserSubject = new BehaviorSubject<UserInterface>(
       JSON.parse(localStorage.getItem('currentUser')!)
     );
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  public get currentUserValue(): User {
+  public get currentUserValue(): UserInterface {
     return this.currentUserSubject.value;
   }
 

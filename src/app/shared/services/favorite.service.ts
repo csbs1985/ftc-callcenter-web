@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FavoritesInterface } from '../_interfaces/favorites.interface';
+import { FavoritesInterface } from '../interfaces/favorites.interface';
 
 @Injectable({
   providedIn: 'root',
