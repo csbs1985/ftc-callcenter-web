@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { MenuModel } from 'src/app/shared/interfaces/menu.interface';
-import { AttendanceService } from 'src/app/shared/services/attendance.service';
-import { FavoriteService } from 'src/app/shared/services/favorite.service';
-import { ThemeService } from 'src/app/shared/services/theme.service';
-import { SessionService } from '../../shared/services/session.service';
+import { MenuInterface, SubmenuInterface } from 'src/app/_interfaces/_index';
+import { AttendanceService } from 'src/app/_services/attendance.service';
+import { FavoriteService } from 'src/app/_services/favorite.service';
+import { ThemeService } from 'src/app/_services/theme.service';
+import { SessionService } from '../../_services/session.service';
 
 @Component({
   selector: 'ftc-menu',
@@ -12,7 +12,7 @@ import { SessionService } from '../../shared/services/session.service';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
-  public menu!: MenuModel[];
+  public menu!: MenuInterface[];
   public theme!: boolean;
 
   constructor(
@@ -46,12 +46,14 @@ export class MenuComponent implements OnInit {
     return false;
   }
 
-  public getFavorited(item: string): boolean {
-    return this.favoriteService.getFavorites(item) ? true : false;
+  public getFavorited(item: SubmenuInterface): boolean {
+    return this.favoriteService.getFavorites({ name: item.name, url: item.url })
+      ? true
+      : false;
   }
 
-  public toggleFavorite(item: string): void {
-    this.favoriteService.toggle(item);
+  public toggleFavorite(item: SubmenuInterface): void {
+    this.favoriteService.toggle({ name: item.name, url: item.url });
   }
 
   public valueTheme(): void {

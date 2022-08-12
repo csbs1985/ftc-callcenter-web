@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SessionService } from 'src/app/shared/services/session.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { SessionService } from 'src/app/_services/session.service';
+import { first } from 'rxjs';
 
 @Component({
   selector: 'ftc-login',
@@ -16,10 +18,12 @@ export class LoginComponent implements OnInit {
   public codeData: string = '';
   public passwordData: string = '';
   public userData: string = '';
+  public returnUrl!: string;
 
   public isErrorCode: boolean = false;
   public isErrorPassword: boolean = false;
   public isErrorUser: boolean = false;
+  public loading: boolean = false;
 
   public errorMessageCode!: string;
   public errorMessagePassword!: string;
@@ -27,8 +31,14 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private sessionService: SessionService
-  ) {}
+    private sessionService: SessionService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
+    if (this.sessionService.currentUserValue) {
+      this.router.navigate(['/']);
+    }
+  }
 
   ngOnInit(): void {
     this.initForm();
@@ -43,22 +53,42 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required],
       user: ['', Validators.required],
     });
+
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   public onSubmit(): void {
     if (this.loginForm.valid) {
       this.login();
-    } else {
-      this.errorMessageCode = this.validateCode();
-      this.errorMessagePassword = this.validatePassword();
-      this.errorMessageUser = this.validateUser();
+      return;
     }
+
+    this.errorMessageCode = this.validateCode();
+    this.errorMessagePassword = this.validatePassword();
+    this.errorMessageUser = this.validateUser();
   }
 
   protected login(): void {
-    this.isErrorCode = this.isErrorUser = this.isErrorPassword = false;
-    this.sessionService.sessionUser = true;
-    this.sessionService.login(this.codeData, this.userData, this.passwordData);
+    this.loading = true;
+    this.sessionService
+      .login(this.codeData, this.passwordData, this.userData)
+      .pipe(first())
+      .subscribe(
+        (data) => {
+          this.isErrorCode = this.isErrorUser = this.isErrorPassword = false;
+          this.sessionService.sessionUser = true;
+          this.sessionService.login(
+            this.codeData,
+            this.userData,
+            this.passwordData
+          );
+          this.router.navigate([this.returnUrl]);
+        },
+        (error) => {
+          console.log('ERRO = > não foi possivél inciar sessão: ', error);
+          this.loading = false;
+        }
+      );
   }
 
   protected validateCode(): string {

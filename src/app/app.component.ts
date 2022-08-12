@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SessionService } from './shared/services/session.service';
-import { ThemeService } from './shared/services/theme.service';
+import { SessionService } from './_services/session.service';
+import { ThemeService } from './_services/theme.service';
 
 @Component({
   selector: 'ftc-root',
