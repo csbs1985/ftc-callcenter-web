@@ -3,7 +3,6 @@
   flex-direction: column;
   height: var(--size-header-phone);
   padding: 0 var(--size-medium);
-  background-color: red;
 
   &__top {
     display: flex;
@@ -11,7 +10,6 @@
     align-items: center;
     width: 100%;
     height: var(--size-header-phone);
-    background-color: blue;
   }
 }
 
