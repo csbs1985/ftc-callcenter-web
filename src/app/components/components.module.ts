@@ -10,6 +10,7 @@ import { ToggleComponent } from './toggle/toggle.component';
 import { LibsModule } from '../libs/libs.module';
 import { HeaderComponent } from './header/header.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { ProgressComponent } from './progress/progress.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
     ToggleComponent,
     HeaderComponent,
     FavoritesComponent,
+    ProgressComponent,
   ],
   imports: [
     CommonModule,
@@ -36,6 +38,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
     ToggleComponent,
     HeaderComponent,
     FavoritesComponent,
+    ProgressComponent,
   ],
 })
 export class ComponentsModule {}
