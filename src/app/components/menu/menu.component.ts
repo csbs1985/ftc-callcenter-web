@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   AuthenticationService,
   AttendanceService,
@@ -7,6 +8,7 @@ import {
   ThemeService,
   MenuInterface,
   SubmenuInterface,
+  MenuService,
 } from 'src/app/shared/_index';
 
 @Component({
@@ -20,9 +22,11 @@ export class MenuComponent implements OnInit {
 
   constructor(
     private attendanceService: AttendanceService,
+    private authenticationService: AuthenticationService,
     private client: HttpClient,
     private favoriteService: FavoriteService,
-    private authenticationService: AuthenticationService,
+    private menuService: MenuService,
+    private router: Router,
     private themeService: ThemeService
   ) {
     this.initMenu();
@@ -63,7 +67,20 @@ export class MenuComponent implements OnInit {
     this.themeService.toggle();
   }
 
+  public selectRoute(item: string): void {
+    this.menuService.showMenu = false;
+    this.router.navigate([item]);
+  }
+
   public logout(): void {
     this.authenticationService.logout();
+  }
+
+  public toggleMenu(): boolean {
+    return this.menuService.showMenu ?? false;
+  }
+
+  public overlayOutput(value: boolean): void {
+    this.menuService.showMenu = value;
   }
 }

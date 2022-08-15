@@ -1,10 +1,14 @@
 <section class="header">
   <div class="header__top">
-    <ftc-icon [icon]="'menu'" class="minus-desktop"></ftc-icon>
-
     <svg class="call_center"></svg>
 
-    <h5>olá, {{ user.firstName }} {{ user.lastName }}</h5>
+    <ftc-icon
+      [icon]="'menu'"
+      class="minus-desktop"
+      (click)="toggleMenu()"
+    ></ftc-icon>
+
+    <h5 class="minus-phone">olá, {{ user.firstName }} {{ user.lastName }}</h5>
   </div>
 
   <ftc-favorites class="only-desktop"></ftc-favorites>

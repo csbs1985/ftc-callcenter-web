@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs';
 import {
   AuthenticationService,
+  MenuService,
   UserInterface,
   UserService,
 } from '../../shared/_index';
@@ -16,7 +17,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private menuService: MenuService
   ) {
     this.user = this.authenticationService.userValue;
   }
@@ -37,5 +39,9 @@ export class HeaderComponent implements OnInit {
     } catch (error) {
       console.log('ERRO = > não foi possivél identificar o usuário: ', error);
     }
+  }
+
+  public toggleMenu(): void {
+    this.menuService.showMenu = true;
   }
 }

@@ -11,6 +11,7 @@ import { LibsModule } from '../libs/libs.module';
 import { HeaderComponent } from './header/header.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { ProgressComponent } from './progress/progress.component';
+import { OverlayComponent } from './overlay/overlay.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ProgressComponent } from './progress/progress.component';
     HeaderComponent,
     FavoritesComponent,
     ProgressComponent,
+    OverlayComponent,
   ],
   imports: [
     CommonModule,
@@ -39,6 +41,7 @@ import { ProgressComponent } from './progress/progress.component';
     HeaderComponent,
     FavoritesComponent,
     ProgressComponent,
+    OverlayComponent,
   ],
 })
 export class ComponentsModule {}

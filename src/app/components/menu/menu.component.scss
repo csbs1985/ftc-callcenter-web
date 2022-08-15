@@ -1,12 +1,21 @@
 @import "./../../../assets/theme/tools/_border";
 
 .menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  z-index: var(--index-second);
   width: 280px;
-  height: 100%;
+  height: 100vh;
   overflow-x: auto;
   padding: var(--size-medium);
   padding-top: 0;
   border-right: var(--size-border) solid var(--color-border);
+  transition: 0.1s ease-in;
+
+  &--open {
+    left: 0;
+  }
 
   &__item {
     margin-bottom: var(--size-small);
@@ -18,7 +27,7 @@
     width: 100%;
   }
 
-  h6 {
+  h5 {
     margin-top: var(--size-medium);
   }
 

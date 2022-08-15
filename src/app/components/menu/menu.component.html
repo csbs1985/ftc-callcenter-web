@@ -1,8 +1,8 @@
-<section class="menu">
+<section class="menu" [class.menu--open]="toggleMenu()">
   <ul class="menu__item">
     <li *ngFor="let item of menu">
       <div *ngIf="canMenu(item.requiredService)">
-        <h6>{{ item.name }}</h6>
+        <h5>{{ item.name }}</h5>
         <ul>
           <li class="menu__subitem" *ngFor="let sub of item.submenu">
             <svg
@@ -22,7 +22,7 @@
               />
             </svg>
 
-            <p routerLink="{{ sub.url }}">{{ sub.name }}</p>
+            <p (click)="selectRoute(sub.url)">{{ sub.name }}</p>
           </li>
         </ul>
       </div>
@@ -37,3 +37,8 @@
 
   <button class="button button--primary" (click)="logout()">sair</button>
 </section>
+
+<ftc-overlay
+  *ngIf="toggleMenu()"
+  (overlayOutput)="overlayOutput($event)"
+></ftc-overlay>

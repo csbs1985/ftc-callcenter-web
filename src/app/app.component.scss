@@ -1,5 +1,6 @@
 .app {
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -12,12 +13,53 @@
     min-height: 100%;
     background-color: blue;
   }
+
+  ftc-info {
+    width: 300px;
+    height: 100%;
+    overflow-x: auto;
+    border-left: var(--size-border) solid var(--color-border);
+  }
+}
+
+@media (min-width: 768px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    ftc-menu {
+      width: 280px;
+      height: 100%;
+      overflow-x: auto;
+      padding: var(--size-medium);
+      padding-top: 0;
+      border-right: var(--size-border) solid var(--color-border);
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      overflow-x: auto;
+      width: 100%;
+      min-height: 100%;
+      background-color: blue;
+    }
+
+    ftc-info {
+      width: 300px;
+      height: 100%;
+      overflow-x: auto;
+      border-left: var(--size-border) solid var(--color-border);
+    }
+  }
 }
 
 @media (min-width: 1024px) {
   .app {
     display: flex;
-
     width: 100%;
     height: 100%;
     overflow: hidden;
