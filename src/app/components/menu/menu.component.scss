@@ -65,3 +65,13 @@
     padding-right: var(--size-medium);
   }
 }
+
+@media (min-width: 1024px) {
+  .menu {
+    order: 1;
+    position: relative;
+    left: 0;
+    z-index: var(--index-default);
+    transition: none;
+  }
+}

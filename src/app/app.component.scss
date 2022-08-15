@@ -30,15 +30,6 @@
     height: 100%;
     overflow: hidden;
 
-    ftc-menu {
-      width: 280px;
-      height: 100%;
-      overflow-x: auto;
-      padding: var(--size-medium);
-      padding-top: 0;
-      border-right: var(--size-border) solid var(--color-border);
-    }
-
     &__content {
       display: flex;
       flex-direction: column;

@@ -1,6 +1,9 @@
 .header {
+  position: fixed;
+  top: 0;
   display: flex;
   flex-direction: column;
+  width: 100%;
   height: var(--size-header-phone);
   padding: 0 var(--size-medium);
 
@@ -9,14 +12,12 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: var(--size-header-phone);
+    height: 100%;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .header {
-    &__top {
-      height: var(--size-header-desktop);
-    }
+    height: var(--size-header-desktop);
   }
 }
