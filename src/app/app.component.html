@@ -1,13 +1,17 @@
-<section class="app">
-  <ftc-header *ngIf="currentUser"></ftc-header>
+<section class="app" *ngIf="currentUser; else session_container">
+  <ftc-header></ftc-header>
 
   <div class="app__content">
-    <ftc-menu *ngIf="currentUser"></ftc-menu>
+    <ftc-menu></ftc-menu>
 
     <div class="app__main">
       <router-outlet></router-outlet>
     </div>
 
-    <ftc-article *ngIf="currentUser"></ftc-article>
+    <ftc-article></ftc-article>
   </div>
 </section>
+
+<ng-template #session_container>
+  <router-outlet></router-outlet>
+</ng-template>

@@ -3,7 +3,6 @@ import {
   AuthenticationService,
   ThemeService,
   UserInterface,
-  UserService,
 } from './shared/_index';
 
 @Component({
@@ -16,6 +15,7 @@ export class AppComponent {
 
   constructor(
     private authenticationService: AuthenticationService,
+
     private themeService: ThemeService
   ) {
     this.authenticationService.currentUser.subscribe(
