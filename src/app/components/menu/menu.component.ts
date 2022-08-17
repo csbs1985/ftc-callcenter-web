@@ -80,7 +80,7 @@ export class MenuComponent implements OnInit {
     return this.menuService.showMenu ?? false;
   }
 
-  public overlayOutput(value: boolean): void {
-    this.menuService.showMenu = value;
+  public closedMenu(): void {
+    this.menuService.showMenu = false;
   }
 }

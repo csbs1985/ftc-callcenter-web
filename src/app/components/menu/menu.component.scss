@@ -10,8 +10,13 @@
   overflow-x: auto;
   padding: var(--size-medium);
   padding-top: 0;
-  border-right: var(--size-border) solid var(--color-border);
   transition: 0.1s ease-in;
+
+  ftc-icon {
+    display: flex;
+    justify-content: flex-end;
+    margin: var(--size-medium) 0;
+  }
 
   &--open {
     left: 0;
@@ -25,24 +30,27 @@
     display: flex;
     align-items: center;
     width: 100%;
+    margin-bottom: 1px;
+    height: 30px;
   }
 
   h5 {
-    margin-top: var(--size-medium);
+    margin: var(--size-medium) 0 var(--size-small) 0;
   }
 
   svg {
     cursor: pointer;
-    height: 21px;
+    line-height: 100%;
   }
 
   p {
     @include border-radius;
     cursor: pointer;
     width: 100%;
+    line-height: 30px;
     font-size: 14px;
     margin-left: var(--size-small);
-    padding: var(--size-x-small) var(--size-x-small);
+    padding: 0 var(--size-x-small);
     background-color: transparent;
 
     &:hover {
