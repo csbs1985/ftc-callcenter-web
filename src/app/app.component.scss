@@ -15,18 +15,7 @@
     flex-direction: column;
   }
 
-  .menu {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    min-width: 300px;
-    width: 300px;
-    height: 100vh;
-    overflow-x: auto;
-    padding: 16px;
-  }
-
-  .main {
+  &__main {
     width: 100%;
     padding: 16px;
   }
@@ -57,13 +46,7 @@
       flex-direction: row;
     }
 
-    .menu {
-      position: relative;
-      left: 0;
-      padding-bottom: 80px;
-    }
-
-    .main {
+    &__main {
       flex-grow: 1;
       overflow-x: auto;
       padding-bottom: 80px;
