@@ -19,7 +19,6 @@
     position: absolute;
     top: 0;
     left: -100%;
-    // left: 0;
     min-width: 300px;
     width: 300px;
     height: 100vh;
@@ -28,11 +27,6 @@
   }
 
   .main {
-    width: 100%;
-    padding: 16px;
-  }
-
-  .article {
     width: 100%;
     padding: 16px;
   }
@@ -76,12 +70,13 @@
       height: 100vh;
     }
 
-    .article {
+    ftc-article {
       min-width: 300px;
       width: 300px;
+      max-width: 300px;
       height: 100vh;
       overflow-x: auto;
-      padding-bottom: 80px;
+      padding-bottom: 64px;
     }
   }
 }

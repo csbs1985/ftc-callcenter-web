@@ -1,0 +1,29 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 16px 16px;
+}
+
+@media (min-width: 768px) {
+  .article {
+    flex-direction: row;
+
+    ftc-timezone,
+    ftc-contacts {
+      width: 50%;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .article {
+    flex-direction: column;
+    padding-top: var(--size-medium);
+
+    ftc-timezone,
+    ftc-contacts {
+      width: 100%;
+    }
+  }
+}

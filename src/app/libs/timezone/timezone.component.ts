@@ -41,7 +41,7 @@ export class TimezoneComponent implements OnInit, OnDestroy {
   public brasilia = new Date('2021-04-23T10:00:00.000Z');
   public amazonas = new Date('2021-04-23T10:00:00.000Z');
   public acre = new Date('2021-04-23T10:00:00.000Z');
-  public day!: string;
+  public day: string = 'hoje';
 
   constructor() {}
 
