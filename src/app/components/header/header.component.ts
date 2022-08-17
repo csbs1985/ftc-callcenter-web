@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs';
 import {
   AuthenticationService,
-  MenuService,
   UserInterface,
   UserService,
+  VariablesService,
 } from '../../shared/_index';
 
 @Component({
@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   constructor(
     private userService: UserService,
     private authenticationService: AuthenticationService,
-    private menuService: MenuService
+    private variablesService: VariablesService
   ) {
     this.user = this.authenticationService.userValue;
   }
@@ -42,6 +42,6 @@ export class HeaderComponent implements OnInit {
   }
 
   public toggleMenu(): void {
-    this.menuService.showMenu = true;
+    this.variablesService.showMenu = true;
   }
 }

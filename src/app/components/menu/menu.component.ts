@@ -8,7 +8,7 @@ import {
   ThemeService,
   MenuInterface,
   SubmenuInterface,
-  MenuService,
+  VariablesService,
 } from 'src/app/shared/_index';
 
 @Component({
@@ -25,7 +25,7 @@ export class MenuComponent implements OnInit {
     private authenticationService: AuthenticationService,
     private client: HttpClient,
     private favoriteService: FavoriteService,
-    private menuService: MenuService,
+    private variablesService: VariablesService,
     private router: Router,
     private themeService: ThemeService
   ) {
@@ -68,7 +68,7 @@ export class MenuComponent implements OnInit {
   }
 
   public selectRoute(item: string): void {
-    this.menuService.showMenu = false;
+    this.variablesService.showMenu = false;
     this.router.navigate([item]);
   }
 
@@ -77,10 +77,10 @@ export class MenuComponent implements OnInit {
   }
 
   public toggleMenu(): boolean {
-    return this.menuService.showMenu ?? false;
+    return this.variablesService.showMenu ?? false;
   }
 
   public closedMenu(): void {
-    this.menuService.showMenu = false;
+    this.variablesService.showMenu = false;
   }
 }
