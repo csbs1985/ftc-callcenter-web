@@ -9,9 +9,11 @@
 
   <ftc-info *ngIf="currentUser"></ftc-info> -->
 
-  <div class="header">header</div>
+  <!-- <div class="header">header</div> -->
 
-  <div class="content">
+  <ftc-header *ngIf="currentUser"></ftc-header>
+
+  <div class="app__content">
     <div class="menu">
       1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, illum
       officia blanditiis voluptatem earum commodi cupiditate saepe harum animi

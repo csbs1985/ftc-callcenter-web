@@ -1,0 +1,16 @@
+.favorites {
+  ul {
+    display: flex;
+    overflow-y: auto;
+  }
+}
+
+.chip {
+  gap: var(--size-small);
+}
+
+@media (min-width: 1024px) {
+  .favorites {
+    margin-left: var(--size-large);
+  }
+}
