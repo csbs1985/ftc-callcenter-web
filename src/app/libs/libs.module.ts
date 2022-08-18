@@ -8,6 +8,8 @@ import { InputButtonComponent } from './input-button/input-button.component';
 import { InputTextComponent } from './input-text/input-text.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { SemPararComponent } from './sem-parar/sem-parar.component';
+import { CallCenterComponent } from './call-center/call-center.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { RouterModule } from '@angular/router';
     IdentifyUserComponent,
     InputButtonComponent,
     InputTextComponent,
+    SemPararComponent,
+    CallCenterComponent,
   ],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
   exports: [
@@ -26,6 +30,8 @@ import { RouterModule } from '@angular/router';
     IdentifyUserComponent,
     InputButtonComponent,
     InputTextComponent,
+    SemPararComponent,
+    CallCenterComponent,
   ],
 })
 export class LibsModule {}
