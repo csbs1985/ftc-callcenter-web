@@ -4,12 +4,18 @@
   display: flex;
   flex-direction: column;
   margin-bottom: var(--size-medium);
+  background-color: var(--color-second);
+
+  label {
+    background-color: var(--color-second);
+  }
 
   &__main {
     @include border-radius;
     display: flex;
     width: 100%;
     border: 1px solid transparent;
+    background-color: var(--color-second);
 
     input {
       flex-grow: 1;

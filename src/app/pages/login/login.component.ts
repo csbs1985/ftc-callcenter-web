@@ -58,6 +58,8 @@ export class LoginComponent implements OnInit {
   }
 
   public onSubmit(): void {
+    this.loading = true;
+
     if (this.loginForm.valid && this.userData === 'admin') {
       this.login();
       return;
@@ -66,10 +68,10 @@ export class LoginComponent implements OnInit {
     this.errorMessageCode = this.validateCode();
     this.errorMessagePassword = this.validatePassword();
     this.errorMessageUser = this.validateUser();
+    this.loading = false;
   }
 
   protected login(): void {
-    this.loading = true;
     this.authenticationService
       .login(this.codeData, this.passwordData, this.userData)
       .pipe(first())
