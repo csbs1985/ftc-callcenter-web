@@ -6,6 +6,7 @@
   width: 100%;
   height: var(--size-button-medium);
   color: var(--color-button-label);
+  padding: 0 var(--size-medium);
 
   &:active {
     opacity: 0.9;

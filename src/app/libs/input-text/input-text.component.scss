@@ -1,0 +1,8 @@
+@import "./../../../assets/theme/tools/_border";
+
+.input-text {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-bottom: var(--size-medium);
+}

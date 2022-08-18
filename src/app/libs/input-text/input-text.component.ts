@@ -19,20 +19,15 @@ import {
 })
 export class InputTextComponent implements OnInit, ControlValueAccessor {
   public form!: FormGroup;
-  public buttonPassword: string = 'mostrar';
-  public isPassword: boolean = false;
-  public type: string = 'text';
-  public typeNative: string = 'text';
   public field = '';
 
+  @Input() button!: string;
   @Input() disabled: boolean = false;
-  @Input() placeholder!: string;
   @Input() errorMessage!: string;
-  @Input() set typeForm(value: string) {
-    this.typeNative = value;
-    if (value === 'password') this.isPassword = true;
-    this.type = value;
-  }
+  @Input() label!: string;
+  @Input() placeholder!: string;
+  @Input() typeForm: string = 'text';
+  @Input() inputReverse: boolean = false;
 
   constructor() {}
 
@@ -57,17 +52,5 @@ export class InputTextComponent implements OnInit, ControlValueAccessor {
 
   registerOnTouched(onTouched: any): void {
     this.onTouch = onTouched;
-  }
-
-  toogle(): void {
-    if (this.isPassword) {
-      this.isPassword = false;
-      this.type = 'text';
-      this.buttonPassword = 'ocultar';
-    } else {
-      this.isPassword = true;
-      this.type = 'password';
-      this.buttonPassword = 'mostrar';
-    }
   }
 }

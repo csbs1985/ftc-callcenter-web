@@ -4,7 +4,9 @@
   --color-third: #cfcfd1;
   --color-default: #fff;
   --color-text: #4a4a4a;
-  --color-input: #f7f6fe;
+  --color-input: var(--color-default);
+  --color-input-reverse: var(--color-second);
+  --color-input-text: var(--color-text);
   --color-error: #ef5540;
   --color-success: #5b9e0f;
   --color-warning: #efc02d;
@@ -21,6 +23,8 @@
   --color-third: #3e4042;
   --color-default: #181e25;
   --color-text: #f7f6fe;
-  --color-input: #252934;
+  --color-input: var(--color-default);
+  --color-input-text: var(--color-text);
+  --color-input-reverse: #252934;
   --color-border: var(--color-third);
 }
