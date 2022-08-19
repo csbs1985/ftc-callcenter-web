@@ -5,11 +5,9 @@
   margin: 0;
   padding: 0;
   border: 0;
-  box-sizing: border-box;
   list-style: none;
   list-style-type: none;
   outline: none;
-  background-color: var(--color-default);
   color: var(--color-text);
   text-decoration: none;
   text-transform: lowercase;
@@ -31,4 +29,5 @@ body {
   height: 100%;
   overflow-x: hidden;
   z-index: var(--index-default);
+  background-color: var(--color-default);
 }

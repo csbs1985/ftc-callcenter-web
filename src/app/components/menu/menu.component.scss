@@ -1,5 +1,3 @@
-@import "./../../../assets/theme/tools/_border";
-
 .menu {
   position: fixed;
   top: 0;
@@ -44,8 +42,8 @@
   }
 
   p {
-    @include border-radius;
     cursor: pointer;
+    border-radius: var(--size-radius);
     width: 100%;
     line-height: 30px;
     font-size: 14px;

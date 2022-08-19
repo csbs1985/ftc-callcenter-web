@@ -1,41 +1,16 @@
-@import "./../../../assets/theme/styles.scss";
-
 .input-button {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: var(--size-medium);
-  background-color: var(--color-second);
-
-  label {
-    background-color: var(--color-second);
-  }
-
   &__main {
-    @include border-radius;
+    border-radius: var(--size-radius);
     display: flex;
     width: 100%;
-    border: 1px solid transparent;
-    background-color: var(--color-second);
 
     input {
       flex-grow: 1;
       border-radius: var(--size-small) 0 0 var(--size-small);
-      border: none;
 
       &.input--reverse {
         background-color: var(--color-input-reverse);
       }
     }
-
-    button {
-      border-radius: 0 var(--size-small) var(--size-small) 0;
-      width: min-content;
-    }
-  }
-}
-
-.input {
-  &--error {
-    border-color: var(--color-error);
   }
 }

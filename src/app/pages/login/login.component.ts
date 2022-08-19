@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
     this.initForm();
   }
 
-  protected initForm(): void {
+  private initForm(): void {
     this.loginForm = this.formBuilder.group({
       code: [
         '',
@@ -71,7 +71,13 @@ export class LoginComponent implements OnInit {
     this.loading = false;
   }
 
-  protected login(): void {
+  private login(): void {
+    if (this.codeData !== '123456') {
+      this.errorMessageCode = 'código okta incorreto';
+      this.loading = false;
+      return;
+    }
+
     this.authenticationService
       .login(this.codeData, this.passwordData, this.userData)
       .pipe(first())
@@ -87,20 +93,20 @@ export class LoginComponent implements OnInit {
       );
   }
 
-  protected validateCode(): string {
+  private validateCode(): string {
     if (this.codeData === '') return 'campo código obrigatório';
     if (this.codeData.length !== 6) return 'código deve ter 6 caracteres';
-    if (this.codeData !== '123456') return 'código okta incorreto';
+    // if (this.codeData !== '123456') return 'código okta incorreto';
     return '';
   }
 
-  protected validatePassword(): string {
+  private validatePassword(): string {
     if (this.passwordData === '') return 'campo senha obrigatório';
     if (this.passwordData !== 'admin') return 'senha incorreta';
     return '';
   }
 
-  protected validateUser(): string {
+  private validateUser(): string {
     if (this.userData === '') return 'campo usuário obrigatório';
     if (this.userData !== 'admin') return 'usuário não existe';
     return '';

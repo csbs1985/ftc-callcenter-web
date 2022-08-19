@@ -1,8 +1,6 @@
-@import "./../tools/_border";
-
 .button {
-  @include border-radius;
   cursor: pointer;
+  border-radius: var(--size-radius);
   width: 100%;
   height: var(--size-button-medium);
   color: var(--color-button-label);
@@ -13,6 +11,12 @@
   }
 
   &--primary {
+    background-color: var(--color-button);
+  }
+
+  &--input {
+    width: min-content;
+    border-radius: 0 var(--size-small) var(--size-small) 0;
     background-color: var(--color-button);
   }
 }

@@ -1,12 +1,6 @@
-@import "./../../../assets/theme/tools/_border";
-
 .card {
-  @include border-radius;
+  border-radius: var(--size-radius);
   width: 100%;
   padding: var(--size-medium);
   background-color: var(--color-second);
-
-  * {
-    background-color: transparent;
-  }
 }

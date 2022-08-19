@@ -1,13 +1,13 @@
-<section class="input-text">
+<section class="input__section input-text">
   <label *ngIf="label">{{ label }}</label>
 
   <input
-    [class.input--error]="errorMessage"
-    [class.input--reverse]="inputReverse"
     [(ngModel)]="value"
     [type]="typeForm"
-    [placeholder]="placeholder"
+    placeholder="placeholder"
     [disabled]="disabled"
+    [class.input--error]="errorMessage"
+    [class.input--reverse]="inputReverse"
   />
 
   <p class="text-error" *ngIf="errorMessage">{{ errorMessage }}</p>

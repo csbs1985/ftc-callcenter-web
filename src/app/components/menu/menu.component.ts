@@ -35,7 +35,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  protected initMenu() {
+  private initMenu() {
     const mySub = this.client
       .get('assets/mocks/menu.json')
       .subscribe((result: any) => {
