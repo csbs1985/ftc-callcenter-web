@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs';
 import {
-  AuthenticationService,
-  UserInterface,
   UserService,
+  UserInterface,
   VariablesService,
+  ApiService,
 } from '../../shared/_index';
 
 @Component({
@@ -16,11 +16,11 @@ export class HeaderComponent implements OnInit {
   public user: UserInterface;
 
   constructor(
+    private apiService: ApiService,
     private userService: UserService,
-    private authenticationService: AuthenticationService,
     private variablesService: VariablesService
   ) {
-    this.user = this.authenticationService.userValue;
+    this.user = this.userService.userValue;
   }
 
   ngOnInit(): void {
@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit {
 
   private getUser(): void {
     try {
-      const mySub = this.userService
+      const mySub = this.apiService
         .getById(this.user.id!)
         .pipe(first())
         .subscribe((user) => {

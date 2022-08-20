@@ -7,11 +7,18 @@ import { VariablesService } from '@app/shared/_index';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  public loading: boolean = false;
+  public errorMessage!: string;
+
   constructor(private variablesService: VariablesService) {}
 
   ngOnInit(): void {}
 
   public get showNews(): boolean {
     return this.variablesService.showNews;
+  }
+
+  public loadingOutput(value: boolean): void {
+    this.loading = value;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -19,7 +19,6 @@ export class InputButtonComponent implements OnInit, ControlValueAccessor {
   public typeNative: string = 'text';
   public textButton: string = 'mostrar';
 
-  // @Input() button!: string;
   @Input() disabled: boolean = false;
   @Input() errorMessage!: string;
   @Input() label!: string;
@@ -36,6 +35,8 @@ export class InputButtonComponent implements OnInit, ControlValueAccessor {
     if (value === 'password') this.isPassword = true;
     this.type = value;
   }
+
+  @Output() inputButtonOutput = new EventEmitter();
 
   constructor() {}
 
@@ -77,5 +78,7 @@ export class InputButtonComponent implements OnInit, ControlValueAccessor {
     }
   }
 
-  public selectButton(): void {}
+  public selectButton(): void {
+    this.inputButtonOutput.emit(true);
+  }
 }

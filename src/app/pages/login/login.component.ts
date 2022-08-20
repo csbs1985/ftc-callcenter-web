@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs';
-import { AuthenticationService, UserInterface } from 'src/app/shared/_index';
+import { UserService, UserInterface } from 'src/app/shared/_index';
 
 @Component({
   selector: 'ftc-login',
@@ -31,11 +31,11 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authenticationService: AuthenticationService,
+    private userService: UserService,
     private route: ActivatedRoute,
     private router: Router
   ) {
-    if (this.authenticationService.userValue) {
+    if (this.userService.userValue) {
       this.router.navigate(['/']);
     }
   }
@@ -78,7 +78,7 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    this.authenticationService
+    this.userService
       .login(this.codeData, this.passwordData, this.userData)
       .pipe(first())
       .subscribe(
@@ -96,7 +96,6 @@ export class LoginComponent implements OnInit {
   private validateCode(): string {
     if (this.codeData === '') return 'campo código obrigatório';
     if (this.codeData.length !== 6) return 'código deve ter 6 caracteres';
-    // if (this.codeData !== '123456') return 'código okta incorreto';
     return '';
   }
 

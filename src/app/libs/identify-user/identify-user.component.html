@@ -1,10 +1,14 @@
-<section class="identify-user card">
+<section class="identify-user card" [formGroup]="form">
   <h1>novo atendimento</h1>
 
   <ftc-input-button
-    [label]="'identificar usuário'"
+    formControlName="customer"
+    [label]="'identificar cliente'"
+    [errorMessage]="errorMessage"
     [placeholder]="'cpf, cnpj ou protocolo'"
     [button]="'identificar'"
-    [(ngModel)]="userData"
+    [(ngModel)]="valueData"
+    (ngModelChange)="onChange($event)"
+    (click)="onSubmit()"
   ></ftc-input-button>
 </section>

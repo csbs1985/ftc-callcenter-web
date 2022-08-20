@@ -7,11 +7,11 @@ import {
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { AuthenticationService } from '../services/_index';
+import { UserService } from '../services/_index';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
-  constructor(private authenticationService: AuthenticationService) {}
+  constructor(private userService: UserService) {}
 
   intercept(
     request: HttpRequest<any>,
@@ -20,7 +20,7 @@ export class ErrorInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((err) => {
         if ([401, 403].indexOf(err.status) !== -1) {
-          this.authenticationService.logout();
+          this.userService.logout();
           location.reload();
         }
 

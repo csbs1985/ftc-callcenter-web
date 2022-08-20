@@ -12,9 +12,9 @@ import {
 @Injectable({
   providedIn: 'root',
 })
-export class AuthenticationService {
+export class CustomerService {
   private userSubject!: BehaviorSubject<UserInterface>;
-  public currentUser: Observable<UserInterface>;
+  public currentClient: Observable<UserInterface>;
 
   constructor(
     private cryptografiaService: CryptografiaService,
@@ -22,8 +22,8 @@ export class AuthenticationService {
     private http: HttpClient,
     private localStorageService: LocalStorageService
   ) {
-    this.hasCurrentUser();
-    this.currentUser = this.userSubject.asObservable();
+    this.hasCurrentClient();
+    this.currentClient = this.userSubject.asObservable();
   }
 
   public login(
@@ -38,20 +38,22 @@ export class AuthenticationService {
       })
       .pipe(
         map((user) => {
-          this.localStorageService.save('currentUser', JSON.stringify(user));
+          this.localStorageService.save('currentClient', JSON.stringify(user));
           this.userSubject.next(user);
           return user;
         })
       );
   }
 
-  private hasCurrentUser(): void {
-    var user = localStorage.getItem('currentUser') ?? null;
+  private hasCurrentClient(): void {
+    var user = localStorage.getItem('currentClient') ?? null;
 
     if (user) {
       this.userSubject = new BehaviorSubject<UserInterface>(
         JSON.parse(
-          this.cryptografiaService.decrypt(localStorage.getItem('currentUser'))
+          this.cryptografiaService.decrypt(
+            localStorage.getItem('currentClient')
+          )
         )
       );
     } else {

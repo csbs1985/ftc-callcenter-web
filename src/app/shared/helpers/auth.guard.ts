@@ -5,22 +5,19 @@ import {
   Router,
   RouterStateSnapshot,
 } from '@angular/router';
-import { AuthenticationService } from '../services/_index';
+import { UserService } from '../services/_index';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(
-    private authenticationService: AuthenticationService,
-    private router: Router
-  ) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
-    const user = this.authenticationService.userValue;
+    const user = this.userService.userValue;
 
     if (user) {
       if (

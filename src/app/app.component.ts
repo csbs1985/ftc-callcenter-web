@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  AuthenticationService,
-  ThemeService,
-  UserInterface,
-} from './shared/_index';
+import { UserService, ThemeService, UserInterface } from './shared/_index';
 
 @Component({
   selector: 'ftc-root',
@@ -14,13 +10,11 @@ export class AppComponent {
   public currentUser!: UserInterface;
 
   constructor(
-    private authenticationService: AuthenticationService,
+    private userService: UserService,
 
     private themeService: ThemeService
   ) {
-    this.authenticationService.currentUser.subscribe(
-      (x) => (this.currentUser = x)
-    );
+    this.userService.currentUser.subscribe((x) => (this.currentUser = x));
     this.getTheme();
   }
 

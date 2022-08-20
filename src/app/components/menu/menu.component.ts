@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
-  AuthenticationService,
+  UserService,
   AttendanceService,
   FavoriteService,
   ThemeService,
@@ -22,7 +22,7 @@ export class MenuComponent implements OnInit {
 
   constructor(
     private attendanceService: AttendanceService,
-    private authenticationService: AuthenticationService,
+    private userService: UserService,
     private client: HttpClient,
     private favoriteService: FavoriteService,
     private variablesService: VariablesService,
@@ -73,7 +73,7 @@ export class MenuComponent implements OnInit {
   }
 
   public logout(): void {
-    this.authenticationService.logout();
+    this.userService.logout();
   }
 
   public toggleMenu(): boolean {
