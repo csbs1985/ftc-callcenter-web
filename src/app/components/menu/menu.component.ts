@@ -54,7 +54,7 @@ export class MenuComponent implements OnInit {
   }
 
   public getFavorited(item: SubmenuInterface): boolean {
-    return this.favoriteService.getFavorites({ name: item.name, url: item.url })
+    return this.favoriteService.getFavorite({ name: item.name, url: item.url })
       ? true
       : false;
   }

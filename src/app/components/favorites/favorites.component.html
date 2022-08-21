@@ -2,7 +2,7 @@
   <ul *ngIf="favorites; else notFavorites">
     <li
       *ngFor="let item of favorites"
-      class="chip ellipsis"
+      class="chip ellipsis cursor--pointer"
       [routerLink]="[item.url]"
     >
       <svg

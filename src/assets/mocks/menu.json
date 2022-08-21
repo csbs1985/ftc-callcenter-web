@@ -458,7 +458,7 @@
         },
         {
           "name": "manutenção de orientações",
-          "url": "/configuracoes/manutenção-orientacoes",
+          "url": "/configuracoes/manutencao-orientacoes",
           "profiles": [
             1,
             2,

@@ -46,8 +46,13 @@
   .header {
     height: var(--size-header-desktop);
 
-    &__left > svg {
-      margin-left: 0;
+    &__left {
+      flex-grow: 1;
+      margin-right: var(--size-medium);
+
+      svg {
+        margin-left: 0;
+      }
     }
   }
 }

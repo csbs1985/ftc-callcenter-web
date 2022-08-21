@@ -7,34 +7,17 @@ import { FavoriteService, FavoritesInterface } from '@app/shared/_index';
   styleUrls: ['./favorites.component.scss'],
 })
 export class FavoritesComponent implements OnInit {
-  public favorites!: FavoritesInterface[];
+  public favorites: FavoritesInterface[] = [];
 
-  constructor(private favoriteService: FavoriteService) {
-    this.favorites = [
-      {
-        name: 'atendimento',
-        url: '/atendimento/atendimento',
-      },
-      {
-        name: 'priorização',
-        url: '/atendimento/priorizacao',
-      },
-      {
-        name: 'bloqueio de correspond./cobrança',
-        url: '/cliente/bloqueio-cobranca',
-      },
-      {
-        name: 'devices virtuais',
-        url: '/dispositivo/devices-virtuais',
-      },
-      {
-        name: 'faturas',
-        url: 'string',
-      },
-    ];
-  }
+  constructor(private favoriteService: FavoriteService) {}
 
   ngOnInit(): void {
-    // this.favorites = this.favoriteService.getAllFavorites();
+    this.getFavorites();
+  }
+
+  private getFavorites(): void {
+    this.favoriteService.getAllFavorites().subscribe((result) => {
+      this.favorites = result;
+    });
   }
 }

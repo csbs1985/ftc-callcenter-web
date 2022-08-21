@@ -1,47 +1,47 @@
 import { Injectable } from '@angular/core';
+import { Subject, Observable, of } from 'rxjs';
 import { FavoritesInterface } from '../interfaces/favorites.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FavoriteService {
-  private favorites: FavoritesInterface[] = [];
+  public favorites = Subject<FavoritesInterface[]>;
 
   constructor() {}
 
-  // public getAllFavorites() {
-  //   var favorites = localStorage.getItem('favorites');
+  public getAllFavorites(): Observable<FavoritesInterface[]> {
+    return of(JSON.parse(localStorage.getItem('favorites')!));
+  }
 
-  //   if (favorites) {
-  //     this.favorites = JSON.parse(favorites);
-  //     return this.favorites.includes(item) ? true : false;
-  //   }
-  //   return false;
-  // }
+  public getFavorite(item: FavoritesInterface): boolean {
+    var favorites = JSON.parse(localStorage.getItem('favorites')!) ?? [];
 
-  public getFavorites(item: FavoritesInterface): boolean {
-    var favorites = localStorage.getItem('favorites');
-
-    if (favorites) {
-      this.favorites = JSON.parse(favorites);
-      // return this.favorites.includes(item) ? true : false;
-    }
-    return false;
+    return favorites.some(
+      (element: FavoritesInterface) => element.url === item.url
+    )
+      ? true
+      : false;
   }
 
   public toggle(item: FavoritesInterface) {
     var favorites = JSON.parse(localStorage.getItem('favorites')!) ?? [];
 
-    favorites.find((element: FavoritesInterface) => {
-      if (element.url === item.url) {
-        this.favorites = favorites.filter((obj: FavoritesInterface) => {
-          return obj !== item;
-        });
-      } else this.favorites.push(item);
-    });
+    if (
+      favorites.some(
+        (element: FavoritesInterface) => element.url === item.url
+      )
+    ) {
+      var index = favorites.findIndex(
+        (x: FavoritesInterface) => x.url === item.url
+      );
+      favorites.splice(index, 1);
+    } else {
+      favorites.push(item);
+    }
+
+    this.favorites = favorites;
 
     localStorage.setItem('favorites', JSON.stringify(this.favorites));
-
-    //TODO: salvar na api
   }
 }
