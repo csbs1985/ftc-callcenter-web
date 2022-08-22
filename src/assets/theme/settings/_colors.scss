@@ -7,14 +7,17 @@
   --color-input: var(--color-default);
   --color-input-reverse: var(--color-second);
   --color-input-text: var(--color-text);
-  --color-error: #ff6059;
-  --color-success: #5b9e0f;
-  --color-warning: #ecb419;
   --color-button: var(--color-primary);
   --color-button-label: #f7f6fe;
   --color-border: var(--color-third);
   --color-overlay: rgba(110, 116, 182, 0.9);
   --color-text-fixed: #f7f6fe;
+  --color-error: #fbd5d9;
+  --color-error-text: #760b18;
+  --color-success: #d0edda;
+  --color-success-text: #00591f;
+  --color-warning: #fff2cf;
+  --color-warning-text: #947426;
 }
 
 :root .dark-theme {

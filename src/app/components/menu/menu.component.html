@@ -45,6 +45,6 @@
 <ftc-overlay *ngIf="toggleMenu()" (overlayOutput)="closedMenu()"></ftc-overlay>
 
 <ftc-notification
-  *ngIf="notification"
+  *ngIf="isNotification"
   [content]="notification"
 ></ftc-notification>

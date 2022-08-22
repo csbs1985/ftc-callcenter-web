@@ -5,36 +5,50 @@
   width: 280px;
   box-shadow: var(--box-shadow);
   overflow: hidden;
-  color: --color-text-fixed;
-  animation: slide-left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 
   &__progress {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: -100%;
     width: 100%;
     height: var(--size-x-small);
-    background-color: var(--color-text-fixed);
-
-    &::before {
-      animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
+    animation: width 5s ease;
   }
 }
 
 .error {
   background-color: var(--color-error);
+
+  * {
+    color: var(--color-error-text);
+  }
+
+  .notification__progress {
+    background-color: var(--color-error-text);
+  }
 }
 
 .success {
   background-color: var(--color-success);
+
+  * {
+    color: var(--color-success-text);
+  }
+
+  .notification__progress {
+    background-color: var(--color-success-text);
+  }
 }
 
 .warning {
   background-color: var(--color-warning);
+
+  * {
+    color: var(--color-warning-text);
+  }
+
+  .notification__progress {
+    background-color: var(--color-warning-text);
+  }
 }

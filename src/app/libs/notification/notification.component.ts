@@ -1,38 +1,31 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { NotificationInterface, NotificationService } from '@app/shared/_index';
-import { NotificationEnum } from '../../shared/enums/notification.enum';
 
 @Component({
   selector: 'ftc-notification',
   templateUrl: './notification.component.html',
   styleUrls: ['./notification.component.scss'],
 })
-export class NotificationComponent implements OnInit {
+export class NotificationComponent implements OnInit, OnDestroy {
   @Input() content!: NotificationInterface;
 
   public notification!: NotificationInterface;
 
   constructor(private notificationService: NotificationService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.open();
   }
 
-  private open() {
+  ngOnDestroy() {
     this.notificationService.dismissAll();
+  }
 
-    this.notification = {
-      type: this.content.type,
-      text: this.content.text,
-      title: this.content.title,
-    };
+  private open() {
+    this.notification = this.content;
 
     setTimeout(() => {
       this.notificationService.dismissAll();
     }, 5000);
-  }
-
-  public dismissAll() {
-    // this.notification = null;
   }
 }

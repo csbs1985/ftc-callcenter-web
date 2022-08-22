@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NotificationEnum, NotificationInterface } from '@app/shared/_index';
+import {
+  NotificationEnum,
+  NotificationInterface,
+  NotificationService,
+} from '@app/shared/_index';
 import {
   UserService,
   AttendanceService,
@@ -19,17 +23,18 @@ import {
 })
 export class MenuComponent implements OnInit {
   public menu!: MenuInterface[];
+  public notification!: NotificationInterface;
   public theme!: boolean;
-  public notification?: NotificationInterface = undefined;
 
   constructor(
     private attendanceService: AttendanceService,
-    private userService: UserService,
     private client: HttpClient,
     private favoriteService: FavoriteService,
-    private variablesService: VariablesService,
     private router: Router,
-    private themeService: ThemeService
+    private notificationService: NotificationService,
+    private themeService: ThemeService,
+    private userService: UserService,
+    private variablesService: VariablesService
   ) {
     this.initMenu();
     this.theme = this.themeService.theme;
@@ -64,7 +69,7 @@ export class MenuComponent implements OnInit {
   public toggleFavorite(item: SubmenuInterface): void {
     this.favoriteService.toggle({ name: item.name, url: item.url });
 
-    if (this.favoriteService.isNotification) this.modalOpen();
+    if (this.notificationService.isNotification) this.modalOpen();
   }
 
   public valueTheme(): void {
@@ -89,10 +94,16 @@ export class MenuComponent implements OnInit {
   }
 
   private modalOpen() {
+    this.notificationService.isNotification = true;
+
     this.notification = {
-      type: NotificationEnum.WARNING,
+      type: NotificationEnum.SUCCESS,
       title: 'Limite de 5 itens',
       text: 'para adicionar este item favor remover outro item dos favoritos.',
     };
+  }
+
+  public get isNotification(): boolean {
+    return this.notificationService.isNotification;
   }
 }

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable, of } from 'rxjs';
 import { FavoritesInterface } from '../interfaces/favorites.interface';
-import { NotificationEnum } from '../_index';
 import { NotificationService } from './notification.service';
 
 @Injectable({
@@ -9,7 +8,7 @@ import { NotificationService } from './notification.service';
 })
 export class FavoriteService {
   public favorites = Subject<FavoritesInterface[]>;
-  public isNotification: boolean = false;
+
 
   readonly limitFavorites: number = 5;
 
@@ -31,6 +30,7 @@ export class FavoriteService {
 
   public toggle(item: FavoritesInterface) {
     var favorites = JSON.parse(localStorage.getItem('favorites')!) ?? [];
+    this.notificationService.isNotification = false;
 
     if (
       favorites.some(
@@ -43,7 +43,7 @@ export class FavoriteService {
       favorites.splice(index, 1);
     } else {
       favorites.length >= this.limitFavorites ?
-        this.isNotification = true :
+      this.notificationService.isNotification = true :
         favorites.push(item);
     }
 

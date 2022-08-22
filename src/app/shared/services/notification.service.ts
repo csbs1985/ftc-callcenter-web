@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-import { NotificationInterface } from '../_index';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NotificationService {
-  public notification?: NotificationInterface;
+  public isNotification: boolean = false;
 
   constructor() {}
 
   public dismissAll() {
-    this.notification = undefined;
+    this.isNotification = false;
   }
 }
