@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { CryptografiaService } from './cryptography.service';
+import { CryptografyService } from './cryptography.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LocalStorageService {
-  constructor(private cryptografiaService: CryptografiaService) {}
+  constructor(private cryptografyService: CryptografyService) {}
 
   save(key: string, value: any): void {
-    const crypto = this.cryptografiaService.encrypt(value);
+    const crypto = this.cryptografyService.encrypt(value);
     localStorage.setItem(key, crypto);
   }
 

@@ -1,4 +1,5 @@
-import { ProfilesEnum } from '../enums/_index';
+import { ProfilesEnum } from '../_index';
+
 export class UserInterface {
   'id'?: number;
   'username'?: string;

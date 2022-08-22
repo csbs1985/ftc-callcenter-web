@@ -97,7 +97,7 @@ export class MenuComponent implements OnInit {
     this.notificationService.isNotification = true;
 
     this.notification = {
-      type: NotificationEnum.SUCCESS,
+      type: NotificationEnum.WARNING,
       title: 'Limite de 5 itens',
       text: 'para adicionar este item favor remover outro item dos favoritos.',
     };

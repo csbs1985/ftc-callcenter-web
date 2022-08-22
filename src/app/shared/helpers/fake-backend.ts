@@ -9,8 +9,7 @@ import {
 } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, materialize, dematerialize } from 'rxjs/operators';
-import { UserInterface } from '../_index';
-import { ProfilesEnum } from '../enums/_index';
+import { ProfilesEnum, UserInterface } from '../_index';
 
 const users: UserInterface[] = [
   {

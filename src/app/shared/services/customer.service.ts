@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import {
-  CryptografiaService,
+  CryptografyService,
   LocalStorageService,
   UserInterface,
 } from '../_index';
@@ -17,7 +17,7 @@ export class CustomerService {
   public currentClient: Observable<UserInterface>;
 
   constructor(
-    private cryptografiaService: CryptografiaService,
+    private cryptografyService: CryptografyService,
     private router: Router,
     private http: HttpClient,
     private localStorageService: LocalStorageService
@@ -51,9 +51,7 @@ export class CustomerService {
     if (user) {
       this.userSubject = new BehaviorSubject<UserInterface>(
         JSON.parse(
-          this.cryptografiaService.decrypt(
-            localStorage.getItem('currentClient')
-          )
+          this.cryptografyService.decrypt(localStorage.getItem('currentClient'))
         )
       );
     } else {

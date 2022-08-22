@@ -7,7 +7,7 @@ import {
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { UserService } from '../services/_index';
+import { UserService } from '../_index';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
