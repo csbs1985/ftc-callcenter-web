@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NotificationEnum, NotificationInterface } from '@app/shared/_index';
 import {
   UserService,
   AttendanceService,
@@ -19,6 +20,7 @@ import {
 export class MenuComponent implements OnInit {
   public menu!: MenuInterface[];
   public theme!: boolean;
+  public notification?: NotificationInterface = undefined;
 
   constructor(
     private attendanceService: AttendanceService,
@@ -61,6 +63,8 @@ export class MenuComponent implements OnInit {
 
   public toggleFavorite(item: SubmenuInterface): void {
     this.favoriteService.toggle({ name: item.name, url: item.url });
+
+    if (this.favoriteService.isNotification) this.modalOpen();
   }
 
   public valueTheme(): void {
@@ -82,5 +86,13 @@ export class MenuComponent implements OnInit {
 
   public closedMenu(): void {
     this.variablesService.showMenu = false;
+  }
+
+  private modalOpen() {
+    this.notification = {
+      type: NotificationEnum.WARNING,
+      title: 'Limite de 5 itens',
+      text: 'para adicionar este item favor remover outro item dos favoritos.',
+    };
   }
 }

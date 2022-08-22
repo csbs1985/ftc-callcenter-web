@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable, of } from 'rxjs';
 import { FavoritesInterface } from '../interfaces/favorites.interface';
+import { NotificationEnum } from '../_index';
+import { NotificationService } from './notification.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FavoriteService {
   public favorites = Subject<FavoritesInterface[]>;
+  public isNotification: boolean = false;
 
-  constructor() {}
+  readonly limitFavorites: number = 5;
+
+  constructor(private notificationService: NotificationService) {}
 
   public getAllFavorites(): Observable<FavoritesInterface[]> {
     return of(JSON.parse(localStorage.getItem('favorites')!));
@@ -33,15 +38,17 @@ export class FavoriteService {
       )
     ) {
       var index = favorites.findIndex(
-        (x: FavoritesInterface) => x.url === item.url
+        (value: FavoritesInterface) => value.url === item.url
       );
       favorites.splice(index, 1);
     } else {
-      favorites.push(item);
+      favorites.length >= this.limitFavorites ?
+        this.isNotification = true :
+        favorites.push(item);
     }
 
     this.favorites = favorites;
-
     localStorage.setItem('favorites', JSON.stringify(this.favorites));
   }
 }
+

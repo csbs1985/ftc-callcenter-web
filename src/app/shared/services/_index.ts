@@ -4,6 +4,7 @@ export * from './cryptography.service';
 export * from './customer.service';
 export * from './favorite.service';
 export * from './local_storage.service';
+export * from './notification.service';
 export * from './theme.service';
 export * from './variables.service';
 export * from './user.service';

@@ -1,10 +1,13 @@
 /* https://imasters.com.br/arquitetura-da-informacao/arquitetura-css-itcss */
 
+@import "./settings/box-shadow";
 @import "./settings/colors";
 @import "./settings/index";
 @import "./settings/sizes";
 
 @import "./tools/fonts";
+// @import "./tools/progress";
+@import "./tools/slide-left";
 @import "./tools/slide-right";
 
 @import "./generic/input";

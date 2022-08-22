@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { SemPararComponent } from './sem-parar/sem-parar.component';
 import { CallCenterComponent } from './call-center/call-center.component';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CallCenterComponent } from './call-center/call-center.component';
     InputTextComponent,
     SemPararComponent,
     CallCenterComponent,
+    NotificationComponent,
   ],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
   exports: [
@@ -32,6 +34,7 @@ import { CallCenterComponent } from './call-center/call-center.component';
     InputTextComponent,
     SemPararComponent,
     CallCenterComponent,
+    NotificationComponent,
   ],
 })
 export class LibsModule {}
