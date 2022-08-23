@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs';
-import { UserService, UserInterface } from 'src/app/shared/_index';
+import { UserService, UserInterface, RouterEnum } from 'src/app/shared/_index';
 
 @Component({
   selector: 'ftc-login',
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {
     if (this.userService.userValue) {
-      this.router.navigate(['/']);
+      this.router.navigate([RouterEnum.HOME]);
     }
   }
 
@@ -107,7 +107,7 @@ export class LoginComponent implements OnInit {
 
   private validateUser(): string {
     if (this.userData === '') return 'campo usuário obrigatório';
-    if (this.userData !== 'admin') return 'usuário não existe';
+    if (this.userData !== 'admin') return 'usuário inexistente';
     return '';
   }
 }

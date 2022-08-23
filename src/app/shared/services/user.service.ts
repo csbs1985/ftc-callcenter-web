@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import {
   CryptografyService,
   LocalStorageService,
+  RouterEnum,
   UserInterface,
 } from '../_index';
 
@@ -19,9 +20,9 @@ export class UserService {
 
   constructor(
     private cryptografyService: CryptografyService,
-    private router: Router,
     private http: HttpClient,
-    private localStorageService: LocalStorageService
+    private localStorageService: LocalStorageService,
+    private router: Router
   ) {
     this.hasCurrentUser();
     this.currentUser = this.userSubject.asObservable();
@@ -64,7 +65,7 @@ export class UserService {
     try {
       this.userSubject.next(null!);
       this.localStorageService.endSession();
-      this.router.navigate(['/login']);
+      this.router.navigate([RouterEnum.LOGIN]);
     } catch (error) {
       console.log('ERRO = > não foi possivél encerrar a sessão: ', error);
     }

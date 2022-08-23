@@ -1,75 +1,83 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, map, Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import {
   CryptografyService,
+  CustomerInterface,
   LocalStorageService,
-  UserInterface,
+  RouterEnum,
 } from '../_index';
+
+const customer: CustomerInterface = {
+  cpf: 12345678901,
+  cnpj: 12345678901234,
+  firstName: 'airton',
+  id: 1234567,
+  lastName: 'senna da silva',
+  rg: 123456789,
+};
 
 @Injectable({
   providedIn: 'root',
 })
 export class CustomerService {
-  private userSubject!: BehaviorSubject<UserInterface>;
-  public currentClient: Observable<UserInterface>;
+  private customerSubject!: BehaviorSubject<CustomerInterface>;
+
+  public currentCustomer: Observable<CustomerInterface>;
 
   constructor(
     private cryptografyService: CryptografyService,
     private router: Router,
-    private http: HttpClient,
     private localStorageService: LocalStorageService
   ) {
     this.hasCurrentClient();
-    this.currentClient = this.userSubject.asObservable();
+    this.currentCustomer = this.customerSubject.asObservable();
   }
 
-  public login(
-    code: string,
-    password: string,
-    username: string
-  ): Observable<any> {
-    return this.http
-      .post<any>(`${environment.apiUrl}/users/authenticate`, {
-        username,
-        password,
-      })
-      .pipe(
-        map((user) => {
-          this.localStorageService.save('currentClient', JSON.stringify(user));
-          this.userSubject.next(user);
-          return user;
-        })
+  public identify(value: number): Observable<CustomerInterface> | null {
+    if (
+      value === customer.cpf ||
+      value === customer.id ||
+      value === customer.cnpj
+    ) {
+      this.customerSubject.next(customer);
+      this.localStorageService.save(
+        'currentCustomer',
+        JSON.stringify(customer)
       );
+      return of(customer);
+    }
+
+    return null;
   }
 
   private hasCurrentClient(): void {
-    var user = localStorage.getItem('currentClient') ?? null;
+    var user = localStorage.getItem('currentCustomer') ?? null;
 
     if (user) {
-      this.userSubject = new BehaviorSubject<UserInterface>(
+      this.customerSubject = new BehaviorSubject<CustomerInterface>(
         JSON.parse(
-          this.cryptografyService.decrypt(localStorage.getItem('currentClient'))
+          this.cryptografyService.decrypt(
+            localStorage.getItem('currentCustomer')
+          )
         )
       );
     } else {
-      this.userSubject = new BehaviorSubject<UserInterface>(null!);
+      this.customerSubject = new BehaviorSubject<CustomerInterface>(null!);
     }
   }
 
   public logout(): void {
     try {
-      this.userSubject.next(null!);
+      this.customerSubject.next(null!);
       this.localStorageService.endSession();
-      this.router.navigate(['/login']);
+      this.router.navigate([RouterEnum.LOGIN]);
     } catch (error) {
       console.log('ERRO = > não foi possivél encerrar a sessão: ', error);
     }
   }
 
   public get userValue(): any {
-    return this.userSubject.value;
+    return this.customerSubject.value;
   }
 }

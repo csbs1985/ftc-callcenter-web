@@ -1,11 +1,13 @@
 export * from './enums/notification.enum';
 export * from './enums/profiles.enum';
+export * from './enums/router.enum';
 
 export * from './helpers/auth.guard';
 export * from './helpers/error.interceptor';
 export * from './helpers/fake-backend.interceptor';
 export * from './helpers/jwt.interceptor';
 
+export * from './interfaces/customer.interface';
 export * from './interfaces/devices.interface';
 export * from './interfaces/favorites.interface';
 export * from './interfaces/menu.interface';

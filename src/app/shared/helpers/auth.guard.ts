@@ -5,7 +5,7 @@ import {
   Router,
   RouterStateSnapshot,
 } from '@angular/router';
-import { UserService } from '../_index';
+import { RouterEnum, UserService } from '../_index';
 
 @Injectable({
   providedIn: 'root',
@@ -24,14 +24,14 @@ export class AuthGuard implements CanActivate {
         route.data['roles'] &&
         route.data['roles'].indexOf(user.role) === -1
       ) {
-        this.router.navigate(['/']);
+        this.router.navigate([RouterEnum.HOME]);
         return false;
       }
 
       return true;
     }
 
-    this.router.navigate(['/login']);
+    this.router.navigate([RouterEnum.LOGIN]);
     return false;
   }
 }
