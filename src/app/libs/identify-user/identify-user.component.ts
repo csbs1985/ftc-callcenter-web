@@ -16,15 +16,13 @@ export class IdentifyUserComponent implements OnInit {
 
   // public cpf = '[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}';
   // public cnpj = '[0-9]{2}.?[0-9]{3}.?[0-9]{3}/?[0-9]{4}-?[0-9]{2}';
-  // public code = '';
+  // public code = '[0-9]{6}';
 
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.initForm();
   }
-
-  public onChange(value: string) {}
 
   private initForm(): void {
     this.form = this.formBuilder.group({
@@ -38,11 +36,9 @@ export class IdentifyUserComponent implements OnInit {
     this.loadingOutput.emit((this.loading = false));
   }
 
-  private identify() {}
-
   private validateCustomer(): string {
     if (this.valueData === '') return 'campo identificador obrigatório';
-    if (this.valueData !== '123456')
+    if (this.valueData !== '1234567')
       return 'cpf, cnpj ou código interno inexistente';
     return '';
   }

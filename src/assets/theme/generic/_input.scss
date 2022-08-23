@@ -17,11 +17,6 @@ input {
 }
 
 .input {
-  &--error {
-    border-color: var(--color-error);
-    background-color: var(--color-error) !important;
-  }
-
   &__section {
     margin-bottom: var(--size-medium);
   }

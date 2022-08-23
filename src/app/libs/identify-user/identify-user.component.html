@@ -2,13 +2,12 @@
   <h1>novo atendimento</h1>
 
   <ftc-input-button
+    [placeholder]="'cpf, cnpj ou protocolo'"
+    [errorMessage]="errorMessage"
     formControlName="customer"
     [label]="'identificar cliente'"
-    [errorMessage]="errorMessage"
-    [placeholder]="'cpf, cnpj ou protocolo'"
     [button]="'identificar'"
     [(ngModel)]="valueData"
-    (ngModelChange)="onChange($event)"
-    (click)="onSubmit()"
+    (inputButtonOutput)="onSubmit()"
   ></ftc-input-button>
 </section>

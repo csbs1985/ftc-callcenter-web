@@ -3,7 +3,7 @@ export * from './enums/profiles.enum';
 
 export * from './helpers/auth.guard';
 export * from './helpers/error.interceptor';
-export * from './helpers/fake-backend';
+export * from './helpers/fake-backend.interceptor';
 export * from './helpers/jwt.interceptor';
 
 export * from './interfaces/devices.interface';
