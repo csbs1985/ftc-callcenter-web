@@ -14,6 +14,7 @@ import {
 })
 export class UserService {
   private userSubject!: BehaviorSubject<UserInterface>;
+
   public currentUser: Observable<UserInterface>;
 
   constructor(

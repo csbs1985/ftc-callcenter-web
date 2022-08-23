@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject, Observable, of } from 'rxjs';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 import { FavoritesInterface } from '../interfaces/favorites.interface';
 import { NotificationService } from './notification.service';
 
@@ -7,15 +7,18 @@ import { NotificationService } from './notification.service';
   providedIn: 'root',
 })
 export class FavoriteService {
-  public favorites = Subject<FavoritesInterface[]>;
+  private favoritesSubject: BehaviorSubject<FavoritesInterface[]> =
+    new BehaviorSubject<FavoritesInterface[]>([]);
 
+  public favorites: Observable<FavoritesInterface[]> =
+    this.favoritesSubject.asObservable();
 
   readonly limitFavorites: number = 5;
 
   constructor(private notificationService: NotificationService) {}
 
   public getAllFavorites(): Observable<FavoritesInterface[]> {
-    return of(JSON.parse(localStorage.getItem('favorites')!));
+    return JSON.parse(localStorage.getItem('favorites')!);
   }
 
   public getFavorite(item: FavoritesInterface): boolean {
@@ -33,22 +36,19 @@ export class FavoriteService {
     this.notificationService.isNotification = false;
 
     if (
-      favorites.some(
-        (element: FavoritesInterface) => element.url === item.url
-      )
+      favorites.some((element: FavoritesInterface) => element.url === item.url)
     ) {
       var index = favorites.findIndex(
         (value: FavoritesInterface) => value.url === item.url
       );
       favorites.splice(index, 1);
     } else {
-      favorites.length >= this.limitFavorites ?
-      this.notificationService.isNotification = true :
-        favorites.push(item);
+      favorites.length >= this.limitFavorites
+        ? (this.notificationService.isNotification = true)
+        : favorites.push(item);
     }
 
-    this.favorites = favorites;
-    localStorage.setItem('favorites', JSON.stringify(this.favorites));
+    this.favoritesSubject.next(favorites);
+    localStorage.setItem('favorites', JSON.stringify(favorites));
   }
 }
-

@@ -9,15 +9,16 @@ import { FavoriteService, FavoritesInterface } from '@app/shared/_index';
 export class FavoritesComponent implements OnInit {
   public favorites: FavoritesInterface[] = [];
 
-  constructor(private favoriteService: FavoriteService) {}
-
-  ngOnInit(): void {
+  constructor(private favoriteService: FavoriteService) {
     this.getFavorites();
   }
 
+  ngOnInit(): void {}
+
   private getFavorites(): void {
-    this.favoriteService.getAllFavorites().subscribe((result) => {
-      this.favorites = result;
+    this.favoriteService.favorites.subscribe((result: FavoritesInterface[]) => {
+      this.favorites = result ?? [];
+      console.log('chamando...', this.favorites);
     });
   }
 }

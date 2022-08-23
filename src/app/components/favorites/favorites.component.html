@@ -1,5 +1,5 @@
 <section class="favorites">
-  <ul *ngIf="favorites; else notFavorites">
+  <ul *ngIf="favorites.length > 0; else notFavorites">
     <li
       *ngFor="let item of favorites"
       class="chip ellipsis cursor--pointer"
@@ -31,6 +31,6 @@
       />
     </svg>
 
-    seus favoritos
+    seus atalhos favoritos
   </div>
 </ng-template>
