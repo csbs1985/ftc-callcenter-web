@@ -10,9 +10,8 @@ export class AppComponent {
   public currentUser!: UserInterface;
 
   constructor(
-    private userService: UserService,
-
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private userService: UserService
   ) {
     this.userService.currentUser.subscribe((x) => (this.currentUser = x));
     this.getTheme();

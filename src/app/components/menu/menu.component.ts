@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CustomerInterface, CustomerService } from '@app/shared/_index';
 import {
   NotificationEnum,
   NotificationInterface,
@@ -8,7 +9,6 @@ import {
 } from '@app/shared/_index';
 import {
   UserService,
-  AttendanceService,
   FavoriteService,
   ThemeService,
   MenuInterface,
@@ -22,13 +22,14 @@ import {
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
+  public currentCustomer!: CustomerInterface;
   public menu!: MenuInterface[];
   public notification!: NotificationInterface;
   public theme!: boolean;
 
   constructor(
-    private attendanceService: AttendanceService,
     private client: HttpClient,
+    private customerService: CustomerService,
     private favoriteService: FavoriteService,
     private router: Router,
     private notificationService: NotificationService,
@@ -51,11 +52,14 @@ export class MenuComponent implements OnInit {
       });
   }
 
-  public canMenu(menu: boolean): boolean {
-    var hasAttendance = this.attendanceService.hasAttendance();
+  public canMenu(menu: MenuInterface): boolean {
+    if (!menu.requiredService) return true;
 
-    if (!menu) return true;
-    else if (hasAttendance) return true;
+    this.customerService.currentCustomer.subscribe(
+      (x) => (this.currentCustomer = x)
+    );
+
+    if (this.currentCustomer) return true;
 
     return false;
   }

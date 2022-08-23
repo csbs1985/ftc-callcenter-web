@@ -8,7 +8,7 @@
 
   <ul class="menu__item">
     <li *ngFor="let item of menu">
-      <div *ngIf="canMenu(item.requiredService)">
+      <div *ngIf="canMenu(item)">
         <h5>{{ item.name }}</h5>
         <ul>
           <li class="menu__subitem" *ngFor="let sub of item.submenu">

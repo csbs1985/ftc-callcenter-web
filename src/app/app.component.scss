@@ -52,6 +52,15 @@
       height: 100vh;
     }
 
+    ftc-menu {
+      min-width: 280px;
+      width: 280px;
+      max-width: 280px;
+      height: 100vh;
+      overflow-x: auto;
+      padding-bottom: 64px;
+    }
+
     ftc-article {
       min-width: 300px;
       width: 300px;
