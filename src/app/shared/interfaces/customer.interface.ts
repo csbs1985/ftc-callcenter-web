@@ -1,10 +1,10 @@
 import { ProfilesEnum } from '../_index';
 
 export class CustomerInterface {
-  'cpf'?: string;
-  'cnpj'?: string;
+  'cpf'?: number;
+  'cnpj'?: number;
   'firstName'?: string;
   'id'?: number;
   'lastName'?: string;
-  'rg'?: string;
+  'rg'?: number;
 }

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TimezoneComponent } from './timezone/timezone.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { NewsComponent } from './news/news.component';
-import { IdentifyUserComponent } from './identify-user/identify-user.component';
+import { IdentifyCustomerComponent } from './identify-customer/identify-customer.component';
 import { InputButtonComponent } from './input-button/input-button.component';
 import { InputTextComponent } from './input-text/input-text.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -17,7 +17,7 @@ import { NotificationComponent } from './notification/notification.component';
     TimezoneComponent,
     ContactsComponent,
     NewsComponent,
-    IdentifyUserComponent,
+    IdentifyCustomerComponent,
     InputButtonComponent,
     InputTextComponent,
     SemPararComponent,
@@ -29,7 +29,7 @@ import { NotificationComponent } from './notification/notification.component';
     TimezoneComponent,
     ContactsComponent,
     NewsComponent,
-    IdentifyUserComponent,
+    IdentifyCustomerComponent,
     InputButtonComponent,
     InputTextComponent,
     SemPararComponent,
