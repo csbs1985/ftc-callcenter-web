@@ -17,7 +17,6 @@ export * from './interfaces/submenu.interface';
 export * from './interfaces/user.interface';
 
 export * from './services/api.service';
-export * from './services/attendance.service';
 export * from './services/cryptography.service';
 export * from './services/customer.service';
 export * from './services/favorite.service';
