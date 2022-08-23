@@ -11,30 +11,33 @@ import { RouterModule } from '@angular/router';
 import { SemPararComponent } from './sem-parar/sem-parar.component';
 import { CallCenterComponent } from './call-center/call-center.component';
 import { NotificationComponent } from './notification/notification.component';
+import { CustomerDataComponent } from './customer-data/customer-data.component';
 
 @NgModule({
   declarations: [
-    TimezoneComponent,
+    CallCenterComponent,
     ContactsComponent,
-    NewsComponent,
+    CustomerDataComponent,
     IdentifyCustomerComponent,
     InputButtonComponent,
     InputTextComponent,
-    SemPararComponent,
-    CallCenterComponent,
+    NewsComponent,
     NotificationComponent,
+    SemPararComponent,
+    TimezoneComponent,
   ],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
   exports: [
-    TimezoneComponent,
+    CallCenterComponent,
     ContactsComponent,
-    NewsComponent,
+    CustomerDataComponent,
     IdentifyCustomerComponent,
     InputButtonComponent,
     InputTextComponent,
-    SemPararComponent,
-    CallCenterComponent,
+    NewsComponent,
     NotificationComponent,
+    SemPararComponent,
+    TimezoneComponent,
   ],
 })
 export class LibsModule {}

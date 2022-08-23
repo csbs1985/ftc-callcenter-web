@@ -67,11 +67,10 @@ export class CustomerService {
     }
   }
 
-  public logout(): void {
+  public closeService(): void {
     try {
+      localStorage.removeItem('currentCustomer');
       this.customerSubject.next(null!);
-      this.localStorageService.endSession();
-      this.router.navigate([RouterEnum.LOGIN]);
     } catch (error) {
       console.log('ERRO = > não foi possivél encerrar a sessão: ', error);
     }

@@ -1,9 +1,5 @@
 .text-label {
   display: flex;
   flex-direction: column;
-  margin-bottom: var(--size-medium);
-
-  &:last-of-type {
-    margin-bottom: var(--size-small);
-  }
+  margin-bottom: var(--size-small);
 }
