@@ -46,7 +46,7 @@ export class IdentifyCustomerComponent implements OnInit {
     if (this.valueData === '') return 'campo identificador obrigatório';
 
     if (this.customerService.identify(Number(this.valueData)))
-      this.router.navigate([RouterEnum.DADOS_COBRANCA]);
+      this.router.navigate([RouterEnum.DADOS_CADASTRAIS]);
     else return 'cpf, cnpj ou código inexistente';
 
     return '';

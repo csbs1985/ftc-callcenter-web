@@ -12,6 +12,7 @@ import { SemPararComponent } from './sem-parar/sem-parar.component';
 import { CallCenterComponent } from './call-center/call-center.component';
 import { NotificationComponent } from './notification/notification.component';
 import { CustomerDataComponent } from './customer-data/customer-data.component';
+import { LimitsComponent } from './limits/limits.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CustomerDataComponent } from './customer-data/customer-data.component';
     IdentifyCustomerComponent,
     InputButtonComponent,
     InputTextComponent,
+    LimitsComponent,
     NewsComponent,
     NotificationComponent,
     SemPararComponent,
@@ -34,6 +36,7 @@ import { CustomerDataComponent } from './customer-data/customer-data.component';
     IdentifyCustomerComponent,
     InputButtonComponent,
     InputTextComponent,
+    LimitsComponent,
     NewsComponent,
     NotificationComponent,
     SemPararComponent,

@@ -71,6 +71,7 @@ export class CustomerService {
     try {
       localStorage.removeItem('currentCustomer');
       this.customerSubject.next(null!);
+      this.router.navigate([RouterEnum.HOME]);
     } catch (error) {
       console.log('ERRO = > não foi possivél encerrar a sessão: ', error);
     }

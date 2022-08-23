@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-
+import { RegistrationDataComponent } from './registration-data/registration-data.component';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  declarations: [RegistrationDataComponent],
+  imports: [CommonModule],
+  exports: [RegistrationDataComponent],
 })
-export class FinancialModule { }
+export class FinancialModule {}
