@@ -1,13 +1,3 @@
-.home {
-  padding: var(--size-medium);
-
-  ftc-news {
-    margin-bottom: var(--size-medium);
-  }
-}
-
-@media (min-width: 1024px) {
-  .home {
-    padding: var(--size-medium) 0;
-  }
+.home ftc-news {
+  margin-bottom: var(--size-medium);
 }

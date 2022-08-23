@@ -1,0 +1,9 @@
+.page {
+  padding: var(--size-medium);
+}
+
+@media (min-width: 1024px) {
+  .page {
+    padding: var(--size-medium) 0;
+  }
+}

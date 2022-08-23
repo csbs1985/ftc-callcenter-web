@@ -13,10 +13,12 @@ import { CallCenterComponent } from './call-center/call-center.component';
 import { NotificationComponent } from './notification/notification.component';
 import { CustomerDataComponent } from './customer-data/customer-data.component';
 import { LimitsComponent } from './limits/limits.component';
+import { ChecklistComponent } from './checklist/checklist.component';
 
 @NgModule({
   declarations: [
     CallCenterComponent,
+    ChecklistComponent,
     ContactsComponent,
     CustomerDataComponent,
     IdentifyCustomerComponent,
@@ -31,6 +33,7 @@ import { LimitsComponent } from './limits/limits.component';
   imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
   exports: [
     CallCenterComponent,
+    ChecklistComponent,
     ContactsComponent,
     CustomerDataComponent,
     IdentifyCustomerComponent,
