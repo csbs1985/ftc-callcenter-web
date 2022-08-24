@@ -1,0 +1,54 @@
+.notification {
+  position: absolute;
+  bottom: var(--size-medium);
+  right: var(--size-medium);
+  width: 280px;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  animation: slide-top 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+  &__progress {
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: var(--size-x-small);
+    animation: width 5s ease;
+  }
+}
+
+.erro {
+  background-color: var(--color-erro);
+
+  * {
+    color: var(--color-erro-texto);
+  }
+
+  .notification__progress {
+    background-color: var(--color-erro-texto);
+  }
+}
+
+.sucesso {
+  background-color: var(--color-sucesso);
+
+  * {
+    color: var(--color-sucesso-texto);
+  }
+
+  .notification__progress {
+    background-color: var(--color-sucesso-texto);
+  }
+}
+
+.alerta {
+  background-color: var(--color-alerta);
+
+  * {
+    color: var(--color-alerta-texto);
+  }
+
+  .notification__progress {
+    background-color: var(--color-alerta-texto);
+  }
+}

@@ -1,0 +1,49 @@
+<section class="entrar">
+  <ftc-sem-parar></ftc-sem-parar>
+
+  <div class="login__content">
+    <svg class="cardume minus-phone"></svg>
+
+    <ftc-call-center></ftc-call-center>
+
+    <form class="login__form" [formGroup]="loginForm">
+      <ftc-input-texto
+        [placeholder]="'usuário'"
+        [erroMensagem]="erroMensagemUsuario"
+        [typeForm]="'texto'"
+        formControlName="usuario"
+        [(ngModel)]="usuarioValor"
+        [inputReverse]="true"
+      ></ftc-input-texto>
+
+      <ftc-input-button
+        [placeholder]="'senha'"
+        [erroMensagem]="erroMensagemSenha"
+        [typeForm]="'senha'"
+        [isToggleButton]="true"
+        formControlName="senha"
+        [(ngModel)]="senhaValor"
+        [inputReverse]="true"
+      ></ftc-input-button>
+
+      <ftc-input-texto
+        [placeholder]="'código'"
+        [erroMensagem]="erroMensagemCodigo"
+        [typeForm]="'texto'"
+        formControlName="codigo"
+        [(ngModel)]="codigoValor"
+        [inputReverse]="true"
+      ></ftc-input-texto>
+
+      <button type="submit" class="button button--primary" (click)="onSubmit()">
+        entrar
+      </button>
+
+      <a class="login__help" href="{{ forgotPassword }}" target="_blank"
+        >problema para entrar?</a
+      >
+    </form>
+  </div>
+</section>
+
+<ftc-progress *ngIf="isCarregando"></ftc-progress>

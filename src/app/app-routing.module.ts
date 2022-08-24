@@ -1,30 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DadosCadastraisComponent } from './pages/financeiro/dados-cadastrais/dados-cadastrais.component';
-import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/login/login.component';
-import { AuthGuard, ProfilesEnum, RouterEnum } from './shared/_index';
+import { InicioComponent } from './pages/inicio/inicio.component';
+import { EntrarComponent } from './pages/entrar/entrar.component';
+import { AutenticarGuard, PerfilEnum, RotaEnum } from './shared/_index';
 
 const routes: Routes = [
   {
-    path: RouterEnum.HOME.replace('/', ''),
-    component: HomeComponent,
-    canActivate: [AuthGuard],
+    path: RotaEnum.INICIO.replace('/', ''),
+    component: InicioComponent,
+    canActivate: [AutenticarGuard],
   },
   {
-    path: RouterEnum.LOGIN.replace('/', ''),
-    component: LoginComponent,
+    path: RotaEnum.ENTRAR.replace('/', ''),
+    component: EntrarComponent,
   },
   {
-    path: RouterEnum.DADOS_CADASTRAIS.substring(0),
+    path: RotaEnum.DADOS_CADASTRAIS.substring(0),
     component: DadosCadastraisComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AutenticarGuard],
   },
   // {
   //   path: 'admin',
   //   component: AdminComponent,
-  //   canActivate: [AuthGuard],
-  //   data: { roles: [ProfilesEnum.ADMIN] },
+  //   canActivate: [AutenticarGuard],
+  //   data: { roles: [PerfilEnum.ADMIN] },
   // },
   {
     path: '**',

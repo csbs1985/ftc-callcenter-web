@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserService, ThemeService, UserInterface } from './shared/_index';
+import { UsuarioService, TemaService, UsuarioInterface } from './shared/_index';
 
 @Component({
   selector: 'ftc-root',
@@ -7,17 +7,17 @@ import { UserService, ThemeService, UserInterface } from './shared/_index';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public currentUser!: UserInterface;
+  public usuarioAtual!: UsuarioInterface;
 
   constructor(
-    private themeService: ThemeService,
-    private userService: UserService
+    private temaService: TemaService,
+    private usuarioService: UsuarioService
   ) {
-    this.userService.currentUser.subscribe((x) => (this.currentUser = x));
+    this.usuarioService.usuarioAtual.subscribe((x) => (this.usuarioAtual = x));
     this.getTheme();
   }
 
   private getTheme(): void {
-    this.themeService.getTheme();
+    this.temaService.getTheme();
   }
 }

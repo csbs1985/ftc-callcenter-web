@@ -1,0 +1,16 @@
+.favoritos {
+  ul {
+    display: flex;
+    overflow-y: auto;
+  }
+}
+
+.chip {
+  gap: var(--size-small);
+}
+
+@media (min-width: 1024px) {
+  .favoritos {
+    margin-left: var(--size-large);
+  }
+}

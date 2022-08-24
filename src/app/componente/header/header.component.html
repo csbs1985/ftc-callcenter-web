@@ -1,0 +1,20 @@
+<section class="header">
+  <div class="header__top">
+    <div class="header__left">
+      <ftc-icon
+        [icon]="'menu'"
+        [size]="16"
+        class="minus-desktop"
+        (click)="toggleMenu()"
+      ></ftc-icon>
+
+      <ftc-call-center></ftc-call-center>
+
+      <ftc-favoritos class="only-desktop"></ftc-favoritos>
+    </div>
+
+    <h5 class="minus-phone">olá, {{ nome }}</h5>
+  </div>
+
+  <ftc-favoritos class="only-tablet"></ftc-favoritos>
+</section>

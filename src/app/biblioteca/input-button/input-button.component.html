@@ -1,0 +1,20 @@
+<section class="input__section input-button">
+  <label *ngIf="label">{{ label }}</label>
+
+  <div class="input input-button__main">
+    <input
+      [(ngModel)]="value"
+      placeholder="{{ placeholder }}"
+      [type]="type"
+      [disabled]="disabled"
+      [class.input--reverse]="isToggleButton"
+      [class.input--erro]="erroMensagem"
+    />
+
+    <button class="button button--input" (click)="click()">
+      {{ textButton }}
+    </button>
+  </div>
+
+  <p class="texto-erro" *ngIf="erroMensagem">{{ erroMensagem }}</p>
+</section>

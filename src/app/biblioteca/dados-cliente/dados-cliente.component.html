@@ -1,0 +1,41 @@
+<section class="cliente-data card">
+  <h1>dados do cliente</h1>
+
+  <div class="texto-label">
+    <label>protocolo</label>
+    <p>2145412132121</p>
+  </div>
+
+  <div class="texto-label">
+    <label>nome</label>
+    <p>{{ clienteAtual.primeiroNome }} {{ clienteAtual.sobrenome }}</p>
+  </div>
+
+  <div class="texto-label">
+    <label>cpf</label>
+    <p>{{ clienteAtual.cpf || "-" }}</p>
+  </div>
+
+  <div class="texto-label">
+    <label>rg</label>
+    <p>{{ clienteAtual.rg || "-" }}</p>
+  </div>
+
+  <div class="texto-label">
+    <label>cnpj</label>
+    <p>{{ clienteAtual.cnpj || "-" }}</p>
+  </div>
+
+  <div class="texto-label">
+    <label>código</label>
+    <p>{{ clienteAtual.id }}</p>
+  </div>
+
+  <button
+    type="submit"
+    class="button button--primary margin-top--medium"
+    (click)="closeService()"
+  >
+    encerrar atendimento
+  </button>
+</section>

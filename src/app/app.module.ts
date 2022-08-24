@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ComponentsModule } from './components/components.module';
-import { PagesModule } from './pages/pages.module';
-import { LibsModule } from './libs/libs.module';
+import { BibliotecaModule } from './biblioteca/biblioteca.module';
 import {
-  ErrorInterceptor,
-  fakeBackendProvider,
+  ApiFalsaProvider,
+  ErroInterceptor,
   JwtInterceptor,
-} from './shared/_index';
+} from './compartilhar/_index';
+import { ComponenteModule } from './componente/componente.module';
+import { PaginaModule } from './pagina/pagina.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,14 +18,14 @@ import {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ComponentsModule,
-    PagesModule,
-    LibsModule,
+    ComponenteModule,
+    PaginaModule,
+    BibliotecaModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    fakeBackendProvider, // TODO: provedor usado para criar backend falso
+    { provide: HTTP_INTERCEPTORS, useClass: ErroInterceptor, multi: true },
+    ApiFalsaProvider, // TODO: provedor usado para criar backend falso
   ],
   bootstrap: [AppComponent],
 })
