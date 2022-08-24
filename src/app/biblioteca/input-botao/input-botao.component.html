@@ -1,17 +1,18 @@
-<section class="input__section input-botao">
+<section class="input__secao input-botao">
   <label *ngIf="label">{{ label }}</label>
 
-  <div class="input input-button__main">
+  <div class="input input-botao__conteudo">
     <input
       [(ngModel)]="value"
+      [type]="tipo"
       placeholder="{{ placeholder }}"
-      [disabled]="disabled"
-      [class.input--reverse]="isToggleButton"
+      [disabled]="desabilitado"
+      [class.input--reverse]="isTrocarBotao"
       [class.input--erro]="erroMensagem"
     />
 
     <button class="button button--input" (click)="click()">
-      {{ textButton }}
+      {{ botaoTexto }}
     </button>
   </div>
 

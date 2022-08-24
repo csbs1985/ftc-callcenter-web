@@ -1,12 +1,12 @@
 <section class="entrar">
   <ftc-sem-parar></ftc-sem-parar>
 
-  <div class="login__content">
-    <svg class="cardume minus-phone"></svg>
+  <div class="entrar__conteudo">
+    <svg class="cardume menos-telefone"></svg>
 
     <ftc-call-center></ftc-call-center>
 
-    <form class="login__form" [formGroup]="loginForm">
+    <form class="entrar__formulario" [formGroup]="form">
       <ftc-input-texto
         [placeholder]="'usuário'"
         [erroMensagem]="erroMensagemUsuario"
@@ -20,7 +20,7 @@
         [placeholder]="'senha'"
         [erroMensagem]="erroMensagemSenha"
         [typeForm]="'senha'"
-        [isToggleButton]="true"
+        [isTrocarBotao]="true"
         formControlName="senha"
         [(ngModel)]="senhaValor"
         [inputReverse]="true"
@@ -39,7 +39,7 @@
         entrar
       </button>
 
-      <a class="login__help" href="{{ forgotPassword }}" target="_blank"
+      <a class="entrar__ajuda" href="{{ forgotPassword }}" target="_blank"
         >problema para entrar?</a
       >
     </form>

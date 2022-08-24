@@ -22,7 +22,7 @@ export class InputTextComponent implements OnInit, ControlValueAccessor {
   public field = '';
 
   @Input() button!: string;
-  @Input() disabled: boolean = false;
+  @Input() desabilitado: boolean = false;
   @Input() erroMensagem!: string;
   @Input() label!: string;
   @Input() placeholder!: string;

@@ -14,25 +14,25 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ],
 })
 export class InputBotaoComponent implements OnInit, ControlValueAccessor {
-  public isPassword: boolean = false;
+  public isSenha: boolean = false;
   public tipo: string = 'text';
-  public typeNative: string = 'text';
-  public textButton: string = 'mostrar';
+  public tipoNativo: string = 'text';
+  public botaoTexto: string = 'mostrar';
 
-  @Input() disabled: boolean = false;
+  @Input() desabilitado: boolean = false;
   @Input() erroMensagem!: string;
   @Input() label!: string;
   @Input() placeholder!: string;
   @Input() inputReverse: boolean = false;
-  @Input() isToggleButton: boolean = false;
+  @Input() isTrocarBotao: boolean = false;
 
   @Input() set button(value: string) {
-    this.textButton = value !== '' ? value : 'mostrar';
+    this.botaoTexto = value !== '' ? value : 'mostrar';
   }
 
   @Input() set typeForm(value: string) {
-    this.typeNative = value;
-    if (value === 'senha') this.isPassword = true;
+    this.tipoNativo = value;
+    if (value === 'senha') this.isSenha = true;
     this.tipo = value;
   }
 
@@ -63,17 +63,17 @@ export class InputBotaoComponent implements OnInit, ControlValueAccessor {
   }
 
   public click(): void {
-    this.isToggleButton ? this.toggleLabel() : this.selectButton();
+    this.isTrocarBotao ? this.toggleLabel() : this.selectButton();
   }
 
   public toggleLabel(): void {
-    if (this.isPassword) {
-      this.isPassword = false;
+    if (this.isSenha) {
+      this.isSenha = false;
       this.tipo = 'text';
       this.button = 'ocultar';
     } else {
-      this.isPassword = true;
-      this.tipo = 'senha';
+      this.isSenha = true;
+      this.tipo = 'password';
       this.button = 'mostrar';
     }
   }

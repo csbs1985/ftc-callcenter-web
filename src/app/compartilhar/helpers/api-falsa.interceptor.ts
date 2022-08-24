@@ -44,8 +44,8 @@ export class ApiFalsaInterceptor implements HttpInterceptor {
 
     function handleRoute() {
       switch (true) {
-        case url.endsWith('/usuarios/Autenticar') && method === 'POST':
-          return Autenticar();
+        case url.endsWith('/usuarios/autenticar') && method === 'POST':
+          return autenticar();
         case url.endsWith('/usuarios') && method === 'GET':
           return getUsers();
         case url.match(/\/usuarios\/\d+$/) && method === 'GET':
@@ -55,12 +55,12 @@ export class ApiFalsaInterceptor implements HttpInterceptor {
       }
     }
 
-    function Autenticar() {
-      const { usuarioNome, senha } = body;
-      const usuario: any = usuarios.find(
-        (x) => x.usuario === usuarioNome && x.senha === senha
+    function autenticar() {
+      const { usuario, senha } = body;
+      const _usuario: any = usuarios.find(
+        (x) => x.usuario === usuario && x.senha === senha
       );
-      if (!usuario) return error('Username or senha is incorrect');
+      if (!_usuario) return error('Username or senha is incorrect');
       return ok({
         id: usuario.id,
         usuario: usuario.usuario,

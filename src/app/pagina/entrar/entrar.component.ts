@@ -17,7 +17,7 @@ export class EntrarComponent implements OnInit {
   readonly forgotPassword =
     'https://idm.semparar.com.br/identity/faces/signin?_afrLoop=55608894749594894&_afrWindowMode=0&_afrWindowId=popup&_adf.ctrl-state=qcop06eq7_6';
 
-  public loginForm!: FormGroup;
+  public form!: FormGroup;
 
   public codigoValor: string = '';
   public senhaValor: string = '';
@@ -49,7 +49,7 @@ export class EntrarComponent implements OnInit {
   }
 
   private initForm(): void {
-    this.loginForm = this.formBuilder.group({
+    this.form = this.formBuilder.group({
       codigo: [
         '',
         [Validators.required, Validators.minLength(6), Validators.maxLength(6)],
@@ -64,7 +64,7 @@ export class EntrarComponent implements OnInit {
   public onSubmit(): void {
     this.isCarregando = true;
 
-    if (this.loginForm.valid && this.usuarioValor === 'admin') {
+    if (this.form.valid && this.usuarioValor === 'admin') {
       this.entrar();
       return;
     }

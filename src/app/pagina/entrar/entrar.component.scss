@@ -7,7 +7,7 @@
   overflow-x: hidden;
   padding: var(--size-large);
 
-  &__content {
+  &__conteudo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,12 +18,12 @@
     }
   }
 
-  &__form {
+  &__formulario {
     width: 100%;
     margin-top: var(--size-xx-large);
   }
 
-  &__help {
+  &__ajuda {
     display: flex;
     justify-content: center;
     margin-top: var(--size-medium);
@@ -36,7 +36,7 @@
   .entrar {
     padding: var(--size-x-large);
 
-    &__content {
+    &__conteudo {
       height: 100%;
       justify-content: center;
 
@@ -45,7 +45,7 @@
       }
     }
 
-    &__form {
+    &__formulario {
       max-width: 280px;
     }
   }

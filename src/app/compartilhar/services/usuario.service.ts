@@ -34,7 +34,7 @@ export class UsuarioService {
     usuario: string
   ): Observable<any> {
     return this.http
-      .post<any>(`${environment.apiUrl}/users/Autenticar`, {
+      .post<any>(`${environment.apiUrl}/usuarios/autenticar`, {
         usuario,
         senha,
       })

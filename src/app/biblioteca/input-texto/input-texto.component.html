@@ -1,11 +1,11 @@
-<section class="input__section input-texto">
+<section class="input__secao input-texto">
   <label *ngIf="label">{{ label }}</label>
 
   <input
     [(ngModel)]="value"
     [type]="typeForm"
     [placeholder]="placeholder"
-    [disabled]="disabled"
+    [disabled]="desabilitado"
     [class.input--erro]="erroMensagem"
     [class.input--reverse]="inputReverse"
   />
