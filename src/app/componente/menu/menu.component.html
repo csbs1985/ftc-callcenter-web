@@ -1,10 +1,10 @@
 <section class="menu" [class.menu--open]="toggleMenu()">
-  <ftc-icon
-    [icon]="'closed'"
+  <ftc-icone
+    [icone]="'closed'"
     [size]="12"
     (click)="closedMenu()"
     class="minus-desktop"
-  ></ftc-icon>
+  ></ftc-icone>
 
   <ul class="menu__item">
     <li *ngFor="let item of menu">

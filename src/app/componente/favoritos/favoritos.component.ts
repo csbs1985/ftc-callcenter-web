@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FavoritoService, FavoritoInterface } from '@app/shared/_index';
+import { FavoritoInterface, FavoritoService } from '@app/compartilhar/_index';
 
 @Component({
   selector: 'ftc-favoritos',
   templateUrl: './favoritos.component.html',
   styleUrls: ['./favoritos.component.scss'],
 })
-export class FavoritesComponent implements OnInit {
+export class FavoritosComponent implements OnInit {
   public favoritos: FavoritoInterface[] = [];
 
   constructor(private favoritoService: FavoritoService) {

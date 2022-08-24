@@ -1,20 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ClienteInterface, ClienteService } from '@app/shared/_index';
 import {
+  ClienteInterface,
+  ClienteService,
+  FavoritoService,
+  MenuInterface,
   NotificacaoEnum,
   NotificacaoInterface,
   NotificacaoService,
-} from '@app/shared/_index';
-import {
-  UsuarioService,
-  FavoritoService,
-  TemaService,
-  MenuInterface,
   SubmenuInterface,
+  TemaService,
+  UsuarioService,
   VariavelService,
-} from 'src/app/shared/_index';
+} from '@app/compartilhar/_index';
 
 @Component({
   selector: 'ftc-menu',

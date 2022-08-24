@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  UsuarioService,
   UsuarioInterface,
+  UsuarioService,
   VariavelService,
-} from '../../shared/_index';
+} from '@app/compartilhar/_index';
 
 @Component({
-  selector: 'ftc-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  selector: 'ftc-cabecalho',
+  templateUrl: './cabecalho.component.html',
+  styleUrls: ['./cabecalho.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class CabecalhoComponent implements OnInit {
   private usuario!: UsuarioInterface;
 
   public nome: string = 'usuário.atento';

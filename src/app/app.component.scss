@@ -2,15 +2,15 @@
   width: 100vw;
   height: 100vh;
 
-  ftc-header {
+  ftc-cabecalho {
     position: fixed;
     top: 0;
     width: 100%;
-    height: var(--size-header-phone);
+    height: var(--size-cabecalho-phone);
   }
 
   &__content {
-    margin-top: var(--size-header-phone);
+    margin-top: var(--size-cabecalho-phone);
     display: flex;
     flex-direction: column;
   }
@@ -22,12 +22,12 @@
 
 @media (min-width: 768px) {
   .app {
-    ftc-header {
-      height: var(--size-header-tablet);
+    ftc-cabecalho {
+      height: var(--size-cabecalho-tablet);
     }
 
     &__content {
-      margin-top: var(--size-header-tablet);
+      margin-top: var(--size-cabecalho-tablet);
     }
   }
 }
@@ -36,12 +36,12 @@
   .app {
     overflow: hidden;
 
-    ftc-header {
-      height: var(--size-header-desktop);
+    ftc-cabecalho {
+      height: var(--size-cabecalho-desktop);
     }
 
     &__content {
-      margin-top: var(--size-header-desktop);
+      margin-top: var(--size-cabecalho-desktop);
       flex-direction: row;
     }
 
@@ -61,7 +61,7 @@
       padding-bottom: 64px;
     }
 
-    ftc-article {
+    ftc-artigo {
       min-width: 300px;
       width: 300px;
       max-width: 300px;

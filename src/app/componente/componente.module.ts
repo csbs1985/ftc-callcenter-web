@@ -1,26 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconComponent } from './icon/icon.component';
+import { IconeComponent } from './icone/icone.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
-import { ArticleComponent } from './article/article.component';
+import { ArtigoComponent } from './artigo/artigo.component';
 import { RouterModule } from '@angular/router';
 import { ToggleComponent } from './toggle/toggle.component';
-import { BibliotecaModule } from '../libs/libs.module';
-import { HeaderComponent } from './header/header.component';
-import { FavoritesComponent } from './favoritos/favoritos.component';
-import { ProgressComponent } from './progress/progress.component';
+import { CabecalhoComponent } from './cabecalho/cabecalho.component';
+import { ProgressoComponent } from './progresso/progresso.component';
 import { OverlayComponent } from './overlay/overlay.component';
+import { BibliotecaModule } from '@app/biblioteca/biblioteca.module';
+import { FavoritosComponent } from './favoritos/favoritos.component';
 
 @NgModule({
   declarations: [
-    IconComponent,
+    IconeComponent,
     MenuComponent,
-    ArticleComponent,
+    ArtigoComponent,
     ToggleComponent,
-    HeaderComponent,
-    FavoritesComponent,
-    ProgressComponent,
+    CabecalhoComponent,
+    FavoritosComponent,
+    ProgressoComponent,
     OverlayComponent,
   ],
   imports: [
@@ -31,13 +31,13 @@ import { OverlayComponent } from './overlay/overlay.component';
     BibliotecaModule,
   ],
   exports: [
-    IconComponent,
+    IconeComponent,
     MenuComponent,
-    ArticleComponent,
+    ArtigoComponent,
     ToggleComponent,
-    HeaderComponent,
-    FavoritesComponent,
-    ProgressComponent,
+    CabecalhoComponent,
+    FavoritosComponent,
+    ProgressoComponent,
     OverlayComponent,
   ],
 })

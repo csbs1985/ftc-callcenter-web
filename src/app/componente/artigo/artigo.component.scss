@@ -1,4 +1,4 @@
-.article {
+.artigo {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -6,7 +6,7 @@
 }
 
 @media (min-width: 768px) {
-  .article {
+  .artigo {
     flex-direction: row;
 
     ftc-fuso-horario,
@@ -17,7 +17,7 @@
 }
 
 @media (min-width: 1024px) {
-  .article {
+  .artigo {
     flex-direction: column;
     padding-top: var(--size-medium);
 

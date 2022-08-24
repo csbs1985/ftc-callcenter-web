@@ -1,4 +1,4 @@
-.header {
+.cabecalho {
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -12,7 +12,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: var(--size-header-phone);
+    height: var(--size-cabecalho-phone);
   }
 
   &__left {
@@ -35,18 +35,18 @@
 }
 
 @media (min-width: 768px) {
-  .header {
-    height: var(--size-header-tablet);
+  .cabecalho {
+    height: var(--size-cabecalho-tablet);
 
     &__top {
-      height: var(--size-header-desktop);
+      height: var(--size-cabecalho-desktop);
     }
   }
 }
 
 @media (min-width: 1024px) {
-  .header {
-    height: var(--size-header-desktop);
+  .cabecalho {
+    height: var(--size-cabecalho-desktop);
 
     &__left {
       flex-grow: 1;
