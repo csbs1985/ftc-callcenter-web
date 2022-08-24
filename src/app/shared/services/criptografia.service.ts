@@ -4,7 +4,7 @@ import * as CryptoJS from 'crypto-js';
 @Injectable({
   providedIn: 'root',
 })
-export class CryptografyService {
+export class CriptografiaService {
   constructor() {}
 
   encrypt(data: any) {
@@ -34,6 +34,6 @@ export class CryptografyService {
       return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
     }
 
-    throw new Error('Erro ao decriptar informação');
+    throw new Error('Erro ao decriptar informação.');
   }
 }

@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import {
-  CryptografyService,
+  CriptografiaService,
   ClienteInterface,
   LocalStorageService,
-  RouterEnum,
+  RotaEnum,
   TipoCadastroEnum,
 } from '../_index';
 
@@ -48,7 +48,7 @@ export class ClienteService {
   public clienteAtual: Observable<ClienteInterface>;
 
   constructor(
-    private cryptografyService: CryptografyService,
+    private criptografiaService: CriptografiaService,
     private router: Router,
     private localStorageService: LocalStorageService
   ) {
@@ -71,12 +71,12 @@ export class ClienteService {
   }
 
   private hasCurrentClient(): void {
-    var user = localStorage.getItem('clienteAtual') ?? null;
+    var usuario = localStorage.getItem('clienteAtual') ?? null;
 
-    if (user) {
+    if (usuario) {
       this.clienteSubject = new BehaviorSubject<ClienteInterface>(
         JSON.parse(
-          this.cryptografyService.decrypt(localStorage.getItem('clienteAtual'))
+          this.criptografiaService.decrypt(localStorage.getItem('clienteAtual'))
         )
       );
     } else {
@@ -88,13 +88,13 @@ export class ClienteService {
     try {
       localStorage.removeItem('clienteAtual');
       this.clienteSubject.next(null!);
-      this.router.navigate([RouterEnum.HOME]);
-    } catch (error) {
-      console.log('ERRO = > não foi possivél encerrar a sessão: ', error);
+      this.router.navigate([RotaEnum.INICIO]);
+    } catch (erro) {
+      console.log('ERRO = > não foi possivél encerrar a sessão: ', erro);
     }
   }
 
-  public get userValue(): any {
+  public get usuarioValor(): any {
     return this.clienteSubject.value;
   }
 }

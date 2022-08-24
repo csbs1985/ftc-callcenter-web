@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { CryptografyService } from './cryptography.service';
+import { CriptografiaService } from './criptografia.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LocalStorageService {
-  constructor(private cryptografyService: CryptografyService) {}
+  constructor(private criptografiaService: CriptografiaService) {}
 
   save(key: string, value: any): void {
-    const crypto = this.cryptografyService.encrypt(value);
+    const crypto = this.criptografiaService.encrypt(value);
     localStorage.setItem(key, crypto);
   }
 
@@ -22,11 +22,10 @@ export class LocalStorageService {
   }
 
   public endSession(): boolean {
-    localStorage.removeItem('attendance');
     localStorage.removeItem('clienteAtual');
-    localStorage.removeItem('currentUser');
-    localStorage.removeItem('favorites');
-    localStorage.removeItem('theme');
+    localStorage.removeItem('usuarioAtual');
+    localStorage.removeItem('favoritos');
+    localStorage.removeItem('tema');
     return true;
   }
 }

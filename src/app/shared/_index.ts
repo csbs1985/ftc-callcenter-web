@@ -17,12 +17,11 @@ export * from './interfaces/perfil.interface';
 export * from './interfaces/submenu.interface';
 export * from './interfaces/usuario.interface';
 
-export * from './services/api.service';
-export * from './services/cryptography.service';
+export * from './services/criptografia.service';
 export * from './services/cliente.service';
-export * from './services/favorite.service';
+export * from './services/favorito.service';
 export * from './services/local_storage.service';
-export * from './services/notification.service';
-export * from './services/theme.service';
+export * from './services/notificacao.service';
+export * from './services/tema.service';
 export * from './services/usuario.service';
-export * from './services/variables.service';
+export * from './services/variavel.service';
