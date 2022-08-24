@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VariavelService } from '@app/shared/_index';
+import { VariavelService } from '@app/compartilhar/_index';
 
 @Component({
   selector: 'ftc-inicio',

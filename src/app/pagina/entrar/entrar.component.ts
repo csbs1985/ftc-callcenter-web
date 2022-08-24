@@ -6,7 +6,7 @@ import {
   UsuarioService,
   UsuarioInterface,
   RotaEnum,
-} from 'src/app/shared/_index';
+} from 'src/app/compartilhar/_index';
 
 @Component({
   selector: 'ftc-entrar',

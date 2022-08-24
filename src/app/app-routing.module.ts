@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DadosCadastraisComponent } from './pages/financeiro/dados-cadastrais/dados-cadastrais.component';
-import { InicioComponent } from './pages/inicio/inicio.component';
-import { EntrarComponent } from './pages/entrar/entrar.component';
-import { AutenticarGuard, PerfilEnum, RotaEnum } from './shared/_index';
+import { AutenticarGuard, RotaEnum } from './compartilhar/_index';
+import { EntrarComponent } from './pagina/entrar/entrar.component';
+import { DadosCadastraisComponent } from './pagina/financeiro/dados-cadastrais/dados-cadastrais.component';
+import { InicioComponent } from './pagina/inicio/inicio.component';
 
 const routes: Routes = [
   {
