@@ -23,7 +23,7 @@ export class LocalStorageService {
 
   public endSession(): boolean {
     localStorage.removeItem('attendance');
-    localStorage.removeItem('currentCustomer');
+    localStorage.removeItem('clienteAtual');
     localStorage.removeItem('currentUser');
     localStorage.removeItem('favorites');
     localStorage.removeItem('theme');

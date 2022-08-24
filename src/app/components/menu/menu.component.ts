@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CustomerInterface, CustomerService } from '@app/shared/_index';
+import { ClienteInterface, ClienteService } from '@app/shared/_index';
 import {
   NotificationEnum,
   NotificationInterface,
@@ -22,14 +22,14 @@ import {
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
-  public currentCustomer!: CustomerInterface;
+  public clienteAtual!: ClienteInterface;
   public menu!: MenuInterface[];
   public notification!: NotificationInterface;
   public theme!: boolean;
 
   constructor(
     private client: HttpClient,
-    private customerService: CustomerService,
+    private clienteService: ClienteService,
     private favoriteService: FavoriteService,
     private router: Router,
     private notificationService: NotificationService,
@@ -55,11 +55,9 @@ export class MenuComponent implements OnInit {
   public canMenu(menu: MenuInterface): boolean {
     if (!menu.requiredService) return true;
 
-    this.customerService.currentCustomer.subscribe(
-      (x) => (this.currentCustomer = x)
-    );
+    this.clienteService.clienteAtual.subscribe((x) => (this.clienteAtual = x));
 
-    if (this.currentCustomer) return true;
+    if (this.clienteAtual) return true;
 
     return false;
   }

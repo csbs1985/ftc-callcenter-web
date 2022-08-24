@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomerService } from '@app/shared/_index';
-import { CustomerInterface } from '../../shared/interfaces/customer.interface';
+import { ClienteService } from '@app/shared/_index';
+import { ClienteInterface } from '../../shared/interfaces/cliente.interface';
 
 @Component({
   selector: 'ftc-article',
@@ -8,12 +8,10 @@ import { CustomerInterface } from '../../shared/interfaces/customer.interface';
   styleUrls: ['./article.component.scss'],
 })
 export class ArticleComponent implements OnInit {
-  public currentCustomer!: CustomerInterface;
+  public clienteAtual!: ClienteInterface;
 
-  constructor(private customerService: CustomerService) {
-    this.customerService.currentCustomer.subscribe(
-      (x) => (this.currentCustomer = x)
-    );
+  constructor(private clienteService: ClienteService) {
+    this.clienteService.clienteAtual.subscribe((x) => (this.clienteAtual = x));
   }
 
   ngOnInit(): void {}

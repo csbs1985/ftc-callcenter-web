@@ -1,14 +1,14 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CustomerService, RouterEnum } from '@app/shared/_index';
+import { ClienteService, RouterEnum } from '@app/shared/_index';
 
 @Component({
-  selector: 'ftc-identify-customer',
-  templateUrl: './identify-customer.component.html',
-  styleUrls: ['./identify-customer.component.scss'],
+  selector: 'ftc-identificar-cliente',
+  templateUrl: './identificar-cliente.component.html',
+  styleUrls: ['./identificar-cliente.component.scss'],
 })
-export class IdentifyCustomerComponent implements OnInit {
+export class IdentificarClienteComponent implements OnInit {
   @Output() loadingOutput = new EventEmitter<boolean>();
 
   public form!: FormGroup;
@@ -21,7 +21,7 @@ export class IdentifyCustomerComponent implements OnInit {
   // public code = '[0-9]{6}';
 
   constructor(
-    private customerService: CustomerService,
+    private clienteService: ClienteService,
     private formBuilder: FormBuilder,
     private router: Router
   ) {}
@@ -32,7 +32,7 @@ export class IdentifyCustomerComponent implements OnInit {
 
   private initForm(): void {
     this.form = this.formBuilder.group({
-      customer: ['', Validators.required],
+      cliente: ['', Validators.required],
     });
   }
 
@@ -45,7 +45,7 @@ export class IdentifyCustomerComponent implements OnInit {
   private identify(): string {
     if (this.valueData === '') return 'campo identificador obrigatório';
 
-    if (this.customerService.identify(Number(this.valueData)))
+    if (this.clienteService.identify(Number(this.valueData)))
       this.router.navigate([RouterEnum.DADOS_CADASTRAIS]);
     else return 'cpf, cnpj ou código inexistente';
 

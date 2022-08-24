@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LibsModule } from '../libs/libs.module';
-import { FinancialModule } from './financial/financial.module';
+import { FinanceiroModule } from './financeiro/financeiro.module';
 
 @NgModule({
   declarations: [HomeComponent, LoginComponent],
@@ -15,8 +15,8 @@ import { FinancialModule } from './financial/financial.module';
     LibsModule,
     FormsModule,
     ReactiveFormsModule,
-    FinancialModule,
+    FinanceiroModule,
   ],
-  exports: [HomeComponent, LoginComponent, FinancialModule],
+  exports: [HomeComponent, LoginComponent, FinanceiroModule],
 })
 export class PagesModule {}

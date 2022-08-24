@@ -1,9 +1,9 @@
 <section class="home page">
   <ftc-news class="minus-phone" *ngIf="showNews"></ftc-news>
 
-  <ftc-identify-customer
+  <ftc-identificar-cliente
     (loadingOutput)="loadingOutput($event)"
-  ></ftc-identify-customer>
+  ></ftc-identificar-cliente>
 </section>
 
 <ftc-progress *ngIf="isLoading"></ftc-progress>

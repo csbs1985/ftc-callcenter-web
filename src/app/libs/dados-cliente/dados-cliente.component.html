@@ -1,4 +1,4 @@
-<section class="customer-data card">
+<section class="cliente-data card">
   <h1>dados do cliente</h1>
 
   <div class="text-label">
@@ -8,27 +8,27 @@
 
   <div class="text-label">
     <label>nome</label>
-    <p>{{ currentCustomer.firstName }} {{ currentCustomer.lastName }}</p>
+    <p>{{ clienteAtual.primeiroNome }} {{ clienteAtual.sobrenome }}</p>
   </div>
 
   <div class="text-label">
     <label>cpf</label>
-    <p>{{ currentCustomer.cpf || "-" }}</p>
+    <p>{{ clienteAtual.cpf || "-" }}</p>
   </div>
 
   <div class="text-label">
     <label>rg</label>
-    <p>{{ currentCustomer.rg || "-" }}</p>
+    <p>{{ clienteAtual.rg || "-" }}</p>
   </div>
 
   <div class="text-label">
     <label>cnpj</label>
-    <p>{{ currentCustomer.cnpj || "-" }}</p>
+    <p>{{ clienteAtual.cnpj || "-" }}</p>
   </div>
 
   <div class="text-label">
     <label>código</label>
-    <p>{{ currentCustomer.id }}</p>
+    <p>{{ clienteAtual.id }}</p>
   </div>
 
   <button

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 const checklists = [
   'protocolo do atendimento: 202208231640',
+  'confirmar dados do cliente',
   'Reforçar caracteristicas do plano atual e Beneficio do CashBack + Voucher',
   'Oferta Em Todo Lugar 2.0',
   'Na Cidade 2.0 Smart',

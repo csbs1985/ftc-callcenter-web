@@ -31,9 +31,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private userService: UserService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) {
     if (this.userService.userValue) {
       this.router.navigate([RouterEnum.HOME]);
