@@ -9,31 +9,31 @@ import {
 } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, materialize, dematerialize } from 'rxjs/operators';
-import { ProfilesEnum, UserInterface } from '../_index';
+import { PerfilEnum, UsuarioInterface } from '../_index';
 
-const users: UserInterface[] = [
+const usuarios: UsuarioInterface[] = [
   {
     id: 1,
-    username: 'admin',
-    password: 'admin',
-    firstName: 'charles',
-    lastName: 'atento',
+    usuario: 'admin',
+    senha: 'admin',
+    primeiroNome: 'charles',
+    sobrenome: 'atento',
     token: '',
-    profile: ProfilesEnum.ADMIN,
+    perfil: PerfilEnum.ADMIN,
   },
   {
     id: 2,
-    username: 'user',
-    password: 'user',
-    firstName: 'Normal',
-    lastName: 'User',
+    usuario: 'usuario',
+    senha: 'usuario',
+    primeiroNome: 'Normal',
+    sobrenome: 'User',
     token: '',
-    profile: ProfilesEnum.OPERATOR,
+    perfil: PerfilEnum.OPERADOR,
   },
 ];
 
 @Injectable()
-export class FakeBackendInterceptor implements HttpInterceptor {
+export class ApiFalsaInterceptor implements HttpInterceptor {
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler
@@ -44,46 +44,46 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
     function handleRoute() {
       switch (true) {
-        case url.endsWith('/users/authenticate') && method === 'POST':
-          return authenticate();
-        case url.endsWith('/users') && method === 'GET':
+        case url.endsWith('/usuarios/Autenticar') && method === 'POST':
+          return Autenticar();
+        case url.endsWith('/usuarios') && method === 'GET':
           return getUsers();
-        case url.match(/\/users\/\d+$/) && method === 'GET':
+        case url.match(/\/usuarios\/\d+$/) && method === 'GET':
           return getUserById();
         default:
           return next.handle(request);
       }
     }
 
-    function authenticate() {
-      const { username, password } = body;
-      const user = users.find(
-        (x) => x.username === username && x.password === password
+    function Autenticar() {
+      const { usuarioNome, senha } = body;
+      const usuario: any = usuarios.find(
+        (x) => x.usuario === usuarioNome && x.senha === senha
       );
-      if (!user) return error('Username or password is incorrect');
+      if (!usuario) return error('Username or senha is incorrect');
       return ok({
-        id: user.id,
-        username: user.username,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        role: user.profile,
-        token: `fake-jwt-token.${user.id}`,
+        id: usuario.id,
+        usuario: usuario.usuario,
+        primeiroNome: usuario.primeiroNome,
+        sobrenome: usuario.sobrenome,
+        role: usuario.perfil,
+        token: `fake-jwt-token.${usuario.id}`,
       });
     }
 
     function getUsers() {
       if (!isAdmin()) return unauthorized();
-      return ok(users);
+      return ok(usuarios);
     }
 
     function getUserById() {
       if (!isLoggedIn()) return unauthorized();
 
-      if (!isAdmin() && currentUser()!.id !== idFromUrl())
+      if (!isAdmin() && usuarioAtual()!.id !== idFromUrl())
         return unauthorized();
 
-      const user = users.find((x) => x.id === idFromUrl());
-      return ok(user);
+      const usuario = usuarios.find((x) => x.id === idFromUrl());
+      return ok(usuario);
     }
 
     function ok(body: any) {
@@ -111,13 +111,13 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     }
 
     function isAdmin() {
-      return isLoggedIn() && currentUser()!.profile === ProfilesEnum.ADMIN;
+      return isLoggedIn() && usuarioAtual()!.perfil === PerfilEnum.ADMIN;
     }
 
-    function currentUser() {
+    function usuarioAtual() {
       if (!isLoggedIn()) return;
       const id = parseInt(headers.get('Authorization')!.split('.')[1]);
-      return users.find((x) => x.id === id);
+      return usuarios.find((x) => x.id === id);
     }
 
     function idFromUrl() {
@@ -129,6 +129,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
 export const fakeBackendProvider = {
   provide: HTTP_INTERCEPTORS,
-  useClass: FakeBackendInterceptor,
+  useClass: ApiFalsaInterceptor,
   multi: true,
 };

@@ -3,9 +3,9 @@ export * from './enums/perfil.enum';
 export * from './enums/rota.enum';
 export * from './enums/tipo-cadastro.enum';
 
-export * from './helpers/auth.guard';
+export * from './helpers/autenticar.guard';
 export * from './helpers/erro.interceptor';
-export * from './helpers/fake-backend.interceptor';
+export * from './helpers/api-falsa.interceptor';
 export * from './helpers/jwt.interceptor';
 
 export * from './interfaces/cliente.interface';

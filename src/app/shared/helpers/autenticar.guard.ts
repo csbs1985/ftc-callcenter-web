@@ -5,33 +5,33 @@ import {
   Router,
   RouterStateSnapshot,
 } from '@angular/router';
-import { RouterEnum, UserService } from '../_index';
+import { RotaEnum, UsuarioService } from '../_index';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanActivate {
-  constructor(private userService: UserService, private router: Router) {}
+export class AutenticarGuard implements CanActivate {
+  constructor(private usuarioService: UsuarioService, private router: Router) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
-    const user = this.userService.userValue;
+    const usuario = this.usuarioService.usuarioValor;
 
-    if (user) {
+    if (usuario) {
       if (
         route.data['roles'] &&
-        route.data['roles'].indexOf(user.role) === -1
+        route.data['roles'].indexOf(usuario.role) === -1
       ) {
-        this.router.navigate([RouterEnum.HOME]);
+        this.router.navigate([RotaEnum.INICIO]);
         return false;
       }
 
       return true;
     }
 
-    this.router.navigate([RouterEnum.LOGIN]);
+    this.router.navigate([RotaEnum.ENTRAR]);
     return false;
   }
 }
