@@ -1,9 +1,9 @@
-import { DevicesInterface } from './devices.interface';
-import { profilesInterface } from './profiles.interface';
+import { DispositivoInterface } from './dispositivo.interface';
+import { PerfilInterface } from './perfil.interface';
 
 export class SubmenuInterface {
-  'name': string;
+  'nome': string;
   'url': string;
-  'profiles': profilesInterface[];
-  'devices': DevicesInterface[];
+  'perfil': PerfilInterface[];
+  'dispositivo': DispositivoInterface[];
 }

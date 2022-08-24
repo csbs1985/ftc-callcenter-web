@@ -4,7 +4,7 @@ input {
   height: var(--size-input);
   border-radius: var(--size-radius);
   padding: 0 var(--size-small);
-  color: var(--color-input-text);
+  color: var(--color-input-texto);
   background-color: var(--color-input);
 
   &.input--reverse {
@@ -12,7 +12,7 @@ input {
   }
 
   &::placeholder {
-    color: var(--color-text);
+    color: var(--color-texto);
   }
 }
 

@@ -2,7 +2,7 @@
   "menu": [
     {
       "name": "atendimento",
-      "requiredService": true,
+      "atendimentoAtivo": true,
       "profiles": [
         1,
         2,
@@ -142,7 +142,7 @@
     },
     {
       "name": "cliente",
-      "requiredService": true,
+      "atendimentoAtivo": true,
       "profiles": [
         1,
         2,
@@ -228,7 +228,7 @@
     },
     {
       "name": "dispositivo",
-      "requiredService": true,
+      "atendimentoAtivo": true,
       "profiles": [
         1,
         2,
@@ -286,7 +286,7 @@
     },
     {
       "name": "financeiro",
-      "requiredService": true,
+      "atendimentoAtivo": true,
       "profiles": [
         1,
         2,
@@ -344,7 +344,7 @@
     },
     {
       "name": "vale pedágio",
-      "requiredService": true,
+      "atendimentoAtivo": true,
       "profiles": [
         1,
         2,
@@ -388,7 +388,7 @@
     },
     {
       "name": "configurações",
-      "requiredService": false,
+      "atendimentoAtivo": false,
       "profiles": [
         1,
         2,

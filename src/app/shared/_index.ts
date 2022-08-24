@@ -9,10 +9,10 @@ export * from './helpers/fake-backend.interceptor';
 export * from './helpers/jwt.interceptor';
 
 export * from './interfaces/cliente.interface';
-export * from './interfaces/dispositivos.interface';
-export * from './interfaces/favorites.interface';
+export * from './interfaces/dispositivo.interface';
+export * from './interfaces/favorito.interface';
 export * from './interfaces/menu.interface';
-export * from './interfaces/notification.interface';
+export * from './interfaces/notificacao.interface';
 export * from './interfaces/perfil.interface';
 export * from './interfaces/submenu.interface';
 export * from './interfaces/usuario.interface';
