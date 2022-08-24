@@ -6,11 +6,11 @@ import localePT from '@angular/common/locales/pt';
 registerLocaleData(localePT);
 
 @Component({
-  selector: 'ftc-timezone',
-  templateUrl: './timezone.component.html',
-  styleUrls: ['./timezone.component.scss'],
+  selector: 'ftc-fuso-horario',
+  templateUrl: './fuso-horario.component.html',
+  styleUrls: ['./fuso-horario.component.scss'],
 })
-export class TimezoneComponent implements OnInit, OnDestroy {
+export class FusoHorarioComponent implements OnInit, OnDestroy {
   private dayWeek = [
     'Domingo',
     'Segunda',

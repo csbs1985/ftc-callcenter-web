@@ -24,7 +24,7 @@ import {
 export class MenuComponent implements OnInit {
   public clienteAtual!: ClienteInterface;
   public menu!: MenuInterface[];
-  public notification!: NotificacaoInterface;
+  public notificacao!: NotificacaoInterface;
   public tema!: boolean;
 
   constructor(
@@ -98,7 +98,7 @@ export class MenuComponent implements OnInit {
   private modalOpen() {
     this.notificacaoService.isNotificacao = true;
 
-    this.notification = {
+    this.notificacao = {
       tipo: NotificacaoEnum.ALERTA,
       titulo: 'Limite de 5 itens',
       texto: 'para adicionar este item favor remover outro item dos favoritos.',

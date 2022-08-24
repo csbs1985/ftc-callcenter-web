@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ClienteInterface, ClienteService } from '@app/shared/_index';
+import { ClienteInterface, ClienteService } from '@app/compartilhar/_index';
 
 @Component({
   selector: 'ftc-dados-cliente',

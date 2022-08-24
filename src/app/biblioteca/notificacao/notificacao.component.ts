@@ -1,15 +1,18 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { NotificacaoInterface, NotificacaoService } from '@app/shared/_index';
+import {
+  NotificacaoInterface,
+  NotificacaoService,
+} from '@app/compartilhar/_index';
 
 @Component({
-  selector: 'ftc-notification',
-  templateUrl: './notification.component.html',
-  styleUrls: ['./notification.component.scss'],
+  selector: 'ftc-notificacao',
+  templateUrl: './notificacao.component.html',
+  styleUrls: ['./notificacao.component.scss'],
 })
-export class NotificationComponent implements OnInit, OnDestroy {
+export class NotificacaoComponent implements OnInit, OnDestroy {
   @Input() content!: NotificacaoInterface;
 
-  public notification!: NotificacaoInterface;
+  public notificacao!: NotificacaoInterface;
 
   constructor(private notificacaoService: NotificacaoService) {}
 
@@ -22,7 +25,7 @@ export class NotificationComponent implements OnInit, OnDestroy {
   }
 
   private open() {
-    this.notification = this.content;
+    this.notificacao = this.content;
 
     setTimeout(() => {
       this.notificacaoService.dismissAll();

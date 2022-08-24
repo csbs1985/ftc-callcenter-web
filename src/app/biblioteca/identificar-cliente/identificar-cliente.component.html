@@ -1,7 +1,7 @@
 <section class="identify-usuario card" [formGroup]="form">
   <h1>novo atendimento</h1>
 
-  <ftc-input-button
+  <ftc-input-botao
     [placeholder]="'cpf, cnpj ou protocolo'"
     [erroMensagem]="erroMensagem"
     formControlName="cliente"
@@ -9,5 +9,5 @@
     [button]="'identificar'"
     [(ngModel)]="valueData"
     (inputButtonOutput)="onSubmit()"
-  ></ftc-input-button>
+  ></ftc-input-botao>
 </section>

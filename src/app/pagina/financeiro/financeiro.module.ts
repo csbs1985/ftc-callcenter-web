@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DadosCadastraisComponent } from './dados-cadastrais/dados-cadastrais.component';
-import { BibliotecaModule } from '@app/libs/libs.module';
-import { ComponenteModule } from '../../components/components.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BibliotecaModule } from '@app/biblioteca/biblioteca.module';
+import { ComponenteModule } from '@app/componente/componente.module';
+import { DadosCadastraisComponent } from './dados-cadastrais/dados-cadastrais.component';
 
 @NgModule({
   declarations: [DadosCadastraisComponent],

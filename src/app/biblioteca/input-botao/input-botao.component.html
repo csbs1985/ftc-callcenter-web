@@ -1,11 +1,10 @@
-<section class="input__section input-button">
+<section class="input__section input-botao">
   <label *ngIf="label">{{ label }}</label>
 
   <div class="input input-button__main">
     <input
       [(ngModel)]="value"
       placeholder="{{ placeholder }}"
-      [type]="type"
       [disabled]="disabled"
       [class.input--reverse]="isToggleButton"
       [class.input--erro]="erroMensagem"

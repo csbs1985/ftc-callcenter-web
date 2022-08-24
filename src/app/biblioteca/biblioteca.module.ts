@@ -1,49 +1,49 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TimezoneComponent } from './timezone/timezone.component';
-import { ContactsComponent } from './contacts/contacts.component';
-import { NewsComponent } from './news/news.component';
+import { FusoHorarioComponent } from './fuso-horario/fuso-horario.component';
+import { ContatoComponent } from './contatos/contatos.component';
+import { NovidadesComponent } from './novidades/novidades.component';
 import { IdentificarClienteComponent } from './identificar-cliente/identificar-cliente.component';
-import { InputButtonComponent } from './input-button/input-button.component';
+import { InputBotaoComponent } from './input-botao/input-botao.component';
 import { InputTextComponent } from './input-texto/input-texto.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { SemPararComponent } from './sem-parar/sem-parar.component';
 import { CallCenterComponent } from './call-center/call-center.component';
-import { NotificationComponent } from './notification/notification.component';
+import { NotificacaoComponent } from './notificacao/notificacao.component';
 import { DadosClienteComponent } from './dados-cliente/dados-cliente.component';
-import { LimitsComponent } from './limits/limits.component';
+import { LimiteDriveThruComponent } from './limite-drive-thru/limite-drive-thru.component';
 import { ChecklistComponent } from './checklist/checklist.component';
 
 @NgModule({
   declarations: [
     CallCenterComponent,
     ChecklistComponent,
-    ContactsComponent,
+    ContatoComponent,
     DadosClienteComponent,
     IdentificarClienteComponent,
-    InputButtonComponent,
+    InputBotaoComponent,
     InputTextComponent,
-    LimitsComponent,
-    NewsComponent,
-    NotificationComponent,
+    LimiteDriveThruComponent,
+    NovidadesComponent,
+    NotificacaoComponent,
     SemPararComponent,
-    TimezoneComponent,
+    FusoHorarioComponent,
   ],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
   exports: [
     CallCenterComponent,
     ChecklistComponent,
-    ContactsComponent,
+    ContatoComponent,
     DadosClienteComponent,
     IdentificarClienteComponent,
-    InputButtonComponent,
+    InputBotaoComponent,
     InputTextComponent,
-    LimitsComponent,
-    NewsComponent,
-    NotificationComponent,
+    LimiteDriveThruComponent,
+    NovidadesComponent,
+    NotificacaoComponent,
     SemPararComponent,
-    TimezoneComponent,
+    FusoHorarioComponent,
   ],
 })
 export class BibliotecaModule {}

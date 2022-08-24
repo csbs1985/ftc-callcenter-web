@@ -9,8 +9,8 @@
   .article {
     flex-direction: row;
 
-    ftc-timezone,
-    ftc-contacts {
+    ftc-fuso-horario,
+    ftc-contato {
       width: 50%;
     }
   }
@@ -21,8 +21,8 @@
     flex-direction: column;
     padding-top: var(--size-medium);
 
-    ftc-timezone,
-    ftc-contacts {
+    ftc-fuso-horario,
+    ftc-contato {
       width: 100%;
     }
   }

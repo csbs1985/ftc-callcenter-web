@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { UsuarioService, TemaService, UsuarioInterface } from './shared/_index';
+import {
+  TemaService,
+  UsuarioInterface,
+  UsuarioService,
+} from './compartilhar/_index';
 
 @Component({
   selector: 'ftc-root',

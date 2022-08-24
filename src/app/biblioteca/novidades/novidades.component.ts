@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { VariavelService } from '@app/shared/_index';
+import { VariavelService } from '@app/compartilhar/_index';
 
 @Component({
-  selector: 'ftc-news',
-  templateUrl: './news.component.html',
-  styleUrls: ['./news.component.scss'],
+  selector: 'ftc-novidades',
+  templateUrl: './novidades.component.html',
+  styleUrls: ['./novidades.component.scss'],
 })
-export class NewsComponent implements OnInit {
+export class NovidadesComponent implements OnInit {
   constructor(private variavelService: VariavelService) {}
 
   ngOnInit(): void {}

@@ -2,18 +2,18 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'ftc-input-button',
-  templateUrl: './input-button.component.html',
-  styleUrls: ['./input-button.component.scss'],
+  selector: 'ftc-input-botao',
+  templateUrl: './input-botao.component.html',
+  styleUrls: ['./input-botao.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: InputButtonComponent,
+      useExisting: InputBotaoComponent,
       multi: true,
     },
   ],
 })
-export class InputButtonComponent implements OnInit, ControlValueAccessor {
+export class InputBotaoComponent implements OnInit, ControlValueAccessor {
   public isPassword: boolean = false;
   public tipo: string = 'text';
   public typeNative: string = 'text';
