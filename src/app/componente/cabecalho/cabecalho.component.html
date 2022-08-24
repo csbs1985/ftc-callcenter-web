@@ -1,20 +1,20 @@
 <section class="cabecalho">
-  <div class="header__top">
-    <div class="header__left">
+  <div class="cabecalho__norte">
+    <div class="cabecalho__esquerda">
       <ftc-icone
         [icone]="'menu'"
         [size]="16"
-        class="minus-desktop"
         (click)="toggleMenu()"
+        class="menos-desktop"
       ></ftc-icone>
 
       <ftc-call-center></ftc-call-center>
 
-      <ftc-favoritos class="only-desktop"></ftc-favoritos>
+      <ftc-favoritos class="somente-computador"></ftc-favoritos>
     </div>
 
     <h5 class="menos-telefone">olá, {{ nome }}</h5>
   </div>
 
-  <ftc-favoritos class="only-tablet"></ftc-favoritos>
+  <ftc-favoritos class="somente-tablet"></ftc-favoritos>
 </section>

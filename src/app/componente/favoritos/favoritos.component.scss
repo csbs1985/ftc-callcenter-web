@@ -1,4 +1,7 @@
 .favoritos {
+  width: 100%;
+  overflow-x: auto;
+
   ul {
     display: flex;
     overflow-y: auto;

@@ -14,7 +14,7 @@ export class DadosClienteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.clienteAtual);
+    // console.log(this.clienteAtual);
   }
 
   public closeService(): void {

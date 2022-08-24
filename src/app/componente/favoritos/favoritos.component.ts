@@ -18,7 +18,6 @@ export class FavoritosComponent implements OnInit {
   private getFavorites(): void {
     this.favoritoService.favoritos.subscribe((result: FavoritoInterface[]) => {
       this.favoritos = result ?? [];
-      console.log('chamando...', this.favoritos);
     });
   }
 }

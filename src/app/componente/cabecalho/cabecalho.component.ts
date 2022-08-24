@@ -11,7 +11,7 @@ import {
   styleUrls: ['./cabecalho.component.scss'],
 })
 export class CabecalhoComponent implements OnInit {
-  private usuario!: UsuarioInterface;
+  public usuarioAtual!: UsuarioInterface;
 
   public nome: string = 'usuário.atento';
 
@@ -19,15 +19,16 @@ export class CabecalhoComponent implements OnInit {
     private usuarioService: UsuarioService,
     private variavelService: VariavelService
   ) {
+    this.usuarioService.usuarioAtual.subscribe((x) => (this.usuarioAtual = x));
     this.getUsuario();
   }
 
   ngOnInit(): void {}
 
   private getUsuario(): void {
-    this.usuario = this.usuarioService.usuarioValor;
-    this.nome = this.usuario.primeiroNome + '.' + this.usuario.sobrenome;
-    console.log(this.usuario);
+    this.usuarioAtual = this.usuarioService.usuarioValor;
+    this.nome =
+      this.usuarioAtual.primeiroNome + '.' + this.usuarioAtual.sobrenome;
   }
 
   public toggleMenu(): void {

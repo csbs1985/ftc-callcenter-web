@@ -7,7 +7,7 @@
   background-color: var(--color-default);
   border-bottom: var(--size-border) solid var(--color-border);
 
-  &__top {
+  &__norte {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,7 +15,7 @@
     height: var(--size-cabecalho-phone);
   }
 
-  &__left {
+  &__esquerda {
     display: flex;
     align-items: center;
 
@@ -38,7 +38,7 @@
   .cabecalho {
     height: var(--size-cabecalho-tablet);
 
-    &__top {
+    &__norte {
       height: var(--size-cabecalho-desktop);
     }
   }
@@ -48,7 +48,7 @@
   .cabecalho {
     height: var(--size-cabecalho-desktop);
 
-    &__left {
+    &__esquerda {
       flex-grow: 1;
       margin-right: var(--size-medium);
 
