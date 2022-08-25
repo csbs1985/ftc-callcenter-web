@@ -1,8 +1,16 @@
 .dados-cadastrais {
   &__conteudo {
     display: flex;
-    justify-content: flex-start;
-    flex-flow: wrap;
-    gap: 0 var(--size-medium);
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .dados-cadastrais {
+    &__conteudo {
+      justify-content: flex-start;
+      flex-flow: wrap;
+      gap: 0 var(--size-medium);
+    }
   }
 }

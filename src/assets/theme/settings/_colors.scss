@@ -8,9 +8,11 @@
   --color-input-reverse: var(--color-second);
   --color-input-texto: var(--color-texto);
   --color-button: var(--color-primary);
-  --color-button-label: #f7f6fe;
+  --color-button-active: #383a57;
+  --color-button-hover: #767bbe;
+  --color-button-label: var(--color-texto-fixed);
   --color-border: var(--color-third);
-  --color-overlay: rgba(110, 116, 182, 0.9);
+  --color-overlay: rgba(var(--color-primary), 0.9);
   --color-texto-fixed: #f7f6fe;
   --color-erro: #fbd5d9;
   --color-erro-texto: #760b18;

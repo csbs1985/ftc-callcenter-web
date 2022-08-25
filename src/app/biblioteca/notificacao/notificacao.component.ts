@@ -29,6 +29,6 @@ export class NotificacaoComponent implements OnInit, OnDestroy {
 
     setTimeout(() => {
       this.notificacaoService.dismissAll();
-    }, 5000);
+    }, 8000);
   }
 }

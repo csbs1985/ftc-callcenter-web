@@ -1,22 +1,15 @@
-.button {
+button {
   cursor: pointer;
   border-radius: var(--size-radius);
-  width: 100%;
   height: var(--size-button);
   color: var(--color-button-label);
   padding: 0 var(--size-medium);
 
   &:active {
-    opacity: 0.9;
+    background-color: var(--color-button-active);
   }
 
-  &--primary {
-    background-color: var(--color-button);
-  }
-
-  &--input {
-    width: min-content;
-    border-radius: 0 var(--size-radius) var(--size-radius) 0;
-    background-color: var(--color-button);
+  &:hover {
+    background-color: var(--color-button-hover);
   }
 }

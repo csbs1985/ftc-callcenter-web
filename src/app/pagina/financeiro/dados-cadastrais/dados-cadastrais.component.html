@@ -1,5 +1,5 @@
 <section class="dados-cadastrais pagina">
-  <ftc-checklist></ftc-checklist>
+  <ftc-checklist class="menos-telefone"></ftc-checklist>
 
   <form class="cartao" [formGroup]="form">
     <h1>dados cadastrais</h1>
@@ -84,6 +84,16 @@
         [(ngModel)]="valorNumero"
         class="input--small"
       ></ftc-input-texto>
+
+      <div class="button__caixa">
+        <button
+          type="submit"
+          class="button--primary margin-top--medium"
+          (click)="onSubmit()"
+        >
+          alterar
+        </button>
+      </div>
     </div>
   </form>
 </section>

@@ -46,49 +46,31 @@ export class DadosCadastraisComponent implements OnInit {
 
   private initForm(): void {
     this.form = this.formBuilder.group({
-      codigo: [this.clienteAtual.codigo, Validators.required],
+      codigo: ['', Validators.required],
       primeiroNome: ['', Validators.required],
-      sobrenome: [this.clienteAtual.sobrenome, Validators.required],
-      tipoCadastro: [this.clienteAtual.tipoCadastro, Validators.required],
-      dataNascimento: [this.clienteAtual.dataNascimento],
-      rg: [this.clienteAtual.rg, Validators.pattern('')],
-      cpfCnpj: [this.clienteAtual.cpfCnpj, Validators.pattern('')],
-      cep: [this.clienteAtual.cep, Validators.pattern('')],
-      lagradouro: [this.clienteAtual.lagradouro, Validators.required],
-      numero: [this.clienteAtual.numero, Validators.required],
-      bairro: [this.clienteAtual.bairro, Validators.required],
-      complemento: [this.clienteAtual.complemento],
-      cidade: [this.clienteAtual.cidade, Validators.required],
-      estado: [this.clienteAtual.estado, Validators.required],
-      enderecoCorrespondencia: [
-        this.clienteAtual.enderecoCorrespondencia,
-        Validators.required,
-      ],
-      celular: [this.clienteAtual.celular, Validators.pattern('')],
-      celularAlternativo: [
-        this.clienteAtual.celularAlternativo,
-        Validators.pattern(''),
-      ],
-      telefoneRecidencia: [
-        this.clienteAtual.telefoneRecidencia,
-        Validators.pattern(''),
-      ],
-      telefoneComercial: [
-        this.clienteAtual.telefoneComercial,
-        Validators.pattern(''),
-      ],
-      permiteSms: [this.clienteAtual.permiteSms, Validators.required],
-      email: [this.clienteAtual.email, Validators.pattern('')],
-      emailAlternativo: [
-        this.clienteAtual.emailAlternativo,
-        Validators.pattern(''),
-      ],
-      plano: [this.clienteAtual.plano, Validators.required],
-      autorizaNfe: [this.clienteAtual.autorizaNfe, Validators.required],
-      formaEnvioExtrato: [
-        this.clienteAtual.formaEnvioExtrato,
-        Validators.required,
-      ],
+      sobrenome: ['', Validators.required],
+      tipoCadastro: ['', Validators.required],
+      dataNascimento: [''],
+      rg: ['', Validators.pattern('')],
+      cpfCnpj: ['', Validators.pattern('')],
+      cep: ['', Validators.pattern('')],
+      lagradouro: ['', Validators.required],
+      numero: ['', Validators.required],
+      bairro: ['', Validators.required],
+      complemento: [''],
+      cidade: ['', Validators.required],
+      estado: ['', Validators.required],
+      enderecoCorrespondencia: ['', Validators.required],
+      celular: ['', Validators.pattern('')],
+      celularAlternativo: ['', Validators.pattern('')],
+      telefoneRecidencia: ['', Validators.pattern('')],
+      telefoneComercial: ['', Validators.pattern('')],
+      permiteSms: ['', Validators.required],
+      email: ['', Validators.pattern('')],
+      emailAlternativo: ['', Validators.pattern('')],
+      plano: ['', Validators.required],
+      autorizaNfe: ['', Validators.required],
+      formaEnvioExtrato: ['', Validators.required],
     });
 
     this.valorInitial();
@@ -96,14 +78,16 @@ export class DadosCadastraisComponent implements OnInit {
 
   public valorInitial(): void {
     this.valorCep = this.clienteAtual.cep;
-    this.valorCpfCnpj = this.clienteAtual.cpfCnpj || '-';
-    this.valorDataNascimento = this.clienteAtual.dataNascimento || '-';
+    this.valorCpfCnpj = this.clienteAtual.cpfCnpj || '';
+    this.valorDataNascimento = this.clienteAtual.dataNascimento || '';
     this.valorLagradouro = this.clienteAtual.lagradouro;
     this.valorPrimeiroNome = this.clienteAtual.primeiroNome;
-    this.valorRg = this.clienteAtual.rg || '-';
+    this.valorRg = this.clienteAtual.rg || '';
     this.valorSobrenome = this.clienteAtual.sobrenome;
     this.valorNumero = this.clienteAtual.numero;
   }
+
+  public onSubmit(): void {}
 
   public get ClienteEnum(): typeof ClienteEnum {
     return ClienteEnum;
