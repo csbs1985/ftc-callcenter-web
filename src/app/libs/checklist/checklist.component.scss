@@ -1,0 +1,21 @@
+.checklist {
+  margin-bottom: var(--size-small);
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    li {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--size-x-large);
+      border-radius: var(--size-radius);
+      margin-bottom: var(--size-small);
+      padding: 0 var(--size-medium);
+      background-color: var(--color-primary);
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.novidades {
+  background-color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+
+  svg {
+    cursor: pointer;
+    display: flex;
+    align-self: flex-end;
+  }
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  hr {
+    border-color: var(--color-texto-fixed);
+  }
+
+  * {
+    color: var(--color-texto-fixed);
+  }
+}
