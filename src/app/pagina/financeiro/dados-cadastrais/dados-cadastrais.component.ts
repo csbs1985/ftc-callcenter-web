@@ -13,7 +13,7 @@ import {
 })
 export class DadosCadastraisComponent implements OnInit {
   public clienteAtual!: ClienteInterface;
-  public form!: FormGroup;
+  public formulario!: FormGroup;
 
   public erroCep!: string;
   public erroCpfCnpj!: string;
@@ -41,11 +41,11 @@ export class DadosCadastraisComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.initForm();
+    this.iniciarFormulario();
   }
 
-  private initForm(): void {
-    this.form = this.formBuilder.group({
+  private iniciarFormulario(): void {
+    this.formulario = this.formBuilder.group({
       codigo: ['', Validators.required],
       primeiroNome: ['', Validators.required],
       sobrenome: ['', Validators.required],
@@ -73,10 +73,10 @@ export class DadosCadastraisComponent implements OnInit {
       formaEnvioExtrato: ['', Validators.required],
     });
 
-    this.valorInitial();
+    this.valorInicial();
   }
 
-  public valorInitial(): void {
+  public valorInicial(): void {
     this.valorCep = this.clienteAtual.cep;
     this.valorCpfCnpj = this.clienteAtual.cpfCnpj || '';
     this.valorDataNascimento = this.clienteAtual.dataNascimento || '';

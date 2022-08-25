@@ -8,7 +8,6 @@ import { RouterModule } from '@angular/router';
 import { ToggleComponent } from './toggle/toggle.component';
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 import { ProgressoComponent } from './progresso/progresso.component';
-import { OverlayComponent } from './overlay/overlay.component';
 import { BibliotecaModule } from '@app/biblioteca/biblioteca.module';
 import { FavoritosComponent } from './favoritos/favoritos.component';
 
@@ -21,7 +20,6 @@ import { FavoritosComponent } from './favoritos/favoritos.component';
     CabecalhoComponent,
     FavoritosComponent,
     ProgressoComponent,
-    OverlayComponent,
   ],
   imports: [
     CommonModule,
@@ -38,7 +36,6 @@ import { FavoritosComponent } from './favoritos/favoritos.component';
     CabecalhoComponent,
     FavoritosComponent,
     ProgressoComponent,
-    OverlayComponent,
   ],
 })
 export class ComponenteModule {}

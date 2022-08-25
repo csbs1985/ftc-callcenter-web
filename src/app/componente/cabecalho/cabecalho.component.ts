@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ClienteInterface } from '../../compartilhar/interfaces/cliente.interface';
 import {
+  ClienteService,
   UsuarioInterface,
   UsuarioService,
   VariavelService,
@@ -11,14 +13,17 @@ import {
   styleUrls: ['./cabecalho.component.scss'],
 })
 export class CabecalhoComponent implements OnInit {
+  public clienteAtual!: ClienteInterface;
   public usuarioAtual!: UsuarioInterface;
 
   public nome: string = 'usuário.atento';
 
   constructor(
+    private clienteService: ClienteService,
     private usuarioService: UsuarioService,
     private variavelService: VariavelService
   ) {
+    this.clienteService.clienteAtual.subscribe((x) => (this.clienteAtual = x));
     this.usuarioService.usuarioAtual.subscribe((x) => (this.usuarioAtual = x));
     this.getUsuario();
   }

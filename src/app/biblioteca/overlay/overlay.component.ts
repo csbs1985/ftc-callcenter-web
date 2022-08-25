@@ -12,7 +12,7 @@ export class OverlayComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public toggleOverlay(): void {
+  public fecharOverlay(): void {
     this.overlayOutput.emit(false);
   }
 }

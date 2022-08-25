@@ -15,6 +15,8 @@ import { DadosClienteComponent } from './dados-cliente/dados-cliente.component';
 import { LimiteDriveThruComponent } from './limite-drive-thru/limite-drive-thru.component';
 import { ChecklistComponent } from './checklist/checklist.component';
 
+import { OverlayComponent } from './overlay/overlay.component';
+
 @NgModule({
   declarations: [
     CallCenterComponent,
@@ -29,6 +31,7 @@ import { ChecklistComponent } from './checklist/checklist.component';
     NotificacaoComponent,
     SemPararComponent,
     FusoHorarioComponent,
+    OverlayComponent,
   ],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
   exports: [
@@ -44,6 +47,7 @@ import { ChecklistComponent } from './checklist/checklist.component';
     NotificacaoComponent,
     SemPararComponent,
     FusoHorarioComponent,
+    OverlayComponent,
   ],
 })
 export class BibliotecaModule {}

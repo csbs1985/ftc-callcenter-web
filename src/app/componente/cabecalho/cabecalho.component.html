@@ -10,11 +10,14 @@
 
       <ftc-call-center></ftc-call-center>
 
-      <ftc-favoritos class="somente-computador"></ftc-favoritos>
+      <ftc-favoritos
+        *ngIf="clienteAtual"
+        class="somente-computador"
+      ></ftc-favoritos>
     </div>
 
     <h5 class="menos-telefone">olá, {{ nome }}</h5>
   </div>
 
-  <ftc-favoritos class="somente-tablet"></ftc-favoritos>
+  <ftc-favoritos *ngIf="clienteAtual" class="somente-tablet"></ftc-favoritos>
 </section>
