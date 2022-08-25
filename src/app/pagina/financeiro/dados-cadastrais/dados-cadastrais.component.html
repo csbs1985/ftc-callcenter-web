@@ -1,7 +1,89 @@
-<section class="registration-data pagina">
+<section class="dados-cadastrais pagina">
   <ftc-checklist></ftc-checklist>
 
   <form class="cartao" [formGroup]="form">
     <h1>dados cadastrais</h1>
+
+    <div class="dados-cadastrais__conteudo">
+      <ftc-input-texto
+        [label]="ClienteEnum.PRIMEIRO_NOME"
+        [placeholder]="ClienteEnum.PRIMEIRO_NOME"
+        [erroMensagem]="erroPrimeiroNome"
+        [typeForm]="'texto'"
+        formControlName="primeiroNome"
+        [(ngModel)]="valorPrimeiroNome"
+        class="input--medium"
+      ></ftc-input-texto>
+
+      <ftc-input-texto
+        [label]="ClienteEnum.SOBRENOME"
+        [placeholder]="ClienteEnum.SOBRENOME"
+        [erroMensagem]="erroSobrenome"
+        [typeForm]="'texto'"
+        formControlName="sobrenome"
+        [(ngModel)]="valorSobrenome"
+        class="input--large"
+      ></ftc-input-texto>
+
+      <ftc-input-texto
+        [label]="ClienteEnum.CPF_CNPJ"
+        [placeholder]="ClienteEnum.CPF_CNPJ"
+        [erroMensagem]="erroCpfCnpj"
+        [typeForm]="'texto'"
+        formControlName="cpfCnpj"
+        [(ngModel)]="valorCpfCnpj"
+        class="input--medium"
+      ></ftc-input-texto>
+
+      <ftc-input-texto
+        [label]="ClienteEnum.DATA_NASCIMENTO"
+        [placeholder]="ClienteEnum.DATA_NASCIMENTO"
+        [erroMensagem]="erroDataNascimento"
+        [typeForm]="'texto'"
+        formControlName="dataNascimento"
+        [(ngModel)]="valorDataNascimento"
+        class="input--medium"
+      ></ftc-input-texto>
+
+      <ftc-input-texto
+        [label]="ClienteEnum.RG"
+        [placeholder]="ClienteEnum.RG"
+        [erroMensagem]="erroRG"
+        [typeForm]="'texto'"
+        formControlName="rg"
+        [(ngModel)]="valorRg"
+        class="input--medium"
+      ></ftc-input-texto>
+
+      <ftc-input-texto
+        [label]="ClienteEnum.CEP"
+        [placeholder]="ClienteEnum.CEP"
+        [erroMensagem]="erroCep"
+        [typeForm]="'texto'"
+        formControlName="cep"
+        [(ngModel)]="valorCep"
+        class="input--small"
+      ></ftc-input-texto>
+
+      <ftc-input-texto
+        [label]="ClienteEnum.LAGRADOURO"
+        [placeholder]="ClienteEnum.LAGRADOURO"
+        [erroMensagem]="erroLagradouro"
+        [typeForm]="'texto'"
+        formControlName="lagradouro"
+        [(ngModel)]="valorLagradouro"
+        class="input--large"
+      ></ftc-input-texto>
+
+      <ftc-input-texto
+        [label]="ClienteEnum.NUMERO"
+        [placeholder]="ClienteEnum.NUMERO"
+        [erroMensagem]="erroNumero"
+        [typeForm]="'texto'"
+        formControlName="numero"
+        [(ngModel)]="valorNumero"
+        class="input--small"
+      ></ftc-input-texto>
+    </div>
   </form>
 </section>

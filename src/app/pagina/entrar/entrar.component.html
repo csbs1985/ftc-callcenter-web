@@ -9,29 +9,29 @@
     <form class="entrar__formulario" [formGroup]="form">
       <ftc-input-texto
         [placeholder]="'usuário'"
-        [erroMensagem]="erroMensagemUsuario"
+        [erroMensagem]="erroUsuario"
         [typeForm]="'texto'"
         formControlName="usuario"
-        [(ngModel)]="usuarioValor"
+        [(ngModel)]="valorUsuario"
         [inputReverse]="true"
       ></ftc-input-texto>
 
       <ftc-input-botao
         [placeholder]="'senha'"
         [erroMensagem]="erroMensagemSenha"
-        [typeForm]="'senha'"
+        [typeForm]="'password'"
         [isTrocarBotao]="true"
         formControlName="senha"
-        [(ngModel)]="senhaValor"
+        [(ngModel)]="valorSenha"
         [inputReverse]="true"
       ></ftc-input-botao>
 
       <ftc-input-texto
         [placeholder]="'código'"
-        [erroMensagem]="erroMensagemCodigo"
+        [erroMensagem]="erroCodigo"
         [typeForm]="'texto'"
         formControlName="codigo"
-        [(ngModel)]="codigoValor"
+        [(ngModel)]="valorCodigo"
         [inputReverse]="true"
       ></ftc-input-texto>
 

@@ -19,19 +19,20 @@ export class EntrarComponent implements OnInit {
 
   public form!: FormGroup;
 
-  public codigoValor: string = '';
-  public senhaValor: string = '';
-  public usuarioValor: string = '';
+  public valorCodigo: string = '';
+  public valorSenha: string = '';
+  public valorUsuario: string = '';
+
+  public isCarregando: boolean = false;
   public returnUrl!: string;
 
   public isErroCodigo: boolean = false;
   public isErroSenha: boolean = false;
   public isErroUsuario: boolean = false;
-  public isCarregando: boolean = false;
 
-  public erroMensagemCodigo!: string;
+  public erroCodigo!: string;
   public erroMensagemSenha!: string;
-  public erroMensagemUsuario!: string;
+  public erroUsuario!: string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -39,7 +40,7 @@ export class EntrarComponent implements OnInit {
     private router: Router,
     private usuarioService: UsuarioService
   ) {
-    if (this.usuarioService.usuarioValor) {
+    if (this.usuarioService.valorUsuario) {
       this.router.navigate([RotaEnum.INICIO]);
     }
   }
@@ -64,26 +65,26 @@ export class EntrarComponent implements OnInit {
   public onSubmit(): void {
     this.isCarregando = true;
 
-    if (this.form.valid && this.usuarioValor === 'admin') {
+    if (this.form.valid && this.valorUsuario === 'admin') {
       this.entrar();
       return;
     }
 
-    this.erroMensagemCodigo = this.validateCode();
+    this.erroCodigo = this.validateCode();
     this.erroMensagemSenha = this.validatePassword();
-    this.erroMensagemUsuario = this.validateUser();
+    this.erroUsuario = this.validateUser();
     this.isCarregando = false;
   }
 
   private entrar(): void {
-    if (this.codigoValor !== '123456') {
-      this.erroMensagemCodigo = 'código okta incorreto';
+    if (this.valorCodigo !== '123456') {
+      this.erroCodigo = 'código okta incorreto';
       this.isCarregando = false;
       return;
     }
 
     this.usuarioService
-      .entrar(this.codigoValor, this.senhaValor, this.usuarioValor)
+      .entrar(this.valorCodigo, this.valorSenha, this.valorUsuario)
       .pipe(first())
       .subscribe(
         (data: UsuarioInterface) => {
@@ -98,20 +99,20 @@ export class EntrarComponent implements OnInit {
   }
 
   private validateCode(): string {
-    if (this.codigoValor === '') return 'campo código obrigatório';
-    if (this.codigoValor.length !== 6) return 'código deve ter 6 caracteres';
+    if (this.valorCodigo === '') return 'campo código obrigatório';
+    if (this.valorCodigo.length !== 6) return 'código deve ter 6 caracteres';
     return '';
   }
 
   private validatePassword(): string {
-    if (this.senhaValor === '') return 'campo senha obrigatório';
-    if (this.senhaValor !== 'admin') return 'senha incorreta';
+    if (this.valorSenha === '') return 'campo senha obrigatório';
+    if (this.valorSenha !== 'admin') return 'senha incorreta';
     return '';
   }
 
   private validateUser(): string {
-    if (this.usuarioValor === '') return 'campo usuário obrigatório';
-    if (this.usuarioValor !== 'admin') return 'usuário inexistente';
+    if (this.valorUsuario === '') return 'campo usuário obrigatório';
+    if (this.valorUsuario !== 'admin') return 'usuário inexistente';
     return '';
   }
 }

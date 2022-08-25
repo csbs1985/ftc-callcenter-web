@@ -45,7 +45,7 @@ export class IdentificarClienteComponent implements OnInit {
   private identify(): string {
     if (this.valueData === '') return 'campo identificador obrigatório';
 
-    if (this.clienteService.identify(Number(this.valueData)))
+    if (this.clienteService.identify(this.valueData))
       this.router.navigate([RotaEnum.DADOS_CADASTRAIS]);
     else return 'cpf, cnpj ou código inexistente';
 

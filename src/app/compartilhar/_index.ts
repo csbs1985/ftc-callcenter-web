@@ -1,3 +1,4 @@
+export * from './enums/cliente.enum';
 export * from './enums/notificacao.enum';
 export * from './enums/perfil.enum';
 export * from './enums/rota.enum';

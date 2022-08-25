@@ -1,18 +1,17 @@
 import { TipoCadastroEnum } from '../_index';
 
 export class ClienteInterface {
-  'id': number;
-  'codigo': number;
+  'id': string;
+  'codigo': string;
   'primeiroNome': string;
   'sobrenome': string;
   'tipoCadastro': TipoCadastroEnum;
   'dataNascimento'?: string;
-  'rg'?: number;
-  'cpf'?: number;
-  'cnpj'?: number;
-  'cep': number;
+  'rg'?: string;
+  'cpfCnpj'?: string;
+  'cep': string;
   'lagradouro': string;
-  'numero': number;
+  'numero': string;
   'bairro': string;
   'complemento'?: string;
   'cidade': string;

@@ -32,7 +32,7 @@ export class InputBotaoComponent implements OnInit, ControlValueAccessor {
 
   @Input() set typeForm(value: string) {
     this.tipoNativo = value;
-    if (value === 'senha') this.isSenha = true;
+    if (value === 'password') this.isSenha = true;
     this.tipo = value;
   }
 

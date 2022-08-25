@@ -10,18 +10,17 @@ import {
 } from '../_index';
 
 const cliente: ClienteInterface = {
-  id: 1234567,
-  codigo: 1234567,
+  id: '1234567',
+  codigo: '1234567',
   primeiroNome: 'airton',
   sobrenome: 'senna da silva',
   tipoCadastro: TipoCadastroEnum.PESSOA_FISICA,
   dataNascimento: '01/01/1900',
-  rg: 123456789,
-  cpf: 12345678901,
-  cnpj: 0,
-  cep: 12345667,
+  rg: '123456789',
+  cpfCnpj: '12345678901',
+  cep: '12345667',
   lagradouro: 'av.brasil',
-  numero: 123,
+  numero: '123',
   bairro: 'centro',
   complemento: '',
   cidade: 'são paulo',
@@ -56,12 +55,8 @@ export class ClienteService {
     this.clienteAtual = this.clienteSubject.asObservable();
   }
 
-  public identify(value: number): Observable<ClienteInterface> | null {
-    if (
-      value === cliente.cpf ||
-      value === cliente.id ||
-      value === cliente.cnpj
-    ) {
+  public identify(value: string): Observable<ClienteInterface> | null {
+    if (value === cliente.cpfCnpj || value === cliente.id) {
       this.clienteSubject.next(cliente);
       this.localStorageService.save('clienteAtual', JSON.stringify(cliente));
       return of(cliente);
@@ -94,7 +89,7 @@ export class ClienteService {
     }
   }
 
-  public get usuarioValor(): any {
+  public get valorUsuario(): any {
     return this.clienteSubject.value;
   }
 }

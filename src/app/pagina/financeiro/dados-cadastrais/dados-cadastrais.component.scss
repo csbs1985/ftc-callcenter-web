@@ -1,0 +1,8 @@
+.dados-cadastrais {
+  &__conteudo {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: wrap;
+    gap: 0 var(--size-medium);
+  }
+}

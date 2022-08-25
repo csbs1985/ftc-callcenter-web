@@ -26,7 +26,7 @@ export class CabecalhoComponent implements OnInit {
   ngOnInit(): void {}
 
   private getUsuario(): void {
-    this.usuarioAtual = this.usuarioService.usuarioValor;
+    this.usuarioAtual = this.usuarioService.valorUsuario;
     this.nome =
       this.usuarioAtual.primeiroNome + '.' + this.usuarioAtual.sobrenome;
   }

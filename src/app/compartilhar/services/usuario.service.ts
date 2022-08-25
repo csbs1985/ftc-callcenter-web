@@ -74,7 +74,7 @@ export class UsuarioService {
     }
   }
 
-  public get usuarioValor(): any {
+  public get valorUsuario(): any {
     return this.usuarioSubject.value;
   }
 }

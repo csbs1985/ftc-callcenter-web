@@ -2,7 +2,7 @@
   cursor: pointer;
   border-radius: var(--size-radius);
   width: 100%;
-  height: var(--size-button-medium);
+  height: var(--size-button);
   color: var(--color-button-label);
   padding: 0 var(--size-medium);
 
@@ -16,7 +16,7 @@
 
   &--input {
     width: min-content;
-    border-radius: 0 var(--size-small) var(--size-small) 0;
+    border-radius: 0 var(--size-radius) var(--size-radius) 0;
     background-color: var(--color-button);
   }
 }

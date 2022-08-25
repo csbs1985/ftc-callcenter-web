@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ClienteInterface, ClienteService } from '@app/compartilhar/_index';
+import {
+  ClienteEnum,
+  ClienteInterface,
+  ClienteService,
+} from '@app/compartilhar/_index';
 
 @Component({
   selector: 'ftc-dados-cadastrais',
@@ -10,6 +14,24 @@ import { ClienteInterface, ClienteService } from '@app/compartilhar/_index';
 export class DadosCadastraisComponent implements OnInit {
   public clienteAtual!: ClienteInterface;
   public form!: FormGroup;
+
+  public erroCep!: string;
+  public erroCpfCnpj!: string;
+  public erroDataNascimento!: string;
+  public erroLagradouro!: string;
+  public erroNumero!: string;
+  public erroPrimeiroNome!: string;
+  public erroRG!: string;
+  public erroSobrenome!: string;
+
+  public valorCep: string = '';
+  public valorCpfCnpj: string = '';
+  public valorDataNascimento: string = '';
+  public valorLagradouro: string = '';
+  public valorPrimeiroNome: string = '';
+  public valorRg: string = '';
+  public valorSobrenome: string = '';
+  public valorNumero: string = '';
 
   constructor(
     private clienteService: ClienteService,
@@ -25,13 +47,12 @@ export class DadosCadastraisComponent implements OnInit {
   private initForm(): void {
     this.form = this.formBuilder.group({
       codigo: [this.clienteAtual.codigo, Validators.required],
-      primeiroNome: [this.clienteAtual.primeiroNome, Validators.required],
+      primeiroNome: ['', Validators.required],
       sobrenome: [this.clienteAtual.sobrenome, Validators.required],
       tipoCadastro: [this.clienteAtual.tipoCadastro, Validators.required],
       dataNascimento: [this.clienteAtual.dataNascimento],
       rg: [this.clienteAtual.rg, Validators.pattern('')],
-      cpf: [this.clienteAtual.cpf, Validators.pattern('')],
-      cnpj: [this.clienteAtual.cnpj, Validators.pattern('')],
+      cpfCnpj: [this.clienteAtual.cpfCnpj, Validators.pattern('')],
       cep: [this.clienteAtual.cep, Validators.pattern('')],
       lagradouro: [this.clienteAtual.lagradouro, Validators.required],
       numero: [this.clienteAtual.numero, Validators.required],
@@ -69,5 +90,22 @@ export class DadosCadastraisComponent implements OnInit {
         Validators.required,
       ],
     });
+
+    this.valorInitial();
+  }
+
+  public valorInitial(): void {
+    this.valorCep = this.clienteAtual.cep;
+    this.valorCpfCnpj = this.clienteAtual.cpfCnpj || '-';
+    this.valorDataNascimento = this.clienteAtual.dataNascimento || '-';
+    this.valorLagradouro = this.clienteAtual.lagradouro;
+    this.valorPrimeiroNome = this.clienteAtual.primeiroNome;
+    this.valorRg = this.clienteAtual.rg || '-';
+    this.valorSobrenome = this.clienteAtual.sobrenome;
+    this.valorNumero = this.clienteAtual.numero;
+  }
+
+  public get ClienteEnum(): typeof ClienteEnum {
+    return ClienteEnum;
   }
 }

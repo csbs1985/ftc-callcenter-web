@@ -6,7 +6,8 @@
 
     input {
       flex-grow: 1;
-      border-radius: var(--size-small) 0 0 var(--size-small);
+      border-radius: var(--size-radius) 0 0 var(--size-radius);
+      margin-top: 0;
 
       &.input--reverse {
         background-color: var(--color-input-reverse);

@@ -6,6 +6,7 @@ input {
   padding: 0 var(--size-small);
   color: var(--color-input-texto);
   background-color: var(--color-input);
+  margin-top: var(--size-x-small);
 
   &.input--reverse {
     background-color: var(--color-input-reverse);
@@ -17,7 +18,31 @@ input {
 }
 
 .input {
+  &--small,
+  &--medium,
+  &--large {
+    input {
+      width: 100%;
+    }
+  }
+
   &__secao {
-    margin-bottom: var(--size-medium);
+    margin-bottom: var(--size-small);
+  }
+}
+
+@media (min-width: 768px) {
+  .input {
+    &--small input {
+      width: 100px;
+    }
+
+    &--medium input {
+      width: 200px;
+    }
+
+    &--large input {
+      width: 400px;
+    }
   }
 }

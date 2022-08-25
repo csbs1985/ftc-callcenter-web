@@ -17,7 +17,7 @@ export class AutenticarGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
-    const usuario = this.usuarioService.usuarioValor;
+    const usuario = this.usuarioService.valorUsuario;
 
     if (usuario) {
       if (
