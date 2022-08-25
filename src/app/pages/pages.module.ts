@@ -4,19 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LibsModule } from '@app/libs/libs.module';
 import { ComponentsModule } from '@app/components/components.module';
 import { EntrarComponent } from './entrar/entrar.component';
-import { FinanceiroModule } from './financeiro/financeiro.module';
 import { InicioComponent } from './inicio/inicio.component';
+import { DadosCadastraisComponent } from './dados-cadastrais/dados-cadastrais.component';
 
 @NgModule({
-  declarations: [InicioComponent, EntrarComponent],
+  declarations: [InicioComponent, EntrarComponent, DadosCadastraisComponent],
   imports: [
     CommonModule,
     ComponentsModule,
     LibsModule,
     FormsModule,
     ReactiveFormsModule,
-    FinanceiroModule,
   ],
-  exports: [InicioComponent, EntrarComponent, FinanceiroModule],
+  exports: [InicioComponent, EntrarComponent, DadosCadastraisComponent],
 })
 export class PagesModule {}

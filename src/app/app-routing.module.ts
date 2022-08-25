@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AutenticarGuard, RotaEnum } from './shared/_index';
 import { EntrarComponent } from './pages/entrar/entrar.component';
-import { DadosCadastraisComponent } from './pages/financeiro/dados-cadastrais/dados-cadastrais.component';
+import { DadosCadastraisComponent } from './pages/dados-cadastrais/dados-cadastrais.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 
 const routes: Routes = [
