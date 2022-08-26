@@ -16,6 +16,10 @@
       margin-bottom: var(--size-small);
       padding: 0 var(--size-medium);
       background-color: var(--color-primary);
+
+      p {
+        color: var(--color-fixo);
+      }
     }
   }
 }
